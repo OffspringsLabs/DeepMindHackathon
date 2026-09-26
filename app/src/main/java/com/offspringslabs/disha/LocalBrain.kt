@@ -208,7 +208,7 @@ class LocalBrain(private val context: Context) {
             ${ToolProtocol.toolMenu()}
             Protocol, exactly one line per reply:
             CALL toolName("arg1", "arg2")   to get facts (use "base" for the base town, "now" for the current time)
-            FINAL: <at most 2 short spoken sentences with the numbers from RESULT>
+            FINAL: <at most 2 short spoken sentences with the numbers from RESULT; no greeting, no "Okay", start with the fact>
             Always start with a CALL. Never write numbers that did not come from a RESULT. If RESULT says not found, FINAL: Not in my pack, ask me when online.
             Example:
             QUESTION: how far is X from base
