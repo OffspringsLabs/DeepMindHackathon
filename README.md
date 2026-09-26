@@ -28,6 +28,10 @@ Every travel app goes quiet the moment the network drops on a ghat road. TravelF
 
 Online, the same tools plus Google Search run in a **multi-round decision loop**: for "9 pm, bus or auto back?" the agent gathers fares, hours and time, then answers `DECISION / WHY / ALTERNATIVE`, rendered as a decision card.
 
+## Voice-first choreography
+
+Components never race the voice. While the agent works you see only the live tool trail; the answer's first sentence is synthesized on its own so Gemini's voice starts as early as possible (the rest synthesizes in parallel and plays back to back). The answer text appears the moment audio starts, and one second later the cards slide in, staggered 650 ms apart. A 9-second cap means a slow voice can never hold the screen hostage. Intake questions follow the same rule: spoken first, card a second later.
+
 ## Planner agent: how the conversation works
 
 The intake agent's questions are **client-side tools**. When Gemini calls `askBudget(...)`, the app renders a ₹ slider card and suspends the loop until you answer; your answer is returned as the tool result and the agent continues. Free text or voice also answers the current card, and if you say "2 days in Araku for two under ₹8,000" it skips what it already knows. `buildTrip` then runs three research calls (Maps ∥ Search → code execution), one structuring call, and a Kotlin re-computation of the budget (models do slip: the demo Tirupati plan claimed ₹14,300; the real total was ₹17,072, so it is flagged over budget with alternatives).

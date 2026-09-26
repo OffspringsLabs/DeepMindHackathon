@@ -8,7 +8,10 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -105,8 +108,15 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         if (preferGemini) {
             try {
                 speaking.value = "gemini"
-                val pcm = geminiTts.synthesize(text, ttsVoice.value, "Read this aloud ${replyLang.value.ttsHint}, warmly and briskly, like a friendly local guide. Say numbers naturally.")
-                geminiTts.play(pcm) { Log.i("Choreo", "voice started (gemini)"); onStart() }
+                val style = "Read this aloud ${replyLang.value.ttsHint}, warmly and briskly, like a friendly local guide. Say numbers naturally."
+                // First sentence alone → audio starts in ~3 s; the rest synthesizes meanwhile and plays back to back.
+                val (head, tail) = splitForSpeech(text)
+                coroutineScope {
+                    val rest = if (tail.isNotBlank()) async(Dispatchers.IO) { runCatching { geminiTts.synthesize(tail, ttsVoice.value, style) }.getOrNull() } else null
+                    val first = geminiTts.synthesize(head, ttsVoice.value, style)
+                    geminiTts.play(first) { Log.i("Choreo", "voice started (gemini)"); onStart() }
+                    rest?.await()?.let { geminiTts.play(it) }
+                }
                 speaking.value = ""; return
             } catch (e: Exception) {
                 Log.w("Disha", "Gemini TTS failed, using Android TTS", e)
@@ -350,8 +360,16 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         geminiTts.stop(); voice.release(); brain.close()
     }
 
+    /** First sentence (or first ~140 chars) vs the remainder. */
+    private fun splitForSpeech(text: String): Pair<String, String> {
+        val t = text.trim()
+        val m = Regex("(?<=[.!?।])\\s+").find(t)
+        val cut = m?.range?.first ?: -1
+        return if (cut in 20..220) t.substring(0, cut).trim() to t.substring(cut).trim() else if (t.length > 220) t.substring(0, 200).trimEnd() to t.substring(200).trim() else t to ""
+    }
+
     companion object {
-        const val VOICE_WAIT_MS = 7_000L   // never hold the screen longer than this waiting for audio
+        const val VOICE_WAIT_MS = 9_000L   // never hold the screen longer than this waiting for audio
         const val CARD_LEAD_MS = 1_000L    // voice leads, components follow
         const val CARD_STAGGER_MS = 650L
     }
