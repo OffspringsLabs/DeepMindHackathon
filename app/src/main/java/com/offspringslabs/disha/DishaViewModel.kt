@@ -127,20 +127,41 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     /**
-     * Voice-first choreography: start speaking, and only once audio begins (or after [VOICE_WAIT_MS])
-     * show the answer text; one second later the components slide in, staggered.
+     * Interleaved choreography: sentence i is paired with component i (tool-call order).
+     * For each pair: the card lands, its sentence appears and is spoken, then a half-second halt.
+     * All sentences are synthesized up front in parallel so the halts stay tight.
      */
-    private suspend fun choreograph(text: String, staged: List<UiCard>, preferGemini: Boolean) {
-        val started = CompletableDeferred<Unit>()
-        viewModelScope.launch { speakOut(text, preferGemini) { started.complete(Unit) }; started.complete(Unit) }
+    private suspend fun choreograph(text: String, staged: List<UiCard>, preferGemini: Boolean) = coroutineScope {
+        val segments = splitSentences(text).ifEmpty { listOf(text) }
+        val style = "Read this aloud ${replyLang.value.ttsHint}, warmly and briskly, like a friendly local guide. Say numbers naturally."
+        val audio = if (preferGemini) segments.map { seg -> async(Dispatchers.IO) { runCatching { withTimeoutOrNull(12_000L) { geminiTts.synthesize(seg, ttsVoice.value, style) } }.getOrNull() } } else emptyList()
         val t0 = System.currentTimeMillis()
-        withTimeoutOrNull(VOICE_WAIT_MS) { started.await() }
-        answer.value = text
-        delay(CARD_LEAD_MS)
-        for (c in staged) { addCard(c); Log.i("Choreo", "card ${c::class.simpleName} +${System.currentTimeMillis() - t0} ms"); delay(CARD_STAGGER_MS) }
+        val shown = StringBuilder()
+        var geminiFailed = false
+        for ((i, seg) in segments.withIndex()) {
+            // component(s) for this sentence: card i, plus any leftovers on the last sentence
+            val group = if (i < segments.lastIndex) listOfNotNull(staged.getOrNull(i)) else staged.drop(i)
+            if (group.isNotEmpty()) { group.forEach { addCard(it); Log.i("Choreo", "card ${it::class.simpleName} +${System.currentTimeMillis() - t0} ms") }; delay(CARD_SETTLE_MS) }
+            shown.append(seg).append(' ')
+            answer.value = shown.toString().trim()
+            val pcm = if (preferGemini && !geminiFailed) audio.getOrNull(i)?.await() else null
+            if (pcm != null) {
+                speaking.value = "gemini"
+                geminiTts.play(pcm) { Log.i("Choreo", "voice ${i + 1}/${segments.size} +${System.currentTimeMillis() - t0} ms") }
+            } else {
+                if (preferGemini && !geminiFailed) { geminiFailed = true; notes.value = notes.value + "Gemini voice unavailable, using device voice" }
+                speaking.value = "android"; Log.i("Choreo", "voice ${i + 1}/${segments.size} (device) +${System.currentTimeMillis() - t0} ms")
+                voice.speakAndWait(seg)
+            }
+            speaking.value = ""
+            if (i < segments.lastIndex) delay(HALT_MS)
+        }
     }
 
-    /** Tools shared by both brains; every tool call lands a precompiled card on screen. */
+    /** Sentence split that respects Indian-language danda and keeps decimals like 22.5 together. */
+    private fun splitSentences(text: String): List<String> =
+        Regex("(?<=[.!?।])\\s+(?=\\S)").split(text.trim()).map { it.trim() }.filter { it.isNotBlank() }
+
     private fun addCard(c: UiCard) { if (c !in cards.value) cards.value = cards.value + c }
     /** Cards are collected while the agent works and revealed by [choreograph] once the voice starts. */
     private fun stagedTools(staged: MutableList<UiCard>): TripTools = TripTools(pack.value).also { t -> t.onCard = { c -> if (c !in staged) staged += c } }
@@ -369,8 +390,9 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     companion object {
-        const val VOICE_WAIT_MS = 9_000L   // never hold the screen longer than this waiting for audio
-        const val CARD_LEAD_MS = 1_000L    // voice leads, components follow
-        const val CARD_STAGGER_MS = 650L
+        const val VOICE_WAIT_MS = 9_000L   // intake: never hold the screen longer than this waiting for audio
+        const val CARD_LEAD_MS = 1_000L    // intake: spoken question leads, card follows
+        const val CARD_SETTLE_MS = 350L    // Q&A: card lands, then its sentence
+        const val HALT_MS = 500L           // Q&A: halt between sentence/card pairs
     }
 }

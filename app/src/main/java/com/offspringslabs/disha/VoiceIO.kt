@@ -7,6 +7,9 @@ import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.withTimeoutOrNull
 import java.util.Locale
 
 /** Offline-capable speech in (Android on-device recognizer) and speech out (TTS). */
@@ -65,6 +68,21 @@ class VoiceIO(private val context: Context) {
     fun speak(text: String) {
         if (text.isBlank()) return
         tts?.speak(text.replace("₹", " rupees "), TextToSpeech.QUEUE_FLUSH, null, "disha")
+    }
+
+    /** Speaks and suspends until the utterance finishes (or 20 s). */
+    suspend fun speakAndWait(text: String) {
+        if (text.isBlank()) return
+        val done = CompletableDeferred<Unit>()
+        val id = "tf-" + System.nanoTime()
+        tts?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
+            override fun onStart(utteranceId: String?) {}
+            override fun onDone(utteranceId: String?) { if (utteranceId == id) done.complete(Unit) }
+            @Deprecated("Deprecated in Java") override fun onError(utteranceId: String?) { if (utteranceId == id) done.complete(Unit) }
+            override fun onError(utteranceId: String?, errorCode: Int) { if (utteranceId == id) done.complete(Unit) }
+        })
+        tts?.speak(text.replace("₹", " rupees "), TextToSpeech.QUEUE_FLUSH, null, id)
+        withTimeoutOrNull(20_000) { done.await() }
     }
 
     fun stopSpeaking() { tts?.stop() }
