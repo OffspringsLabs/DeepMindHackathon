@@ -1,52 +1,61 @@
 {
   "region": "Hampi, Karnataka",
   "state": "Karnataka",
-  "base": "Hampi Bazaar",
-  "baseLat": 15.335,
-  "baseLon": 76.46,
-  "season": "October to February",
+  "base": "Hosapete",
+  "baseLat": 15.2689,
+  "baseLon": 76.3909,
+  "season": "October to March",
   "languages": "Kannada, Telugu, Hindi, English",
   "arrival": {
-    "rail": "Hosapete Junction (HPT), 13 km away",
-    "air": "Jindal Vijayanagar Airport, Vidyanagar (VDY), 38 km away",
-    "fromStart": "Overnight Amaravati Express train from Hyderabad to Hosapete Jn (9.5 hrs, ~₹300 Sleeper), then local bus/auto to Hampi Bazaar"
+    "rail": "Hosapete Junction (HPT)",
+    "air": "Jindal Vijayanagar Airport, Toranagallu (VDY)",
+    "fromStart": "Train #17225 Amaravati Exp from KCG to HPT, 9.5h, ₹340 SL / ₹890 3AC"
   },
   "hotels": [
     {
-      "name": "Lakshmi Heritage Tourist Home",
-      "area": "Janatha Plot, Hampi Bazaar",
-      "pricePerNight": 1500,
+      "name": "Hotel Swagath",
+      "area": "Rotary Circle, Hosapete",
+      "pricePerNight": 1400,
+      "kmFromBase": 0.3,
+      "rating": 4,
+      "mapsUri": "https://maps.google.com/?q=Hotel+Swagath+Hosapete",
+      "note": "Budget stay 300m from bus stand, direct shuttles to Hampi."
+    },
+    {
+      "name": "Pratap Residency",
+      "area": "Beside KSRTC Bus Stand, Hosapete",
+      "pricePerNight": 1200,
       "kmFromBase": 0.2,
-      "rating": 4.4,
-      "mapsUri": "",
-      "note": "Walking distance to Virupaksha and Hemakuta Hill"
+      "rating": 4.1,
+      "mapsUri": "https://maps.google.com/?q=Pratap+Residency+Hosapete",
+      "note": "Clean standard budget rooms near transit."
     },
     {
-      "name": "Hotel Mayura Bhuvaneshwari (KSTDC)",
-      "area": "Kamalapur",
-      "pricePerNight": 2400,
-      "kmFromBase": 4.5,
-      "rating": 3.7,
-      "mapsUri": "",
-      "note": "Government-run hotel near the Archaeological Museum"
+      "name": "Hotel Varsha Hampi",
+      "area": "Opp Police Station, Kamalapura",
+      "pricePerNight": 1800,
+      "kmFromBase": 11,
+      "rating": 3.8,
+      "mapsUri": "https://maps.google.com/?q=Hotel+Varsha+Kamalapura",
+      "note": "Mid-budget base close to Royal Centre."
     },
     {
-      "name": "Hotel Hampi International",
-      "area": "Station Road, Hosapete",
-      "pricePerNight": 2000,
-      "kmFromBase": 12.8,
+      "name": "Clark's Inn Hampi",
+      "area": "HPC Road, Kamalapura",
+      "pricePerNight": 4200,
+      "kmFromBase": 11.5,
       "rating": 3.9,
-      "mapsUri": "",
-      "note": "Convenient location next to Hosapete railway station"
+      "mapsUri": "https://maps.google.com/?q=Clarks+Inn+Hampi",
+      "note": "Comfort hotel opposite ASI Museum."
     },
     {
-      "name": "The King On The Rocks",
-      "area": "Basapur, Anegundi",
+      "name": "Aadhya Homestay Hampi",
+      "area": "Anegundi rural belt",
       "pricePerNight": 2200,
-      "kmFromBase": 24,
-      "rating": 4.5,
-      "mapsUri": "",
-      "note": "Located on the rural Sanapur side across the river"
+      "kmFromBase": 18,
+      "rating": 4.9,
+      "mapsUri": "https://maps.google.com/?q=Aadhya+Homestay+Anegundi",
+      "note": "Serene homestay setting near Sanapur side."
     }
   ],
   "places": [
@@ -55,211 +64,228 @@
       "type": "Active Temple",
       "open": "06:00",
       "close": "21:00",
-      "kmFromBase": 0.3,
-      "minutesFromBase": 4,
-      "fee": 50,
+      "kmFromBase": 12.5,
+      "minutesFromBase": 25,
+      "fee": 25,
       "lat": 15.3353,
-      "lon": 76.4604,
-      "mapsUri": "",
-      "tip": "Visit at 07:30 to see temple elephant Lakshmi receive her ritual river bath"
+      "lon": 76.46,
+      "mapsUri": "https://maps.google.com/?q=Virupaksha+Temple+Hampi",
+      "tip": "Visit at 07:30 to see Lakshmi the elephant bathe at river ghat."
     },
     {
-      "name": "Vijaya Vittala Temple & Stone Chariot",
-      "type": "Monument",
-      "open": "08:30",
+      "name": "Saasivekaalu & Kadalekalu Ganesha",
+      "type": "Monolithic Shrines",
+      "open": "06:00",
       "close": "18:00",
-      "kmFromBase": 3.2,
+      "kmFromBase": 12,
       "minutesFromBase": 22,
-      "fee": 40,
-      "lat": 15.3188,
-      "lon": 76.4782,
-      "mapsUri": "",
-      "tip": "ASI composite ticket also covers Lotus Mahal on the same day"
+      "fee": 0,
+      "lat": 15.3315,
+      "lon": 76.4608,
+      "mapsUri": "https://maps.google.com/?q=Sasivekalu+Ganesha+Hampi",
+      "tip": "Snake carved around belly prevents it from bursting."
     },
     {
-      "name": "Hemakuta Hill Temple Complex",
-      "type": "Temples & Sunset Point",
+      "name": "Hemakuta Hill",
+      "type": "Rock Hill & Temples",
       "open": "06:00",
       "close": "18:30",
-      "kmFromBase": 0.4,
-      "minutesFromBase": 6,
+      "kmFromBase": 12.2,
+      "minutesFromBase": 23,
       "fee": 0,
-      "lat": 15.3325,
-      "lon": 76.4619,
-      "mapsUri": "",
-      "tip": "Prime sunset view overlooking the Virupaksha gopuram"
+      "lat": 15.333,
+      "lon": 76.459,
+      "mapsUri": "https://maps.google.com/?q=Hemakuta+Hill+Hampi",
+      "tip": "Easy slope offering iconic sunset view over Virupaksha gopuram."
     },
     {
-      "name": "Matanga Hill",
-      "type": "Viewpoint & Trek",
-      "open": "05:30",
+      "name": "Vijaya Vitthala Temple",
+      "type": "UNESCO Monument",
+      "open": "08:30",
       "close": "18:00",
-      "kmFromBase": 1.2,
-      "minutesFromBase": 45,
-      "fee": 0,
-      "lat": 15.3318,
-      "lon": 76.4705,
-      "mapsUri": "",
-      "tip": "Top sunrise spot; wear footwear with good grip for smooth granite"
+      "kmFromBase": 15,
+      "minutesFromBase": 30,
+      "fee": 40,
+      "lat": 15.3385,
+      "lon": 76.4795,
+      "mapsUri": "https://maps.google.com/?q=Vijaya+Vitthala+Temple+Hampi",
+      "tip": "Arrive at 08:30 opening to see morning sun hit the Stone Chariot."
     },
     {
-      "name": "Sasivekalu & Kadalekalu Ganesha",
-      "type": "Monolith Sculptures",
-      "open": "06:00",
-      "close": "18:00",
-      "kmFromBase": 0.6,
-      "minutesFromBase": 8,
-      "fee": 0,
-      "lat": 15.3314,
-      "lon": 76.4636,
-      "mapsUri": "",
-      "tip": "Carved pavilion offers views across surrounding banana plantations"
-    },
-    {
-      "name": "Lotus Mahal & Zenana Enclosure",
-      "type": "Royal Architecture",
+      "name": "Lotus Mahal",
+      "type": "Royal Pavilion",
       "open": "08:00",
       "close": "18:00",
-      "kmFromBase": 3.8,
-      "minutesFromBase": 10,
+      "kmFromBase": 11,
+      "minutesFromBase": 20,
       "fee": 0,
       "lat": 15.3204,
-      "lon": 76.4707,
-      "mapsUri": "",
-      "tip": "Covered under the ASI Vittala composite ticket; keep barcode stub safe"
+      "lon": 76.4705,
+      "mapsUri": "https://maps.google.com/?q=Lotus+Mahal+Hampi",
+      "tip": "Covered under Vitthala ASI ticket; historic water conduits cooled walls."
     },
     {
       "name": "Elephant Stables",
-      "type": "Archaeological Monument",
+      "type": "Royal Enclosure",
       "open": "06:00",
       "close": "17:30",
-      "kmFromBase": 4,
-      "minutesFromBase": 10,
+      "kmFromBase": 11.2,
+      "minutesFromBase": 20,
       "fee": 0,
-      "lat": 15.32,
-      "lon": 76.474,
-      "mapsUri": "",
-      "tip": "Observe the distinctive alternating dome architectures"
-    },
-    {
-      "name": "Royal Enclosure & Stepped Tank",
-      "type": "Historical Ruins",
-      "open": "06:00",
-      "close": "18:00",
-      "kmFromBase": 4.5,
-      "minutesFromBase": 12,
-      "fee": 0,
-      "lat": 15.3175,
-      "lon": 76.4682,
-      "mapsUri": "",
-      "tip": "Inspect ancient stone aqueduct channels leading to the pushkarani"
+      "lat": 15.321,
+      "lon": 76.473,
+      "mapsUri": "https://maps.google.com/?q=Elephant+Stables+Hampi",
+      "tip": "Contains 11 domed chambers with alternating architectural styles."
     },
     {
       "name": "Queen's Bathhouse",
-      "type": "Royal Pavilion",
+      "type": "Royal Bath",
       "open": "06:00",
       "close": "18:00",
-      "kmFromBase": 4.2,
-      "minutesFromBase": 11,
+      "kmFromBase": 10.5,
+      "minutesFromBase": 18,
       "fee": 0,
-      "lat": 15.3135,
-      "lon": 76.469,
-      "mapsUri": "",
-      "tip": "Carved ornate balconies overlook the inner moat basin"
+      "lat": 15.3148,
+      "lon": 76.4715,
+      "mapsUri": "https://maps.google.com/?q=Queens+Bath+Hampi",
+      "tip": "Surrounded by an ancient protective moat."
+    },
+    {
+      "name": "Underground Shiva Temple",
+      "type": "Submerged Shrine",
+      "open": "06:00",
+      "close": "18:00",
+      "kmFromBase": 11.5,
+      "minutesFromBase": 22,
+      "fee": 0,
+      "lat": 15.3255,
+      "lon": 76.4625,
+      "mapsUri": "https://maps.google.com/?q=Underground+Shiva+Temple+Hampi",
+      "tip": "Floor often has ankle-deep water fed by canal network."
+    },
+    {
+      "name": "Matanga Hill",
+      "type": "Viewpoint Trek",
+      "open": "05:30",
+      "close": "18:30",
+      "kmFromBase": 13,
+      "minutesFromBase": 25,
+      "fee": 0,
+      "lat": 15.332,
+      "lon": 76.468,
+      "mapsUri": "https://maps.google.com/?q=Matanga+Hill+Hampi",
+      "tip": "Highest sunrise viewpoint; bring torch for pre-dawn climb."
     },
     {
       "name": "Anjanadri Betta",
-      "type": "Hilltop Shrine & Nature",
+      "type": "Hilltop Shrine",
       "open": "06:00",
       "close": "18:00",
-      "kmFromBase": 20,
-      "minutesFromBase": 35,
+      "kmFromBase": 22,
+      "minutesFromBase": 45,
       "fee": 0,
-      "lat": 15.3533,
-      "lon": 76.4716,
-      "mapsUri": "",
-      "tip": "Climb 575 steps early to beat heat; guard belongings from monkeys"
+      "lat": 15.3553,
+      "lon": 76.469,
+      "mapsUri": "https://maps.google.com/?q=Anjanadri+Hill+Hampi",
+      "tip": "575 steps; keep snacks and shades zipped due to monkeys."
     },
     {
       "name": "Sanapur Lake",
-      "type": "Reservoir & Coracle Point",
-      "open": "06:00",
+      "type": "Boulder Reservoir",
+      "open": "07:00",
       "close": "18:30",
-      "kmFromBase": 18,
-      "minutesFromBase": 35,
-      "fee": 400,
-      "lat": 15.362,
-      "lon": 76.4475,
-      "mapsUri": "",
-      "tip": "Use licensed coracles with life jackets; avoid swimming near rock warning areas"
+      "kmFromBase": 25,
+      "minutesFromBase": 50,
+      "fee": 0,
+      "lat": 15.3725,
+      "lon": 76.452,
+      "mapsUri": "https://maps.google.com/?q=Sanapur+Lake+Hampi",
+      "tip": "Scenic coracle rides; avoid swimming due to crocodiles."
+    },
+    {
+      "name": "Tungabhadra River Ghat",
+      "type": "Riverfront",
+      "open": "07:00",
+      "close": "18:00",
+      "kmFromBase": 13,
+      "minutesFromBase": 25,
+      "fee": 0,
+      "lat": 15.3365,
+      "lon": 76.4645,
+      "mapsUri": "https://maps.google.com/?q=Hampi+River+Ghat",
+      "tip": "Coracle rides drift past boulder carvings."
     }
   ],
   "routes": [
     {
-      "from": "Hosapete Junction",
+      "from": "Hospet Bus Stand",
       "to": "Hampi Bazaar",
-      "km": 13,
-      "minutes": 30,
-      "mode": "Auto or Bus"
+      "km": 12.5,
+      "minutes": 25,
+      "mode": "KSRTC Bus"
     },
     {
       "from": "Hampi Bazaar",
-      "to": "Hemakuta Hill",
-      "km": 0.6,
-      "minutes": 8,
-      "mode": "Foot"
+      "to": "Kadalekalu Ganesha",
+      "km": 0.7,
+      "minutes": 10,
+      "mode": "Walk"
     },
     {
-      "from": "Hampi Bazaar",
-      "to": "Matanga Hill Base",
-      "km": 1.2,
-      "minutes": 15,
-      "mode": "Foot"
+      "from": "Saasivekaalu Ganesha",
+      "to": "Underground Shiva Temple",
+      "km": 1.4,
+      "minutes": 4,
+      "mode": "Auto"
     },
     {
-      "from": "Hampi Bazaar",
-      "to": "Vittala Temple",
-      "km": 2.4,
-      "minutes": 40,
-      "mode": "Foot"
+      "from": "Underground Shiva Temple",
+      "to": "Lotus Mahal",
+      "km": 1.5,
+      "minutes": 5,
+      "mode": "Auto"
     },
     {
-      "from": "Hampi Bazaar",
-      "to": "Royal Enclosure",
+      "from": "Lotus Mahal",
+      "to": "Elephant Stables",
+      "km": 0.3,
+      "minutes": 2,
+      "mode": "Walk"
+    },
+    {
+      "from": "Elephant Stables",
+      "to": "Vijaya Vitthala Parking",
       "km": 3.8,
       "minutes": 10,
       "mode": "Auto"
     },
     {
       "from": "Hampi Bazaar",
-      "to": "Anjanadri Betta",
-      "km": 20,
+      "to": "Sanapur Lake",
+      "km": 19.5,
       "minutes": 35,
-      "mode": "Auto"
+      "mode": "Two-wheeler"
     },
     {
-      "from": "Anjanadri Betta",
-      "to": "Sanapur Lake",
-      "km": 5,
-      "minutes": 12,
-      "mode": "Auto"
+      "from": "Sanapur Lake",
+      "to": "Anjanadri Betta",
+      "km": 4.2,
+      "minutes": 10,
+      "mode": "Two-wheeler"
+    },
+    {
+      "from": "Kamalapura",
+      "to": "Hospet Base",
+      "km": 11,
+      "minutes": 20,
+      "mode": "KSRTC Bus"
     }
   ],
   "food": [
     {
-      "item": "Jolada Rotti Oota",
-      "localName": "Jolada Rotti Meal",
-      "where": "Basaveshwara Khanavali, Hospet / Kamalapur",
-      "price": 120,
-      "veg": true,
-      "spice": 3,
-      "mealWindow": "12:30-15:30",
-      "allergens": "Peanuts, sesame"
-    },
-    {
       "item": "Benne Dosa",
-      "localName": "Benne Dose",
-      "where": "Udupi canteens, Hampi Bazaar",
+      "localName": "Davangere Benne Dosa",
+      "where": "Sri Venkateshwara Tiffin Room, Hospet",
       "price": 70,
       "veg": true,
       "spice": 1,
@@ -267,118 +293,128 @@
       "allergens": "Dairy"
     },
     {
-      "item": "South Indian Thali",
-      "localName": "Oota",
-      "where": "Mango Tree Restaurant, Kamalapura Road",
+      "item": "Jolada Rotti Thali",
+      "localName": "Jolada Rotti Oota",
+      "where": "Basaveshwara Khanavali, Hospet",
+      "price": 130,
+      "veg": true,
+      "spice": 3,
+      "mealWindow": "12:30-15:30",
+      "allergens": "Peanuts, Sesame"
+    },
+    {
+      "item": "Veg Thali & Lassi",
+      "localName": "Special South Thali",
+      "where": "Mango Tree Restaurant, Hampi",
       "price": 200,
       "veg": true,
-      "spice": 2,
-      "mealWindow": "12:00-15:00",
-      "allergens": "Mustard, dairy"
+      "spice": 1,
+      "mealWindow": "12:00-21:00",
+      "allergens": "Dairy"
     },
     {
-      "item": "Paddu",
-      "localName": "Guliyappa",
-      "where": "Street carts near Hampi bus stand",
-      "price": 45,
+      "item": "Bisi Bele Bath Combo",
+      "localName": "Bisi Bele Bath",
+      "where": "Hotel Swagath, Hospet",
+      "price": 80,
       "veg": true,
-      "spice": 1,
-      "mealWindow": "07:30-10:30",
-      "allergens": ""
+      "spice": 2,
+      "mealWindow": "07:30-13:00",
+      "allergens": "Mustard, Peanuts"
     },
     {
-      "item": "Wood-Fired Pizza",
-      "localName": "Pizza",
-      "where": "Cafes around Anegundi and Sanapur",
-      "price": 300,
-      "veg": false,
-      "spice": 1,
-      "mealWindow": "18:00-21:30",
-      "allergens": "Gluten, dairy"
-    },
-    {
-      "item": "Badam Milk",
-      "localName": "Badam Halu",
-      "where": "Station Road sweet stalls, Hosapete",
-      "price": 50,
+      "item": "Banana Cane Smoothie",
+      "localName": "Smoothie",
+      "where": "Kishkindha side cafes, Sanapur",
+      "price": 140,
       "veg": true,
       "spice": 0,
-      "mealWindow": "17:00-21:00",
-      "allergens": "Tree nuts, dairy"
+      "mealWindow": "14:00-18:00",
+      "allergens": "Dairy"
+    },
+    {
+      "item": "Filter Coffee",
+      "localName": "Filter Kaapi",
+      "where": "Udupi messes, Hampi Bazaar",
+      "price": 25,
+      "veg": true,
+      "spice": 0,
+      "mealWindow": "07:00-18:00",
+      "allergens": "Milk"
     }
   ],
   "language": {
     "primary": "Kannada",
-    "script": "ಕನ್ನಡ",
+    "script": "Kannada",
     "phrases": [
       {
-        "intent": "Where is",
+        "intent": "direction",
         "english": "Where is...?",
         "native": "... ಎಲ್ಲಿದೆ?",
-        "roman": "... ellide?"
+        "roman": "... yellide?"
       },
       {
-        "intent": "How much",
+        "intent": "price",
         "english": "How much?",
         "native": "ಎಷ್ಟು?",
         "roman": "Eshtu?"
       },
       {
-        "intent": "Too expensive",
+        "intent": "bargain",
         "english": "Too expensive",
-        "native": "ತುಂಬಾ ಜಾಸ್ತಿ",
-        "roman": "Thumba jaasthi"
+        "native": "ತುಂಬಾ ದುಬಾರಿ",
+        "roman": "Thumba dubaari"
       },
       {
-        "intent": "Hospital",
+        "intent": "emergency",
         "english": "Hospital",
         "native": "ಆಸ್ಪತ್ರೆ",
         "roman": "Aaspathre"
       },
       {
-        "intent": "Police",
+        "intent": "safety",
         "english": "Police",
-        "native": "ಪೊಲೀಸ್",
+        "native": "ಪೋಲೀಸ್",
         "roman": "Police"
       },
       {
-        "intent": "Vegetarian",
+        "intent": "food",
         "english": "Vegetarian",
-        "native": "ಶುದ್ಧ ಸಸ್ಯಾಹಾರ",
-        "roman": "Shuddha sasyaahaara"
+        "native": "ಸಸ್ಯಾಹಾರಿ",
+        "roman": "Sasyaahaari"
       },
       {
-        "intent": "No spice",
-        "english": "No spice",
+        "intent": "food",
+        "english": "No spice / mild",
         "native": "ಖಾರ ಬೇಡ",
         "roman": "Khaara beda"
       },
       {
-        "intent": "Stop here",
+        "intent": "transit",
         "english": "Stop here",
         "native": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
         "roman": "Illi nillisi"
       },
       {
-        "intent": "Bus inquiry",
-        "english": "Bus to Hosapete / Hampi?",
-        "native": "ಹೊಸಪೇಟೆಗೆ / ಹಂಪಿಗೆ ಬಸ್ ಇದೆಯಾ?",
-        "roman": "Hosapetegé / Hampigé bus ideya?"
+        "intent": "transit",
+        "english": "Bus to [Place]?",
+        "native": "[Place] ಗೆ ಬಸ್ ಇದೆಯಾ?",
+        "roman": "[Place]-ge bus ideya?"
       },
       {
-        "intent": "Water",
+        "intent": "need",
         "english": "Water",
         "native": "ನೀರು",
         "roman": "Neeru"
       },
       {
-        "intent": "Help",
-        "english": "Help",
-        "native": "ಸಹಾಯ ಮಾಡಿ",
-        "roman": "Sahaaya maadi"
+        "intent": "help",
+        "english": "Help!",
+        "native": "ಸಹಾಯ ಮಾಡಿ!",
+        "roman": "Sahaaya maadi!"
       },
       {
-        "intent": "Thank you",
+        "intent": "courtesy",
         "english": "Thank you",
         "native": "ಧನ್ಯವಾದಗಳು",
         "roman": "Dhanyavaadagalu"
@@ -386,12 +422,12 @@
     ],
     "stationNames": [
       {
-        "native": "ಹಂಪಿ",
-        "english": "Hampi"
+        "native": "ಹೊಸಪೇಟೆ ಜಂಕ್ಷನ್",
+        "english": "Hosapete Junction"
       },
       {
-        "native": "ಹೊಸಪೇಟೆ",
-        "english": "Hosapete"
+        "native": "ಹಂಪಿ",
+        "english": "Hampi"
       },
       {
         "native": "ವಿರೂಪಾಕ್ಷ ದೇವಾಲಯ",
@@ -399,7 +435,7 @@
       },
       {
         "native": "ವಿಜಯ ವಿಠ್ಠಲ ದೇವಾಲಯ",
-        "english": "Vijaya Vittala Temple"
+        "english": "Vijaya Vitthala Temple"
       },
       {
         "native": "ಕಮಲಾಪುರ",
@@ -413,22 +449,22 @@
   },
   "connectivity": {
     "deadZones": [
-      "Achyutaraya boulder ravine",
-      "Riverside walking path between Vittala and Bazaar",
-      "Behind Sanapur Lake boulder formations"
+      "Sanapur gorge",
+      "Anjanadri northern slopes",
+      "Trails behind Achyutaraya"
     ],
-    "bestCarrier": "Airtel and Jio; BSNL has the widest geographic fallback reach",
-    "tips": "Pre-download offline Google Maps for Hospet-Hampi-Anegundi before starting journeys"
+    "bestCarrier": "Airtel / Jio",
+    "tips": "Download offline Google maps and save ticket QR codes in advance."
   },
   "transport": {
-    "autoRule": "Autos do not use meters. Agree firmly on fare before boarding.",
+    "autoRule": "No meters; agree firmly on total price before getting inside.",
     "fares": [
       {
-        "from": "Hosapete Jn",
-        "to": "Hampi Bazaar",
+        "from": "Hosapete Rly Stn",
+        "to": "Hospet Hotel",
         "mode": "Auto",
-        "fairInr": 250,
-        "touristQuoteInr": 500
+        "fairInr": 70,
+        "touristQuoteInr": 180
       },
       {
         "from": "Hosapete Bus Stand",
@@ -438,153 +474,155 @@
         "touristQuoteInr": 20
       },
       {
-        "from": "Hampi Bazaar",
-        "to": "Kamalapur",
+        "from": "Hosapete Bus Stand",
+        "to": "Hampi Bazaar",
         "mode": "Auto",
-        "fairInr": 120,
-        "touristQuoteInr": 250
-      },
-      {
-        "from": "Vittala Parking",
-        "to": "Vittala Gate",
-        "mode": "ASI Battery Buggy",
-        "fairInr": 20,
-        "touristQuoteInr": 50
+        "fairInr": 280,
+        "touristQuoteInr": 450
       },
       {
         "from": "Hampi Bazaar",
-        "to": "Royal Centre Half Day",
+        "to": "Vitthala Temple",
         "mode": "Auto",
-        "fairInr": 700,
-        "touristQuoteInr": 1200
+        "fairInr": 180,
+        "touristQuoteInr": 350
       },
       {
-        "from": "Hampi Bazaar",
-        "to": "Anegundi Circuit Full Day",
+        "from": "Kamalapura",
+        "to": "Lotus Mahal",
         "mode": "Auto",
-        "fairInr": 1200,
-        "touristQuoteInr": 2200
+        "fairInr": 100,
+        "touristQuoteInr": 200
+      },
+      {
+        "from": "Hampi Base",
+        "to": "Sacred & Royal Circuit",
+        "mode": "Full-Day Auto",
+        "fairInr": 1000,
+        "touristQuoteInr": 2000
       }
     ],
     "sharedRoutes": [
-      "Shared autos between Kamalapur and Hampi Bazaar for ₹20-₹30 per seat"
+      "Kamalapura to Hampi Bazaar shared auto (₹20)",
+      "Hosapete to Kamalapura shared auto (₹30)"
     ],
-    "metro": "",
-    "busBoards": "Buses display routes in Kannada; look for ಹಂಪಿ (Hampi) or ಹೊಸಪೇಟೆ (Hosapete)",
+    "metro": "None",
+    "busBoards": "Platform 8/9 at Hospet Central Bus Terminal for Hampi shuttles.",
     "lastServiceTimes": [
-      "KSRTC buses between Hampi Bazaar and Hospet end at ~20:30",
-      "Tungabhadra river ferry stops at 18:00 sharp"
+      "Last KSRTC bus from Hampi Bazaar to Hospet: 20:15",
+      "Coracle ferry crossings stop: 17:30"
     ]
   },
   "payments": {
-    "upiCoverage": "Very high; accepted at 95% of restaurants, homestays, and ticket booths",
+    "upiCoverage": "High in shops, hotels, and ASI ticket gates; spotty in gorges.",
     "cashOnly": [
-      "River coracle boatmen",
-      "Temple footwear counters (₹5-₹10)",
-      "Roadside coconut and fruit stalls"
+      "Coracle rides",
+      "Temple footwear counters",
+      "Tender coconut vendors",
+      "Auto parking fees"
     ],
-    "tolls": "",
-    "permits": [],
-    "idNeeded": "Original Government Photo ID (Aadhaar, Voter ID, or Passport)"
-  },
-  "culture": {
-    "dressCode": "Shoulders and knees covered at active temples (Virupaksha, Anjanadri)",
-    "footwear": "Slip-on footwear recommended; carry thick socks for hot granite surfaces",
-    "photography": "Allowed across monuments; strictly banned inside sanctum sanctorum and no drones",
-    "alcohol": "Sacred Centre around Hampi Bazaar is strictly a dry vegetarian zone",
-    "holidaysShutdowns": [
+    "tolls": "None for autos and two-wheelers on main monument roads.",
+    "permits": [
       {
-        "date": "Every Friday",
-        "what": "Archaeological Museum Kamalapura is closed"
+        "name": "ASI Composite Monument Pass",
+        "whoNeeds": "All visitors entering Vitthala & Zenana Enclosure",
+        "whereToGet": "asi.payumoney.com or gate QR counter",
+        "costInr": 40,
+        "leadDays": 0
       }
     ],
-    "womenSafety": "Safe and welcoming; avoid unlit isolated boulder trails after dark",
+    "idNeeded": "Government photo ID (Aadhaar/Passport) for check-in and ASI gates."
+  },
+  "culture": {
+    "dressCode": "Cover shoulders and knees in active shrines like Virupaksha.",
+    "footwear": "Remove outside temple sanctums; wear slip-on sandals with socks for hot stone.",
+    "photography": "Handheld photography allowed; drones and tripods strictly banned without ASI permit.",
+    "alcohol": "Strictly banned in Hampi sacred core; limited to Hospet and Anegundi resorts.",
+    "holidaysShutdowns": [
+      {
+        "date": "2024-11-01",
+        "what": "Karnataka Rajyotsava - public offices closed, street processions"
+      }
+    ],
+    "womenSafety": "Generally safe; avoid desolate boulder trails and complete hill descents before dark.",
     "tips": [
-      "Carry at least 2 litres of water with ORS on monument walks",
-      "Store loose belongings inside bags around monkeys at Anjanadri",
-      "Purchase ASI tickets online in advance to bypass counters",
-      "Wear trail running or walking shoes with rubber traction"
+      "Carry 2 liters of drinking water per person under the sun.",
+      "Secure food and spectacles from aggressive macaques.",
+      "Do not swim in rivers or canals due to crocodiles and currents.",
+      "Wear trail shoes with rubber grip for boulder ascents."
     ]
   },
   "trust": {
     "scams": [
       {
-        "pattern": "Driver claims river bridge is closed to force a ₹1000 road detour",
-        "counter": "Verify road status via GPS or ask local police before agreeing"
+        "pattern": "Coracle operator stops mid-river demanding extra cash to return.",
+        "counter": "Fix round-trip duration and rate before boarding; pay only on dry land."
       },
       {
-        "pattern": "Unlicensed guides without badges offering fabricated stories",
-        "counter": "Insist on seeing government-issued Ministry of Tourism photo badges"
+        "pattern": "Touts claiming to be official historians offering secret shortcut paths.",
+        "counter": "Follow signboards and hire only guides with valid KSTDC/ASI photo badges."
       },
       {
-        "pattern": "Coracle operators quoting low entry fare then demanding more mid-river",
-        "counter": "Confirm total return fare and ride duration before boarding"
-      },
-      {
-        "pattern": "Hawkers selling cheap polished glass stones as excavated ancient rubies",
-        "counter": "Firmly decline; selling authentic excavated antiquities is illegal"
+        "pattern": "Hawkers selling fake ancient Vijayanagara gold/copper coins.",
+        "counter": "Decline firmly with 'Beda'; they are cheap modern brass replicas."
       }
     ],
-    "officialGuideRateInr": 1200,
+    "officialGuideRateInr": 1500,
     "officialCounters": [
-      "KSTDC Tourism Information Counter at Kamalapur",
-      "ASI Ticket Counter at Vijaya Vittala entrance"
+      "ASI Ticket Booth at Lotus Mahal gate",
+      "ASI Ticket Booth at Vitthala Temple entrance"
     ]
   },
   "emergency": {
-    "hospital": "Sripathi Multispeciality Hospital, Hospet (+91 83942 28784)",
-    "pharmacy24h": "Sripathi Hospital Pharmacy / Sanjivani Medicals, Hospet",
+    "hospital": "Citi Hospital, Baldota Rd, Hosapete (+91 94495 63333)",
+    "pharmacy24h": "Apollo Pharmacy, Station Road, Hosapete",
     "police": "112",
-    "touristPolice": "Hampi Tourist Police Kiosk, Virupaksha Entrance (+91 83942 41244)",
-    "embassy": "Nearest embassies located in Bengaluru (~340 km) or Hyderabad (~365 km)",
-    "atm": "SBI ATM Kamalapura Circle and Canara Bank ATM Hampi Bazaar",
-    "noSignal": "Achyutaraya boulder gorge and trails behind Sanapur Lake",
+    "touristPolice": "Hampi Police Station, Hampi Bazaar (+91 83942 91530)",
+    "embassy": "Consulates in Hyderabad / Bengaluru (~350 km)",
+    "atm": "SBI ATM, Kamalapura Circle & Hospet Station Road",
+    "noSignal": "Sanapur Lake canyon, rear base of Matanga Hill",
     "numbers": [
       {
-        "label": "National Emergency Helpline",
+        "label": "National Emergency",
         "phone": "112"
       },
       {
-        "label": "Ambulance",
-        "phone": "108"
+        "label": "Lifeline Trauma Centre Hospet",
+        "phone": "+91 88670 41478"
       },
       {
-        "label": "Women Helpline",
-        "phone": "1091"
-      },
-      {
-        "label": "Hampi Police Station",
-        "phone": "+91 83942 91530"
+        "label": "Kamalapura Police Station",
+        "phone": "+91 83942 41433"
       }
     ],
     "phrases": [
       {
-        "english": "Please help me!",
-        "native": "ದಯವಿಟ್ಟು ನನಗೆ ಸಹಾಯ ಮಾಡಿ!",
-        "roman": "Dayavittu nanagé sahaaya maadi!"
+        "english": "Please take me to the hospital",
+        "native": "ದಯವಿಟ್ಟು ನನ್ನನ್ನು ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಹೋಗಿ",
+        "roman": "Dayavittu nannannu aaspathrege karedukondu hogi"
       },
       {
-        "english": "Call an ambulance immediately!",
-        "native": "ತಕ್ಷಣ ಆಂಬ್ಯುಲೆನ್ಸ್ ಕರೆಯಿರಿ!",
-        "roman": "Takshana ambulance kareyiri!"
+        "english": "Call the police",
+        "native": "ಪೋಲೀಸರಿಗೆ ಕರೆ ಮಾಡಿ",
+        "roman": "Policerige kare maadi"
       },
       {
-        "english": "Where is the police station?",
-        "native": "ಪೊಲೀಸ್ ಠಾಣೆ ಎಲ್ಲಿದೆ?",
-        "roman": "Police thaane ellide?"
+        "english": "I have lost my way",
+        "native": "ನಾನು ದಾರಿ ತಪ್ಪಿದ್ದೇನೆ",
+        "roman": "Naanu daari thappidhdhene"
       },
       {
-        "english": "I need a doctor",
-        "native": "ನನಗೆ ವೈದ್ಯರ ಅಗತ್ಯವಿದೆ",
-        "roman": "Nanagé vaidyara agatyavidé"
+        "english": "Please help me quickly",
+        "native": "ದಯವಿಟ್ಟು ಬೇಗ ಸಹಾಯ ಮಾಡಿ",
+        "roman": "Dayavittu bega sahaaya maadi"
       }
     ]
   },
   "tips": [
-    "Climb Matanga Hill before sunrise for clear 360-degree dawn vistas",
-    "Keep physical or screenshot QR copy of your ASI ticket for scanning at multiple monuments",
-    "Carry ₹1500 cash for river coracles, shoe stands, and small stalls",
-    "Rent autos for full half-day blocks to save on multiple single-run quotes"
+    "Start sightseeing early at 06:00 to avoid mid-day granite heat.",
+    "Single ASI ticket gives entry to both Vitthala and Lotus Mahal on the same date.",
+    "Withdraw cash at Hospet Junction as village ATMs frequently run out.",
+    "Always zip bags around Anjanadri Hill to keep monkeys away."
   ],
   "plan": {
     "constraints": {
@@ -601,335 +639,413 @@
       "diet": "any"
     },
     "transportToRegion": {
-      "mode": "Overnight Train (Amaravati Express)",
+      "mode": "Overnight Train (Amaravati Exp #17225/#17226)",
       "hours": 9.5,
-      "costInrPerPerson": 300,
-      "note": "Kacheguda to Hosapete Junction return in Sleeper class"
+      "costInrPerPerson": 340,
+      "note": "Kacheguda to Hosapete Sleeper class; upgradeable to 3AC."
     },
     "stay": {
-      "name": "Lakshmi Heritage Tourist Home",
-      "area": "Janatha Plot, Hampi Bazaar",
-      "pricePerNight": 1500,
+      "name": "Hotel Swagath",
+      "area": "Rotary Circle, Hosapete",
+      "pricePerNight": 1400,
       "nights": 2,
-      "rating": 4.4,
-      "mapsUri": "",
-      "lat": 15.335,
-      "lon": 76.46
+      "rating": 4,
+      "mapsUri": "https://maps.google.com/?q=Hotel+Swagath+Hosapete",
+      "lat": 15.2689,
+      "lon": 76.3909
     },
-    "foodPerPersonPerDay": 500,
-    "localTransportInr": 2800,
+    "foodPerPersonPerDay": 450,
+    "localTransportInr": 1930,
     "days": [
       {
         "day": 1,
-        "theme": "Sacred Centre & Monolithic Wonders",
+        "theme": "Sacred Centre, River Ghats & Hemakuta Sunset",
         "stops": [
           {
-            "time": "06:00",
-            "name": "Hosapete Jn to Base",
-            "minutes": 90,
-            "costInr": 125,
-            "travelKm": 13,
-            "travelMin": 30,
-            "mode": "Auto",
+            "time": "05:30",
+            "name": "Arrival & Hotel Swagath Check-in",
+            "minutes": 120,
+            "costInr": 0,
+            "travelKm": 0.4,
+            "travelMin": 6,
+            "mode": "Walk",
+            "lat": 15.2689,
+            "lon": 76.3909,
+            "mapsUri": "https://maps.google.com/?q=Hotel+Swagath+Hosapete",
+            "note": "Train arrival, short walk to hotel, breakfast and wash up."
+          },
+          {
+            "time": "08:15",
+            "name": "KSRTC Shuttle to Hampi",
+            "minutes": 30,
+            "costInr": 40,
+            "travelKm": 12.5,
+            "travelMin": 25,
+            "mode": "Bus",
             "lat": 15.335,
             "lon": 76.46,
-            "mapsUri": "",
-            "note": "Arrive at Hospet, auto to Hampi Bazaar, check in to guesthouse"
+            "mapsUri": "https://maps.google.com/?q=Hampi+Bazaar",
+            "note": "Red government bus from Hospet bus terminal to Hampi Bazaar."
           },
           {
-            "time": "08:00",
-            "name": "Breakfast at Taste of Hampi",
-            "minutes": 60,
-            "costInr": 120,
-            "travelKm": 0.2,
-            "travelMin": 3,
-            "mode": "Foot",
-            "lat": 15.3352,
-            "lon": 76.4598,
-            "mapsUri": "",
-            "note": "Idli, Vada, and Filter Coffee"
-          },
-          {
-            "time": "09:15",
-            "name": "Virupaksha Temple Complex",
-            "minutes": 135,
-            "costInr": 55,
-            "travelKm": 0.3,
-            "travelMin": 4,
-            "mode": "Foot",
+            "time": "08:45",
+            "name": "Virupaksha Temple",
+            "minutes": 90,
+            "costInr": 50,
+            "travelKm": 0.1,
+            "travelMin": 2,
+            "mode": "Walk",
             "lat": 15.3353,
-            "lon": 76.4604,
-            "mapsUri": "",
-            "note": "Ancient shrines, gopuram, and optical inverted shadow chamber"
+            "lon": 76.46,
+            "mapsUri": "https://maps.google.com/?q=Virupaksha+Temple+Hampi",
+            "note": "Active Dravidian temple rituals and elephant Lakshmi blessing."
           },
           {
-            "time": "11:45",
-            "name": "Sasivekalu & Kadalekalu Ganesha",
-            "minutes": 75,
+            "time": "10:15",
+            "name": "Tungabhadra River Ghat Coracle Ride",
+            "minutes": 45,
+            "costInr": 500,
+            "travelKm": 0.5,
+            "travelMin": 8,
+            "mode": "Walk",
+            "lat": 15.3365,
+            "lon": 76.4645,
+            "mapsUri": "https://maps.google.com/?q=Hampi+River+Ghat",
+            "note": "Circular coracle ride past boulder shores and river carvings."
+          },
+          {
+            "time": "11:00",
+            "name": "Kadalekalu Ganesha",
+            "minutes": 90,
             "costInr": 0,
             "travelKm": 0.6,
-            "travelMin": 8,
-            "mode": "Foot",
-            "lat": 15.3314,
-            "lon": 76.4636,
-            "mapsUri": "",
-            "note": "Monolithic stone statues carved out of single boulders"
+            "travelMin": 10,
+            "mode": "Walk",
+            "lat": 15.3315,
+            "lon": 76.4608,
+            "mapsUri": "https://maps.google.com/?q=Kadalekalu+Ganesha",
+            "note": "Monolithic statue with view towards valley."
           },
           {
-            "time": "13:15",
+            "time": "12:30",
             "name": "Lunch at Mango Tree",
-            "minutes": 75,
-            "costInr": 250,
-            "travelKm": 2,
+            "minutes": 90,
+            "costInr": 0,
+            "travelKm": 1.2,
             "travelMin": 5,
             "mode": "Auto",
             "lat": 15.328,
             "lon": 76.465,
-            "mapsUri": "",
-            "note": "South Indian Thali and Mango Lassi"
+            "mapsUri": "https://maps.google.com/?q=Mango+Tree+Restaurant+Hampi",
+            "note": "Relaxed garden seating and thalis."
           },
           {
-            "time": "14:45",
-            "name": "Midday Rest",
-            "minutes": 105,
+            "time": "14:00",
+            "name": "Saasivekaalu Ganesha",
+            "minutes": 90,
             "costInr": 0,
-            "travelKm": 2,
-            "travelMin": 5,
-            "mode": "Auto",
-            "lat": 15.335,
-            "lon": 76.46,
-            "mapsUri": "",
-            "note": "Rest during high afternoon solar heat"
+            "travelKm": 0.8,
+            "travelMin": 12,
+            "mode": "Walk",
+            "lat": 15.3315,
+            "lon": 76.4608,
+            "mapsUri": "https://maps.google.com/?q=Sasivekalu+Ganesha",
+            "note": "Single-stone carving enclosed in open pavilion."
           },
           {
-            "time": "16:45",
-            "name": "Hemakuta Hill Sunset",
-            "minutes": 105,
+            "time": "15:30",
+            "name": "Krishna Temple Complex",
+            "minutes": 90,
             "costInr": 0,
             "travelKm": 0.4,
             "travelMin": 6,
-            "mode": "Foot",
-            "lat": 15.3325,
-            "lon": 76.4619,
-            "mapsUri": "",
-            "note": "Pre-Vijayanagara temples and panoramic sunset views"
+            "mode": "Walk",
+            "lat": 15.332,
+            "lon": 76.463,
+            "mapsUri": "https://maps.google.com/?q=Krishna+Temple+Hampi",
+            "note": "Historic temple tank and carved pillared mantapa."
           },
           {
-            "time": "19:30",
-            "name": "Dinner at Hampi Bazaar Cafe",
+            "time": "17:00",
+            "name": "Hemakuta Hill Sunset",
             "minutes": 90,
-            "costInr": 200,
-            "travelKm": 0.2,
-            "travelMin": 3,
-            "mode": "Foot",
-            "lat": 15.335,
-            "lon": 76.46,
-            "mapsUri": "",
-            "note": "Rooftop dining near temple street"
+            "costInr": 0,
+            "travelKm": 0.3,
+            "travelMin": 5,
+            "mode": "Walk",
+            "lat": 15.333,
+            "lon": 76.459,
+            "mapsUri": "https://maps.google.com/?q=Hemakuta+Hill",
+            "note": "Panoramic sunset over temple gopurams."
+          },
+          {
+            "time": "18:45",
+            "name": "Return to Hospet Base",
+            "minutes": 45,
+            "costInr": 40,
+            "travelKm": 12.5,
+            "travelMin": 25,
+            "mode": "Bus",
+            "lat": 15.2689,
+            "lon": 76.3909,
+            "mapsUri": "https://maps.google.com/?q=Hotel+Swagath+Hosapete",
+            "note": "Bus back to hotel; Jolada Rotti dinner in town."
           }
         ]
       },
       {
         "day": 2,
-        "theme": "River Tungabhadra & Kishkindha",
+        "theme": "Kishkindha Realm, Boulders & Hippie Island",
         "stops": [
           {
-            "time": "05:30",
-            "name": "Matanga Hill Sunrise Trek",
-            "minutes": 135,
+            "time": "07:30",
+            "name": "Breakfast & Scooter Pickup",
+            "minutes": 60,
             "costInr": 0,
-            "travelKm": 1.2,
-            "travelMin": 15,
-            "mode": "Foot",
-            "lat": 15.3318,
-            "lon": 76.4705,
-            "mapsUri": "",
-            "note": "360-degree dawn panorama across Hampi landscape"
+            "travelKm": 0.5,
+            "travelMin": 5,
+            "mode": "Walk",
+            "lat": 15.2689,
+            "lon": 76.3909,
+            "mapsUri": "https://maps.google.com/?q=Hosapete",
+            "note": "Benne dosa breakfast; collect hired scooter for the day."
           },
           {
-            "time": "08:15",
-            "name": "Local Breakfast",
-            "minutes": 45,
-            "costInr": 90,
-            "travelKm": 1.2,
-            "travelMin": 15,
-            "mode": "Foot",
-            "lat": 15.335,
-            "lon": 76.46,
-            "mapsUri": "",
-            "note": "Paddu and Benne Dosa in Hampi Bazaar"
-          },
-          {
-            "time": "09:15",
-            "name": "Anjanadri Betta & Anegundi",
-            "minutes": 255,
+            "time": "08:30",
+            "name": "Ride to Sanapur Lake",
+            "minutes": 60,
             "costInr": 0,
-            "travelKm": 20,
-            "travelMin": 35,
-            "mode": "Auto",
-            "lat": 15.3533,
-            "lon": 76.4716,
-            "mapsUri": "",
-            "note": "Climb 575 steps of Hanuman Hill and visit Anegundi village"
+            "travelKm": 24,
+            "travelMin": 45,
+            "mode": "Two-wheeler",
+            "lat": 15.3725,
+            "lon": 76.452,
+            "mapsUri": "https://maps.google.com/?q=Sanapur+Lake",
+            "note": "Scenic ride crossing Tungabhadra River bridge."
           },
           {
-            "time": "13:30",
-            "name": "Riverside Lunch",
+            "time": "09:30",
+            "name": "Sanapur Lake Coracle Ride",
+            "minutes": 120,
+            "costInr": 500,
+            "travelKm": 0,
+            "travelMin": 0,
+            "mode": "Walk",
+            "lat": 15.3725,
+            "lon": 76.452,
+            "mapsUri": "https://maps.google.com/?q=Sanapur+Lake",
+            "note": "Coracle ride through towering granite canyons."
+          },
+          {
+            "time": "11:30",
+            "name": "Tungabhadra Canal Route & Rapids",
             "minutes": 75,
-            "costInr": 250,
-            "travelKm": 3,
-            "travelMin": 8,
-            "mode": "Auto",
+            "costInr": 0,
+            "travelKm": 6,
+            "travelMin": 15,
+            "mode": "Two-wheeler",
+            "lat": 15.36,
+            "lon": 76.46,
+            "mapsUri": "https://maps.google.com/?q=Hampi+Rapids",
+            "note": "Ride through lush paddy corridors and river canals."
+          },
+          {
+            "time": "12:45",
+            "name": "Lunch at Garden Cafe",
+            "minutes": 105,
+            "costInr": 0,
+            "travelKm": 2.5,
+            "travelMin": 6,
+            "mode": "Two-wheeler",
             "lat": 15.355,
             "lon": 76.465,
-            "mapsUri": "",
-            "note": "Falafel thali and fruit juice at Laughing Buddha Cafe"
+            "mapsUri": "https://maps.google.com/?q=Anegundi+Cafes",
+            "note": "Rest under palm shade with fresh drinks."
           },
           {
-            "time": "15:00",
-            "name": "Sanapur Lake & Coracle Ride",
-            "minutes": 150,
-            "costInr": 400,
+            "time": "14:30",
+            "name": "Historic Anegundi Village",
+            "minutes": 75,
+            "costInr": 0,
+            "travelKm": 4,
+            "travelMin": 10,
+            "mode": "Two-wheeler",
+            "lat": 15.35,
+            "lon": 76.495,
+            "mapsUri": "https://maps.google.com/?q=Chintamani+Temple+Anegundi",
+            "note": "Chintamani Temple cave complex and riverside ghats."
+          },
+          {
+            "time": "15:45",
+            "name": "Anjanadri Betta Sunset",
+            "minutes": 135,
+            "costInr": 0,
             "travelKm": 5,
             "travelMin": 12,
-            "mode": "Auto",
-            "lat": 15.362,
-            "lon": 76.4475,
-            "mapsUri": "",
-            "note": "Circular coracle drift around scenic granite boulder waters"
+            "mode": "Two-wheeler",
+            "lat": 15.3553,
+            "lon": 76.469,
+            "mapsUri": "https://maps.google.com/?q=Anjanadri+Hill",
+            "note": "Ascend 575 steps for sweeping 360-degree sunset vista."
           },
           {
-            "time": "17:45",
-            "name": "Return Scenic Drive",
-            "minutes": 60,
+            "time": "18:15",
+            "name": "Return Ride to Hospet",
+            "minutes": 75,
             "costInr": 0,
             "travelKm": 22,
             "travelMin": 45,
-            "mode": "Auto",
-            "lat": 15.335,
-            "lon": 76.46,
-            "mapsUri": "",
-            "note": "Golden hour drive back to Hampi Bazaar via Bukkasagara bridge"
-          },
-          {
-            "time": "19:30",
-            "name": "Dinner in Hampi Bazaar",
-            "minutes": 90,
-            "costInr": 200,
-            "travelKm": 0.2,
-            "travelMin": 3,
-            "mode": "Foot",
-            "lat": 15.335,
-            "lon": 76.46,
-            "mapsUri": "",
-            "note": "Warm meal at local guest cafe"
+            "mode": "Two-wheeler",
+            "lat": 15.2689,
+            "lon": 76.3909,
+            "mapsUri": "https://maps.google.com/?q=Hotel+Swagath+Hosapete",
+            "note": "Drive back via paved road bridge before complete dark."
           }
         ]
       },
       {
         "day": 3,
-        "theme": "Royal Centre & Vijaya Vittala",
+        "theme": "Imperial Architecture of the Vijayanagara Kings",
         "stops": [
           {
-            "time": "08:00",
-            "name": "Breakfast & Luggage Drop",
-            "minutes": 45,
-            "costInr": 100,
-            "travelKm": 0.1,
-            "travelMin": 2,
-            "mode": "Foot",
-            "lat": 15.335,
-            "lon": 76.46,
-            "mapsUri": "",
-            "note": "Check out and leave backpacks at homestay reception"
+            "time": "05:15",
+            "name": "Matanga Hill Sunrise Trek",
+            "minutes": 120,
+            "costInr": 0,
+            "travelKm": 12,
+            "travelMin": 20,
+            "mode": "Auto",
+            "lat": 15.332,
+            "lon": 76.468,
+            "mapsUri": "https://maps.google.com/?q=Matanga+Hill",
+            "note": "Hike to summit; watch dawn break over Achyutaraya Temple."
           },
           {
-            "time": "09:00",
-            "name": "Royal Centre Monuments",
-            "minutes": 210,
-            "costInr": 40,
-            "travelKm": 3.8,
+            "time": "07:30",
+            "name": "Breakfast Break",
+            "minutes": 60,
+            "costInr": 0,
+            "travelKm": 3,
+            "travelMin": 7,
+            "mode": "Auto",
+            "lat": 15.3188,
+            "lon": 76.4716,
+            "mapsUri": "https://maps.google.com/?q=Kamalapura",
+            "note": "Traditional South Indian tiffin in Kamalapura."
+          },
+          {
+            "time": "08:30",
+            "name": "Vijaya Vitthala Temple Complex",
+            "minutes": 120,
+            "costInr": 80,
+            "travelKm": 3.5,
             "travelMin": 10,
             "mode": "Auto",
-            "lat": 15.3204,
-            "lon": 76.4707,
-            "mapsUri": "",
-            "note": "Lotus Mahal, Elephant Stables, Royal Enclosure, and Stepped Tank"
+            "lat": 15.3385,
+            "lon": 76.4795,
+            "mapsUri": "https://maps.google.com/?q=Vijaya+Vitthala+Temple",
+            "note": "Stone Chariot and musical pillared mandapa; ASI ticket covers day."
           },
           {
-            "time": "12:45",
-            "name": "Lunch at Mayura Bhuvaneshwari",
-            "minutes": 75,
-            "costInr": 220,
-            "travelKm": 1.5,
-            "travelMin": 5,
+            "time": "10:45",
+            "name": "Lotus Mahal & Elephant Stables",
+            "minutes": 90,
+            "costInr": 0,
+            "travelKm": 3.5,
+            "travelMin": 8,
             "mode": "Auto",
-            "lat": 15.31,
-            "lon": 76.468,
-            "mapsUri": "",
-            "note": "Traditional North Karnataka banana leaf meal"
+            "lat": 15.3204,
+            "lon": 76.4705,
+            "mapsUri": "https://maps.google.com/?q=Lotus+Mahal",
+            "note": "Included in morning ASI pass; visit 11 vaulted elephant stalls."
+          },
+          {
+            "time": "12:15",
+            "name": "Hazara Rama Temple & Mahanavami Dibba",
+            "minutes": 45,
+            "costInr": 0,
+            "travelKm": 1,
+            "travelMin": 3,
+            "mode": "Auto",
+            "lat": 15.3168,
+            "lon": 76.4729,
+            "mapsUri": "https://maps.google.com/?q=Mahanavami+Dibba",
+            "note": "Ramayana stone reliefs and stepped water tank."
+          },
+          {
+            "time": "13:00",
+            "name": "Lunch at Kamalapura",
+            "minutes": 75,
+            "costInr": 0,
+            "travelKm": 1.5,
+            "travelMin": 4,
+            "mode": "Auto",
+            "lat": 15.3188,
+            "lon": 76.4716,
+            "mapsUri": "https://maps.google.com/?q=Kamalapura",
+            "note": "Mid-day meal break."
           },
           {
             "time": "14:15",
-            "name": "Vijaya Vittala & Stone Chariot",
-            "minutes": 150,
-            "costInr": 20,
-            "travelKm": 6,
-            "travelMin": 16,
+            "name": "Underground Shiva Temple & Queen's Bath",
+            "minutes": 75,
+            "costInr": 0,
+            "travelKm": 2,
+            "travelMin": 6,
             "mode": "Auto",
-            "lat": 15.3188,
-            "lon": 76.4782,
-            "mapsUri": "",
-            "note": "ASI composite ticket scan; battery buggy transfer to temple entrance"
+            "lat": 15.3255,
+            "lon": 76.4625,
+            "mapsUri": "https://maps.google.com/?q=Underground+Shiva+Temple",
+            "note": "Submerged sanctum and royal bathing pavilion."
           },
           {
-            "time": "17:00",
-            "name": "Luggage Retrieval & Rail Transfer",
-            "minutes": 60,
-            "costInr": 150,
-            "travelKm": 17,
-            "travelMin": 40,
+            "time": "15:30",
+            "name": "Hotel Checkout & Transit Prep",
+            "minutes": 90,
+            "costInr": 0,
+            "travelKm": 11,
+            "travelMin": 20,
             "mode": "Auto",
-            "lat": 15.27,
-            "lon": 76.39,
-            "mapsUri": "",
-            "note": "Pick luggage from Hampi and transfer to Hosapete Junction"
+            "lat": 15.2689,
+            "lon": 76.3909,
+            "mapsUri": "https://maps.google.com/?q=Hotel+Swagath+Hosapete",
+            "note": "Collect baggage, freshen up, and evening tea."
           },
           {
-            "time": "18:30",
+            "time": "17:45",
             "name": "Departure to Hyderabad",
             "minutes": 60,
             "costInr": 0,
-            "travelKm": 0,
-            "travelMin": 0,
-            "mode": "Train",
-            "lat": 15.27,
-            "lon": 76.39,
-            "mapsUri": "",
-            "note": "Board overnight return train to Hyderabad"
+            "travelKm": 0.5,
+            "travelMin": 5,
+            "mode": "Walk",
+            "lat": 15.275,
+            "lon": 76.388,
+            "mapsUri": "https://maps.google.com/?q=Hosapete+Junction",
+            "note": "Board Train #17226 Amaravati Exp returning to Hyderabad."
           }
         ]
       }
     ],
     "budget": {
-      "stay": 3000,
-      "food": 3000,
-      "transport": 4000,
-      "entry": 4440,
-      "buffer": 1444,
-      "total": 15884,
-      "remaining": -1884
+      "stay": 2800,
+      "food": 2700,
+      "transport": 3290,
+      "entry": 2340,
+      "buffer": 1113,
+      "total": 12243,
+      "remaining": 1757
     },
     "alternatives": [
       {
-        "title": "Upgrade Hyderabad-Hospet Train to 3AC",
-        "savesInr": -1840,
-        "tradeoff": "Utilizes surplus cash to secure air-conditioned berths both ways while remaining within ₹14000 total"
+        "title": "Upgrade train to 3-Tier AC",
+        "savesInr": -2200,
+        "tradeoff": "Adds ₹2,200 for roundtrip 3AC berths; still leaves ₹1,438 surplus buffer."
       },
       {
-        "title": "Use KSRTC buses and rental mopeds",
-        "savesInr": 1200,
-        "tradeoff": "Requires driving yourself in midday heat and coordinating fixed public bus timetables"
+        "title": "Stay directly in Hampi Bazaar / Kamalapura",
+        "savesInr": -400,
+        "tradeoff": "Slightly higher room tariff but cuts 25 minutes daily transit from Hospet."
       }
     ],
     "offlineMap": {
@@ -939,83 +1055,53 @@
       "mapsAreaUrl": "https://www.google.com/maps/@15.335,76.46,12z"
     },
     "budgetVerified": true,
-    "overBudget": true
+    "overBudget": false
   },
-  "generatedAt": "2026-09-26T08:13:13.910Z",
+  "generatedAt": "2026-09-26T08:35:17.295Z",
   "sources": [
     {
-      "title": "LAKSHMI HERITAGE TOURIST HOME - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=11647430940870086134",
+      "title": "Group of Monuments at Hampi - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=7850130448578063842",
       "kind": "maps"
     },
     {
-      "title": "Review of Hampi Vijayanagara - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQtalpleEdREAE!2m1!1s0x3bb77fd9129f43d5:0x1a14ecb7ff51d0bb",
+      "title": "IRCTC Hotels & Restaurant - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=10399965901802530455",
       "kind": "maps"
     },
     {
-      "title": "Hosapete Junction (Hospet) - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=13314037634143263522",
+      "title": "JSW Vijayanagar Bus Terminal, Hosapete - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=2833808287234892776",
       "kind": "maps"
     },
     {
-      "title": "Review of Hosapete Junction (Hospet) - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWc1lYYzVPRU55VjFSWmFrRndWakp1VEZwRlNFRRAB!2m1!1s0x3bb9d43e1c381fed:0xb8c4f6affd4a9b22",
+      "title": "Hotel Swagath - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=3841810659445182677",
       "kind": "maps"
     },
     {
-      "title": "Review of LAKSHMI HERITAGE TOURIST HOME - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQtX3EtZlpREAE!2m1!1s0x3bb77fdecba4bf3b:0xa1a3fcbae0748df6",
+      "title": "KSRTC Bus Stand - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=15104203066774170660",
       "kind": "maps"
     },
     {
-      "title": "Hotel Mayura Bhuvaneshwari - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=11298857920908719008",
+      "title": "Pratap Residency - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=17935390690282836378",
       "kind": "maps"
     },
     {
-      "title": "Hotel Hampi International - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=14993730989660611968",
+      "title": "Hotel Varsha Hampi - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=1873185337212078594",
       "kind": "maps"
     },
     {
-      "title": "Review of Hotel Hampi International - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2swM1pWZzNSR0k1VDJScVR6aG5OblYyWmtaMU1GRRAB!2m1!1s0x3bb9d41603657a39:0xd0146ee5187ca580",
+      "title": "Clark's inn Hampi - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=16849098098479433325",
       "kind": "maps"
     },
     {
-      "title": "Hotel Malligi Hampi - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=11412712315947544656",
-      "kind": "maps"
-    },
-    {
-      "title": "Review of Hotel Malligi Hampi - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNwdnJlZGlRRRAB!2m1!1s0x3bb9d426b509e537:0x9e6219625bc77050",
-      "kind": "maps"
-    },
-    {
-      "title": "The King On The Rocks - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=10706559214939988441",
-      "kind": "maps"
-    },
-    {
-      "title": "Review of The King On The Rocks - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR4cjhHQWVREAE!2m1!1s0x3bb9d5c0dd7086d9:0x949556e1552ee1d9",
-      "kind": "maps"
-    },
-    {
-      "title": "Review of LAKSHMI HERITAGE TOURIST HOME - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pSS1JqUXRkREZxVmxCSFkybHBRamczUmpRMWFHYxAB!2m1!1s0x3bb77fdecba4bf3b:0xa1a3fcbae0748df6",
-      "kind": "maps"
-    },
-    {
-      "title": "Coracle Ride Hampi - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=14496971277927534125",
-      "kind": "maps"
-    },
-    {
-      "title": "Review of Coracle Ride Hampi - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xSQ09XSkViRXhMY1RSUVlVTTNjMVZTU1VjeE1sRRAB!2m1!1s0x3bb77f39e058ecff:0xc92f9691abe94e2d",
+      "title": "Aadhya Homestay Hampi - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=7313315894644767766",
       "kind": "maps"
     },
     {
@@ -1024,23 +1110,53 @@
       "kind": "maps"
     },
     {
-      "title": "The Stone Chariot (Hampi) - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=4353177017768843332",
+      "title": "Saasivekaalu Ganesha - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=9910932875379184216",
       "kind": "maps"
     },
     {
-      "title": "Hemakuta Hill Temple - Google Maps",
-      "uri": "https://maps.google.com/maps?cid=16518542748161161520",
+      "title": "Kadalekalu Ganesha - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=11051568444283196570",
       "kind": "maps"
     },
     {
-      "title": "Review of Hemakuta Hill Temple - Google Maps",
-      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xwWVdXSjZTelU0VjI5emJVODNWM2xMT1RsdlMzYxAB!2m1!1s0x3bb77fd9a5f55919:0xe53da71c47403930",
+      "title": "Ancient Shree Vijaya Vitthala Temple - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=11703949993497433197",
+      "kind": "maps"
+    },
+    {
+      "title": "Lotus Mahal - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=2764866153203647745",
+      "kind": "maps"
+    },
+    {
+      "title": "Elephant Stables - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=1732608320396810811",
+      "kind": "maps"
+    },
+    {
+      "title": "Queen's Bathhouse - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=18014252487286514979",
+      "kind": "maps"
+    },
+    {
+      "title": "Underground Shiva Temple - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=7911711778758903367",
       "kind": "maps"
     },
     {
       "title": "Matanga Hill - Google Maps",
       "uri": "https://maps.google.com/maps?cid=16726972542964973804",
+      "kind": "maps"
+    },
+    {
+      "title": "Anjanadri Betta (Koppal) - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=13283496446412919140",
+      "kind": "maps"
+    },
+    {
+      "title": "Sanapura Lake Cliff jumping - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=7492164074219372933",
       "kind": "maps"
     }
   ],
@@ -1050,36 +1166,44 @@
       "day": 1,
       "plan": [
         {
-          "time": "06:00",
-          "stop": "Hosapete Jn to Base"
+          "time": "05:30",
+          "stop": "Arrival & Hotel Swagath Check-in"
         },
         {
-          "time": "08:00",
-          "stop": "Breakfast at Taste of Hampi"
+          "time": "08:15",
+          "stop": "KSRTC Shuttle to Hampi"
         },
         {
-          "time": "09:15",
-          "stop": "Virupaksha Temple Complex"
+          "time": "08:45",
+          "stop": "Virupaksha Temple"
         },
         {
-          "time": "11:45",
-          "stop": "Sasivekalu & Kadalekalu Ganesha"
+          "time": "10:15",
+          "stop": "Tungabhadra River Ghat Coracle Ride"
         },
         {
-          "time": "13:15",
+          "time": "11:00",
+          "stop": "Kadalekalu Ganesha"
+        },
+        {
+          "time": "12:30",
           "stop": "Lunch at Mango Tree"
         },
         {
-          "time": "14:45",
-          "stop": "Midday Rest"
+          "time": "14:00",
+          "stop": "Saasivekaalu Ganesha"
         },
         {
-          "time": "16:45",
+          "time": "15:30",
+          "stop": "Krishna Temple Complex"
+        },
+        {
+          "time": "17:00",
           "stop": "Hemakuta Hill Sunset"
         },
         {
-          "time": "19:30",
-          "stop": "Dinner at Hampi Bazaar Cafe"
+          "time": "18:45",
+          "stop": "Return to Hospet Base"
         }
       ]
     },
@@ -1087,32 +1211,36 @@
       "day": 2,
       "plan": [
         {
-          "time": "05:30",
-          "stop": "Matanga Hill Sunrise Trek"
+          "time": "07:30",
+          "stop": "Breakfast & Scooter Pickup"
         },
         {
-          "time": "08:15",
-          "stop": "Local Breakfast"
+          "time": "08:30",
+          "stop": "Ride to Sanapur Lake"
         },
         {
-          "time": "09:15",
-          "stop": "Anjanadri Betta & Anegundi"
+          "time": "09:30",
+          "stop": "Sanapur Lake Coracle Ride"
         },
         {
-          "time": "13:30",
-          "stop": "Riverside Lunch"
+          "time": "11:30",
+          "stop": "Tungabhadra Canal Route & Rapids"
         },
         {
-          "time": "15:00",
-          "stop": "Sanapur Lake & Coracle Ride"
+          "time": "12:45",
+          "stop": "Lunch at Garden Cafe"
         },
         {
-          "time": "17:45",
-          "stop": "Return Scenic Drive"
+          "time": "14:30",
+          "stop": "Historic Anegundi Village"
         },
         {
-          "time": "19:30",
-          "stop": "Dinner in Hampi Bazaar"
+          "time": "15:45",
+          "stop": "Anjanadri Betta Sunset"
+        },
+        {
+          "time": "18:15",
+          "stop": "Return Ride to Hospet"
         }
       ]
     },
@@ -1120,27 +1248,39 @@
       "day": 3,
       "plan": [
         {
-          "time": "08:00",
-          "stop": "Breakfast & Luggage Drop"
+          "time": "05:15",
+          "stop": "Matanga Hill Sunrise Trek"
         },
         {
-          "time": "09:00",
-          "stop": "Royal Centre Monuments"
+          "time": "07:30",
+          "stop": "Breakfast Break"
         },
         {
-          "time": "12:45",
-          "stop": "Lunch at Mayura Bhuvaneshwari"
+          "time": "08:30",
+          "stop": "Vijaya Vitthala Temple Complex"
+        },
+        {
+          "time": "10:45",
+          "stop": "Lotus Mahal & Elephant Stables"
+        },
+        {
+          "time": "12:15",
+          "stop": "Hazara Rama Temple & Mahanavami Dibba"
+        },
+        {
+          "time": "13:00",
+          "stop": "Lunch at Kamalapura"
         },
         {
           "time": "14:15",
-          "stop": "Vijaya Vittala & Stone Chariot"
+          "stop": "Underground Shiva Temple & Queen's Bath"
         },
         {
-          "time": "17:00",
-          "stop": "Luggage Retrieval & Rail Transfer"
+          "time": "15:30",
+          "stop": "Hotel Checkout & Transit Prep"
         },
         {
-          "time": "18:30",
+          "time": "17:45",
           "stop": "Departure to Hyderabad"
         }
       ]

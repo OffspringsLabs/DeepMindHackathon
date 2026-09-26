@@ -114,7 +114,8 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     /** Tools shared by both brains; every tool call lands a precompiled card on screen. */
-    private fun toolsForScreen(): TripTools = TripTools(pack.value).also { t -> t.onCard = { c -> cards.value = cards.value + c } }
+    private fun addCard(c: UiCard) { if (c !in cards.value) cards.value = cards.value + c }
+    private fun toolsForScreen(): TripTools = TripTools(pack.value).also { t -> t.onCard = ::addCard }
 
     private fun onStep(label: String, result: String) { steps.value = steps.value + ToolStep(label, result) }
 
@@ -124,7 +125,7 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         val rec = Regex("DECISION:\\s*(.+)").find(text)?.groupValues?.get(1)?.trim().orEmpty()
         val why = Regex("WHY:\\s*(.+)").find(text)?.groupValues?.get(1)?.split('|')?.map { it.trim().trimStart('-', '•', ' ') }?.filter { it.isNotBlank() } ?: emptyList()
         val alt = Regex("ALTERNATIVE:\\s*(.+)").find(text)?.groupValues?.get(1)?.trim().orEmpty()
-        cards.value = cards.value + UiCard.Decision(rec, why, alt, "")
+        addCard(UiCard.Decision(rec, why, alt, ""))
         return rec
     }
 
@@ -175,7 +176,7 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
             when (ev) {
                 is BrainEvent.Text -> { sb.append(ev.delta); answer.value = sb.toString() }
                 is BrainEvent.ToolUsed -> steps.value = steps.value + ToolStep(ev.label, ev.result)
-                is BrainEvent.Card -> cards.value = cards.value + ev.card
+                is BrainEvent.Card -> addCard(ev.card)
                 is BrainEvent.Note -> notes.value = notes.value + ev.text
             }
         }
