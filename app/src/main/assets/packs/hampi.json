@@ -1,0 +1,355 @@
+{
+  "region": "Hampi, Karnataka",
+  "state": "Karnataka",
+  "base": "Hosapete",
+  "season": "October to February",
+  "languages": "Kannada, Telugu, Hindi, English",
+  "arrival": {
+    "rail": "Hosapete Junction (HPT)",
+    "air": "Jindal Vijaynagar Airport (VDY)",
+    "fromHyderabad": "Overnight train #17603 or bus (~8-10 hrs)"
+  },
+  "hotels": [
+    {
+      "name": "Rocky Guesthouse",
+      "area": "Hampi Bazaar",
+      "pricePerNight": 900,
+      "kmFromBase": 13,
+      "note": "Basic clean homestay near Virupaksha"
+    },
+    {
+      "name": "Hotel Malligi",
+      "area": "Hosapete City Center",
+      "pricePerNight": 2400,
+      "kmFromBase": 0.8,
+      "note": "Pool, restaurants, power backup"
+    },
+    {
+      "name": "Hotel Mayura Bhuvaneshwari",
+      "area": "Kamalapura",
+      "pricePerNight": 2200,
+      "kmFromBase": 11,
+      "note": "KSTDC property inside ruins perimeter"
+    },
+    {
+      "name": "Heritage Resort Hampi",
+      "area": "Hosapete-Hampi Road",
+      "pricePerNight": 6500,
+      "kmFromBase": 6,
+      "note": "Cottages, spa, pool on organic farmland"
+    },
+    {
+      "name": "Evolve Back Kamalapura Palace",
+      "area": "Kamalapura Outskirts",
+      "pricePerNight": 28000,
+      "kmFromBase": 14,
+      "note": "Luxury 5-star palace architecture"
+    }
+  ],
+  "places": [
+    {
+      "name": "Vijaya Vittala Temple",
+      "type": "Monument",
+      "open": "08:30",
+      "close": "17:30",
+      "kmFromBase": 22.5,
+      "minutesFromBase": 45,
+      "fee": 40,
+      "lat": 15.3182,
+      "lon": 76.477,
+      "tip": "Catch electric buggy 1 km out; see Stone Chariot"
+    },
+    {
+      "name": "Virupaksha Temple",
+      "type": "Temple",
+      "open": "06:00",
+      "close": "21:00",
+      "kmFromBase": 13,
+      "minutesFromBase": 25,
+      "fee": 5,
+      "lat": 15.3353,
+      "lon": 76.46,
+      "tip": "Visit 07:30 for elephant bath; socks needed for hot floor"
+    },
+    {
+      "name": "Lotus Mahal",
+      "type": "Pavilion",
+      "open": "08:00",
+      "close": "18:00",
+      "kmFromBase": 14.5,
+      "minutesFromBase": 30,
+      "fee": 40,
+      "lat": 15.3204,
+      "lon": 76.4705,
+      "tip": "Buy composite ASI ticket here to avoid Vittala queues"
+    },
+    {
+      "name": "Elephant Stables",
+      "type": "Monument",
+      "open": "08:00",
+      "close": "18:00",
+      "kmFromBase": 14.8,
+      "minutesFromBase": 30,
+      "fee": 40,
+      "lat": 15.3211,
+      "lon": 76.4735,
+      "tip": "Lawn offers great late afternoon photo angles"
+    },
+    {
+      "name": "Royal Enclosure",
+      "type": "Ruins",
+      "open": "06:00",
+      "close": "18:00",
+      "kmFromBase": 14,
+      "minutesFromBase": 28,
+      "fee": 0,
+      "lat": 15.3196,
+      "lon": 76.4716,
+      "tip": "Climb Mahanavami Dibba for 360-degree views"
+    },
+    {
+      "name": "Hazara Rama Temple",
+      "type": "Temple",
+      "open": "06:00",
+      "close": "18:00",
+      "kmFromBase": 14.2,
+      "minutesFromBase": 28,
+      "fee": 0,
+      "lat": 15.3218,
+      "lon": 76.4678,
+      "tip": "Outer walls show complete Valmiki Ramayana reliefs"
+    },
+    {
+      "name": "Queen's Bath",
+      "type": "Pavilion",
+      "open": "06:00",
+      "close": "18:00",
+      "kmFromBase": 13.5,
+      "minutesFromBase": 26,
+      "fee": 0,
+      "lat": 15.3138,
+      "lon": 76.4751,
+      "tip": "Visit early to avoid tour bus crowds"
+    },
+    {
+      "name": "Sasivekalu & Kadalekalu Ganesha",
+      "type": "Monolith",
+      "open": "06:00",
+      "close": "18:00",
+      "kmFromBase": 12.5,
+      "minutesFromBase": 24,
+      "fee": 0,
+      "lat": 15.3318,
+      "lon": 76.4627,
+      "tip": "Inspect rear of Sasivekalu to see carved snake band"
+    },
+    {
+      "name": "Hemakuta Hill Temples",
+      "type": "Temple Cluster",
+      "open": "06:00",
+      "close": "18:30",
+      "kmFromBase": 13,
+      "minutesFromBase": 25,
+      "fee": 0,
+      "lat": 15.3332,
+      "lon": 76.4615,
+      "tip": "Premier sunset spot south of the river"
+    },
+    {
+      "name": "Anjanadri Hill",
+      "type": "Temple",
+      "open": "05:30",
+      "close": "20:00",
+      "kmFromBase": 35,
+      "minutesFromBase": 60,
+      "fee": 0,
+      "lat": 15.3547,
+      "lon": 76.469,
+      "tip": "575 steps; start 16:30 for sunset; beware aggressive monkeys"
+    }
+  ],
+  "routes": [
+    {
+      "from": "Hospet Railway Station",
+      "to": "Hampi Bazaar",
+      "km": 13,
+      "minutes": 30,
+      "mode": "Bus or Auto"
+    },
+    {
+      "from": "Hampi Bazaar",
+      "to": "Kamalapura Circle",
+      "km": 4.5,
+      "minutes": 10,
+      "mode": "Bus or Auto"
+    },
+    {
+      "from": "Kamalapura",
+      "to": "Royal Enclosure",
+      "km": 1.8,
+      "minutes": 4,
+      "mode": "Scooter or Auto"
+    },
+    {
+      "from": "Royal Enclosure",
+      "to": "Zenana Enclosure",
+      "km": 1,
+      "minutes": 12,
+      "mode": "Walk"
+    },
+    {
+      "from": "Kamalapura",
+      "to": "Vijaya Vittala Parking",
+      "km": 5.5,
+      "minutes": 12,
+      "mode": "Auto or Scooter"
+    },
+    {
+      "from": "Hampi Bazaar",
+      "to": "Vijaya Vittala",
+      "km": 3.2,
+      "minutes": 40,
+      "mode": "Walk"
+    },
+    {
+      "from": "Hampi Bazaar",
+      "to": "Anegundi",
+      "km": 1.5,
+      "minutes": 15,
+      "mode": "Coracle and Auto"
+    },
+    {
+      "from": "Kamalapura",
+      "to": "Daroji Bear Sanctuary",
+      "km": 15,
+      "minutes": 30,
+      "mode": "Auto"
+    }
+  ],
+  "food": [
+    {
+      "item": "South Indian Veg Thali",
+      "where": "Mango Tree Restaurant",
+      "price": 250
+    },
+    {
+      "item": "Hot Paddus and Filter Coffee",
+      "where": "Taste of Brahmins",
+      "price": 75
+    },
+    {
+      "item": "Shakshuka and Wood-fired Pizza",
+      "where": "Laughing Buddha Cafe",
+      "price": 300
+    },
+    {
+      "item": "Jolada Rotti Oota",
+      "where": "Hotel Malligi",
+      "price": 300
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "plan": [
+        {
+          "time": "06:30",
+          "stop": "Matanga Hill sunrise hike"
+        },
+        {
+          "time": "09:00",
+          "stop": "Breakfast at Hampi Bazaar & Virupaksha Temple"
+        },
+        {
+          "time": "10:45",
+          "stop": "Sasivekalu & Kadalekalu Ganesha"
+        },
+        {
+          "time": "13:00",
+          "stop": "Lunch at Mango Tree"
+        },
+        {
+          "time": "16:00",
+          "stop": "Hemakuta Hill for sunset"
+        },
+        {
+          "time": "19:30",
+          "stop": "Dinner in Kamalapura"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "plan": [
+        {
+          "time": "08:00",
+          "stop": "Zenana Enclosure and Lotus Mahal"
+        },
+        {
+          "time": "10:45",
+          "stop": "Hazara Rama and Royal Enclosure"
+        },
+        {
+          "time": "12:45",
+          "stop": "Lunch and Kamalapura Museum"
+        },
+        {
+          "time": "15:30",
+          "stop": "Vijaya Vittala Temple and Stone Chariot"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "plan": [
+        {
+          "time": "07:30",
+          "stop": "Cross river to Anegundi"
+        },
+        {
+          "time": "10:15",
+          "stop": "Anegundi Village and Durga Temple"
+        },
+        {
+          "time": "13:00",
+          "stop": "Lunch at Laughing Buddha Cafe"
+        },
+        {
+          "time": "15:30",
+          "stop": "Anjanadri Hill for sunset"
+        },
+        {
+          "time": "18:30",
+          "stop": "Return to Hosapete Junction"
+        }
+      ]
+    }
+  ],
+  "emergency": {
+    "hospital": "LifeLine Multispeciality Hospital, Hosapete",
+    "police": "112",
+    "atm": "Kamalapura Circle or Hospet Town",
+    "noSignal": "Achyutaraya trail, Sugriva Cave, and Sanapur Lake"
+  },
+  "tips": [
+    "Dress modestly at Virupaksha; wear rubber-soled walking shoes for ruins.",
+    "Carry ₹3000-5000 cash; ruins have no ATMs and patchy UPI connectivity.",
+    "Pre-book ASI tickets online to skip Vittala entry queues.",
+    "Avoid solitary boulder treks after dark due to local sloth bear activity."
+  ],
+  "generatedAt": "2026-09-26T07:22:14.428Z",
+  "sources": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7QolkrvCIaBefOxv5cTYuWo4hTyDKnxtZUi4W0ITijYmSuqbqq9PEgY0e9QixMc9HNbhQkjbRKQgb0Lex3fPqzEngWTJ815j99_BpFOJZdwYZ6pJdpEw23w==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6ZlZ44tEthpqB14lQODgT0YatE7y6lumwzwd72efz9tXj592v00JtpVJjUVeA1NyXAJlbGAwKDoY10l_sHIDV08a5PDu0e-xURatk0m7jbZbZzAAkPqfymBKeVz8RAfXsdZiqUuKNr9Xx_qnw6d7TfLnSozuYkRmIA0YLhtcEvQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRHKcmJOB4P2cXHW2AlD8k1nRhbB5tF-jqVpjmcv4R_TXSyCdRC_C6SpdgiwRJTLD0ctxEgh4bzggz63KuTvYUl0i8N3uHBukWXNGIThHMknrJtLJtMutpLQXZJBxBFzcV9iiyyILcLlo6EvOTfkH5Rfg=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAR2dwfA4ardJCoLuboghLZ9FSZuHy1nYoRPLrsCsexlzw0I_E7dTKYgUeQgMXbn60giH6bHvpvWw_7lSBmwhC9g71RYE2VTHQO04pkjtfjxrGyglvM2oSRyuI6hz9rqUr8hQEpw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfpFqhqEuDmsgPFUU7AYmyAixfvgb2XSZIdjbURDQodPiWUSvUt_lrME7VK3lplV7LmksnDCSP485vD1jjN71Zp8V3g0rQGAyqUSj1phlLIj_jO7mxTAkw272f6caXBxcdBvIBEXXm",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFdpC8b_6ibdkiT78XF7qQMbAcxMSW7Fhq7izNQLym-MPzIe0w1D5Qkex9ymypDXUpjsvxFvZizr8g_PTD0YgrOA0aoaxjkgHGz19l_NvaYs8w8F4v0Yk-JvraBFbhSw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRjaY-gyONbONJV9mI_uZhAMu4_0ntiUlqRDv4VYPpjx2ytQx8vs90jqJ9hw98cBAW8QHj82wrfnAxbVDVBr_Hr8z7aOx-JZGKxynh2wW7YYjNN73tMzNMhRsebVv7CUYTGiOsikcyLTbY0_KCySw4EIQNRYETexZiMG8lw03D",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3xaAdcDZT8bB7kShJtFhMkMrW5E3Ory49n25qtDm_GxqMHyMFPihdWs0dTMzd6OL_DiRgebQUeaSeChbDA4DHOlh7vZy_JP72VdqLmCKBPc6MfgNzs1oruH5184lw4aEw4eXSJf1BMEIRO7ZDtdRIQ48=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcoKiIzn_kNO1eYq5Fc17MBhnMma-_Xrk3Afl2uAUufbmIc2NQRbDYrtJ4BjAKqaywXInEfgimwex0ucOawaxsZOx9OLzTwG6nDlTCbgKAo6HpJW1mOC9-KzJthihJ2I44qhTMyw0S1CYnOLLGXLgaewTLFVBjgxKwcVMSlj71VEa0",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3IGbK6GjY5XE5VitKXZ-D_M6trIqzMTTFbOB0QILc4vX9MzyESSO2nFv-AO170dNvw4cdjNHxW0SDfSlrz1huXb15y6-5Sdl6GCz9-b0yelZVcBGoP2t6VKIA_RB9a8TLzownlXVeSw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0OXI9-epb823WqA7sAE0aVv-Bam8sBjvthhNmeNE9KXkH9UuzgBJcedLW5qPACAKGyrPBIQ5SE0Gp4YsKaSg08zfJnBZzesgRx5qXNdpQkStqCw1GWvgGHuM48leknzziNDPQy6NW5kGXS6E=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv54gull5ExGXt0h3uYHWN-tS3hPFliEjyfflKnHfxInALqWS8Rp9MyJDXwHyOSVu5KDf_lmV6fjJpZsaBMNcAHKZLwzUzKjTQEv3v1o5IocsI7LdZa_lfhu4dwjOIsb00aMg_x-QgrvmUkZh3BkDjSpB_DkBbFc4="
+  ]
+}

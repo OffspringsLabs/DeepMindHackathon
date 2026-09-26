@@ -1,0 +1,10 @@
+{
+  "name": "disha-tools",
+  "private": true,
+  "type": "module",
+  "description": "Pre-generate offline trip packs with Gemini Flash + Google Search grounding",
+  "scripts": {
+    "pack": "node gen-pack.mjs",
+    "pack:all": "node gen-pack.mjs tirupati 'Tirupati and Tirumala, Andhra Pradesh' && node gen-pack.mjs araku 'Araku Valley, Andhra Pradesh' && node gen-pack.mjs hampi 'Hampi, Karnataka'"
+  }
+}

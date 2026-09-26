@@ -1,0 +1,393 @@
+{
+  "region": "Araku Valley, Andhra Pradesh",
+  "state": "Andhra Pradesh",
+  "base": "Araku Valley",
+  "season": "October to February",
+  "languages": "Telugu",
+  "arrival": {
+    "rail": "Araku (ARK) 2.5 km, Visakhapatnam Jn (VSKP) 114 km",
+    "air": "Visakhapatnam (VTZ) 107 km",
+    "fromHyderabad": "Overnight train to VSKP then scenic Kirandul Express to Araku; or flight to VTZ + cab"
+  },
+  "hotels": [
+    {
+      "name": "Sri Sai Srinivasa / Market Lodges",
+      "area": "Town Center",
+      "pricePerNight": 800,
+      "kmFromBase": 0.3,
+      "note": "Basic clean budget rooms near shops"
+    },
+    {
+      "name": "Krishna Tara Comforts",
+      "area": "Araku Valley",
+      "pricePerNight": 1500,
+      "kmFromBase": 1.2,
+      "note": "Reliable hot water and in-house kitchen"
+    },
+    {
+      "name": "Haritha Mayuri Hill Resort",
+      "area": "Near Bus Stand",
+      "pricePerNight": 2000,
+      "kmFromBase": 0.3,
+      "note": "APTDC resort with restaurant and cottages"
+    },
+    {
+      "name": "Haritha Valley Resort",
+      "area": "Araku Valley",
+      "pricePerNight": 2200,
+      "kmFromBase": 1.5,
+      "note": "Gardens and peaceful heritage setting"
+    },
+    {
+      "name": "Padmapuram Tree Huts",
+      "area": "Padmapuram Gardens",
+      "pricePerNight": 2500,
+      "kmFromBase": 2.5,
+      "note": "Wooden cottages perched 10 ft above ground"
+    }
+  ],
+  "places": [
+    {
+      "name": "Borra Caves",
+      "type": "Limestone Cave",
+      "open": "10:00",
+      "close": "17:00",
+      "kmFromBase": 36,
+      "minutesFromBase": 60,
+      "fee": 60,
+      "lat": 18.2811,
+      "lon": 83.0396,
+      "tip": "Slick steep steps; wear shoes with strong grip"
+    },
+    {
+      "name": "Araku Tribal Museum",
+      "type": "Cultural Museum",
+      "open": "10:00",
+      "close": "18:00",
+      "kmFromBase": 1.2,
+      "minutesFromBase": 3,
+      "fee": 40,
+      "lat": 18.3273,
+      "lon": 82.8778,
+      "tip": "Watch live Dhimsa dance between 11:30 and 16:00"
+    },
+    {
+      "name": "Araku Coffee Museum",
+      "type": "Culinary Museum",
+      "open": "09:00",
+      "close": "20:00",
+      "kmFromBase": 1.3,
+      "minutesFromBase": 4,
+      "fee": 20,
+      "lat": 18.3268,
+      "lon": 82.8781,
+      "tip": "Buy certified Arabica coffee and coffee chocolates here"
+    },
+    {
+      "name": "Padmapuram Botanical Gardens",
+      "type": "Botanical Park",
+      "open": "09:00",
+      "close": "18:00",
+      "kmFromBase": 2.5,
+      "minutesFromBase": 8,
+      "fee": 10,
+      "lat": 18.3444,
+      "lon": 82.8682,
+      "tip": "Ride the mini toy train to survey the grounds"
+    },
+    {
+      "name": "Chaparai Water Cascades",
+      "type": "Water Cascades",
+      "open": "08:00",
+      "close": "18:00",
+      "kmFromBase": 15,
+      "minutesFromBase": 25,
+      "fee": 10,
+      "lat": 18.2934,
+      "lon": 82.7845,
+      "tip": "Rock algae is slippery; avoid fast crevices"
+    },
+    {
+      "name": "Katiki Waterfalls",
+      "type": "Waterfall",
+      "open": "06:00",
+      "close": "17:30",
+      "kmFromBase": 39,
+      "minutesFromBase": 90,
+      "fee": 20,
+      "lat": 18.2847,
+      "lon": 83.0182,
+      "tip": "Requires 4x4 Jeep ride and 20 min uphill trek"
+    },
+    {
+      "name": "Galikonda View Point",
+      "type": "Mountain Overlook",
+      "open": "00:00",
+      "close": "23:59",
+      "kmFromBase": 20,
+      "minutesFromBase": 30,
+      "fee": 0,
+      "lat": 18.2435,
+      "lon": 82.9515,
+      "tip": "Visit early morning for mist pooling in the basin"
+    },
+    {
+      "name": "Ranajilleda Waterfalls",
+      "type": "Waterfall",
+      "open": "07:00",
+      "close": "17:30",
+      "kmFromBase": 5.5,
+      "minutesFromBase": 15,
+      "fee": 0,
+      "lat": 18.3512,
+      "lon": 82.8943,
+      "tip": "Less crowded natural pool reached via short nature walk"
+    },
+    {
+      "name": "Ananthagiri Coffee Plantations",
+      "type": "Plantation Estate",
+      "open": "06:00",
+      "close": "18:00",
+      "kmFromBase": 26,
+      "minutesFromBase": 40,
+      "fee": 0,
+      "lat": 18.2392,
+      "lon": 83.0125,
+      "tip": "Buy authentic pepper and turmeric from local growers"
+    },
+    {
+      "name": "Madagada Sunrise Viewpoint",
+      "type": "Sunrise Viewpoint",
+      "open": "05:00",
+      "close": "08:00",
+      "kmFromBase": 22,
+      "minutesFromBase": 45,
+      "fee": 20,
+      "lat": 18.1965,
+      "lon": 82.6685,
+      "tip": "Start by 04:15; carry a headlamp for the dirt ridge walk"
+    }
+  ],
+  "routes": [
+    {
+      "from": "Visakhapatnam Junction",
+      "to": "Araku Valley",
+      "km": 114,
+      "minutes": 220,
+      "mode": "Train / APSRTC Bus"
+    },
+    {
+      "from": "Araku Town",
+      "to": "Borra Caves",
+      "km": 36,
+      "minutes": 60,
+      "mode": "Taxi / Auto / Train"
+    },
+    {
+      "from": "Borra Caves Junction",
+      "to": "Katiki Falls",
+      "km": 4.5,
+      "minutes": 30,
+      "mode": "4x4 Mahindra Jeep"
+    },
+    {
+      "from": "Araku Town",
+      "to": "Chaparai Cascades",
+      "km": 15,
+      "minutes": 25,
+      "mode": "Auto-rickshaw / Cab"
+    },
+    {
+      "from": "Araku Town",
+      "to": "Padmapuram Gardens",
+      "km": 2.5,
+      "minutes": 8,
+      "mode": "Walking / Auto-rickshaw"
+    },
+    {
+      "from": "Araku Town",
+      "to": "Galikonda Viewpoint",
+      "km": 20,
+      "minutes": 30,
+      "mode": "Cab / APSRTC Bus"
+    },
+    {
+      "from": "Araku Town",
+      "to": "Ranajilleda Falls",
+      "km": 5.5,
+      "minutes": 15,
+      "mode": "Auto-rickshaw"
+    },
+    {
+      "from": "Araku Town",
+      "to": "Ananthagiri Hills",
+      "km": 26,
+      "minutes": 40,
+      "mode": "Cab / APSRTC Bus"
+    }
+  ],
+  "food": [
+    {
+      "item": "Bongu Kodi (Bamboo Chicken)",
+      "where": "Chaparai / Borra Caves stalls",
+      "price": 150
+    },
+    {
+      "item": "Araku Espresso",
+      "where": "Araku Coffee Museum",
+      "price": 50
+    },
+    {
+      "item": "Andhra Tribal Veg Thali",
+      "where": "Haritha Restaurant",
+      "price": 120
+    },
+    {
+      "item": "Thali with Natu Kodi",
+      "where": "Town military messes",
+      "price": 220
+    },
+    {
+      "item": "Charred Sweet Corn",
+      "where": "Galikonda Viewpoint stalls",
+      "price": 30
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "plan": [
+        {
+          "time": "06:45",
+          "stop": "Board Train 18551 at VSKP"
+        },
+        {
+          "time": "10:15",
+          "stop": "Arrive Araku Station and hotel check-in"
+        },
+        {
+          "time": "11:30",
+          "stop": "Padmapuram Botanical Gardens"
+        },
+        {
+          "time": "13:30",
+          "stop": "Lunch at Haritha Mayuri"
+        },
+        {
+          "time": "15:00",
+          "stop": "Araku Tribal Museum"
+        },
+        {
+          "time": "16:30",
+          "stop": "Coffee Museum"
+        },
+        {
+          "time": "18:00",
+          "stop": "Local tribal weekly market"
+        },
+        {
+          "time": "20:00",
+          "stop": "Dinner in town"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "plan": [
+        {
+          "time": "08:00",
+          "stop": "Breakfast and drive towards Borra"
+        },
+        {
+          "time": "09:15",
+          "stop": "Galikonda View Point"
+        },
+        {
+          "time": "10:15",
+          "stop": "Borra Caves"
+        },
+        {
+          "time": "12:30",
+          "stop": "Board 4x4 Jeep to Katiki Falls"
+        },
+        {
+          "time": "13:15",
+          "stop": "Katiki Falls & Bamboo Chicken lunch"
+        },
+        {
+          "time": "15:30",
+          "stop": "Jeep back to Borra junction"
+        },
+        {
+          "time": "16:15",
+          "stop": "Ananthagiri Coffee Plantations"
+        },
+        {
+          "time": "19:30",
+          "stop": "Return to Araku and dinner"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "plan": [
+        {
+          "time": "05:00",
+          "stop": "Madagada Sunrise viewpoint"
+        },
+        {
+          "time": "08:30",
+          "stop": "Breakfast in Araku town"
+        },
+        {
+          "time": "09:30",
+          "stop": "Chaparai Water Cascades"
+        },
+        {
+          "time": "11:30",
+          "stop": "Ranajilleda Waterfalls trail"
+        },
+        {
+          "time": "13:00",
+          "stop": "Lunch and hotel check-out"
+        },
+        {
+          "time": "14:30",
+          "stop": "Bus or cab to Visakhapatnam"
+        },
+        {
+          "time": "18:30",
+          "stop": "Arrive Vizag for return travel"
+        }
+      ]
+    }
+  ],
+  "emergency": {
+    "hospital": "Area Hospital Araku Valley, Main Road",
+    "police": "112",
+    "atm": "SBI / Canara Bank / Union Bank in Araku Town",
+    "noSignal": "Borra Caves interior, Katiki Falls trail, Tyda-Ananthagiri ghat dips"
+  },
+  "tips": [
+    "Book Vistadome coach 30-60 days ahead via IRCTC",
+    "Carry 4000-5000 in cash as rural UPI fails frequently",
+    "Wear closed footwear with strong rubber grip for Borra Caves",
+    "Top up vehicle fuel fully in Araku town before rural side trips",
+    "Download offline Google Maps for ASR district prior to travel"
+  ],
+  "generatedAt": "2026-09-26T07:21:10.113Z",
+  "sources": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPn7MQj8PDybuiyEFxuKN4mIEjK1ZaNvJzM61cm7jUEznSEUSQ1iWmjxqwd1Pv-4l1V7xz9VLY8AMj1RWAclO2VDbMIORxJ8ROGMxkJ0sABJA815xCdUaTLlo8oU2LGSA7-UOUbG1CS8tIiCKlADhxSh-lNV766SwhQddujcTMw56xTqpFM5IpTkAzPQHqHA6VPLcPu_nHgzG3Bg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMWgCqjVeZdSd4KEAMeALYm80Jl_kKeGVxf1fOlN1F0bzYg7gvVHfvCNtrKNVcUDbau0c5Cii56TUcDA2ag8BqJytqQl8sHFLQqCxXVg9FkzLWtqGmgfwbE4uYvt4fLMVTN16Hwt13q2Q8o3TUzxvssQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6hbmIzA0T4wLIqKcraW9KDz7sCgzFF2NBShUv7tFshOFCcVwJm3oeANB2gpaLXATns2ZttZKcIWiUdjIKFj5F5EadpqcUufF8IX4xuZt9O6MblAMpY_-g6c8v5Yas2hDMusNfihg_c07CtAMJx4FG552JikyORHkVsbHwBo8b49mO4EbKaDjse7zOPArVU2rP",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs-G_cuVBvcyoZiUCvqcEO_BW8YH_ljsejNHyhx38yl_B10Al7y1rrf6At7pZJhYNR-QFa4Q19pOE9o2CsFicI8MDgBVaGp5zPMpeDdM8BoW5QUcLmwe1GlS_UZT7AK-5UE17lnnMTPDjlEQkI",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1YTZ5ZDaNFgp9NGAbEltM5hHfDOf2aKCzPuxzLdMZTZ3JYsk7_oF6hjm4uVNTr4yicR1MAThH321d1i4KWGfzl94NkaK8p6lxcz-xHHntAjRv9L3aJQuAb_ohTOL5yu9q-2LDr5BXiLGJHvmbAbTFXaytr83sBptwtc5dBBB9aSSJ5A==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhHhSaewGpAZcdzwPg69sCAUMGCQTJA_56xxVb5r-zSgvk7Pcy7c76F7vKkj4EqICQjhPmCBT0MloscQvEGuhO6WHWU3ROtDykOyy5_kTPEBD_8hUJ0rTHt7XOu725--as",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVXgqXNh02fvt3QDD67vRxXHvUCh39vkXtcxMw51bFBOeaUv6U8zqUuBcn8e2eMM5WHyrYtQKH9_baercbXzAwqQjMGxYDUDNe_-RznkgiJ4JnaOuSims4ksaLagxyMBpf8YLq8Km9FbS1oWw-8kVXv2wmCuJBeMLocA-k69yobgySpwJDsvt_GtCLl1wxTFZoioeCcA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYO2NNC2jWnF-Igt7MgEsjsT7gSmTGJvxREx4vrzetOEsjSTUAndm8x6pkxF62ZodsMBl9Ip_57yeDM3n2CGRiAEgkh5WOiMfoLuJUh0R3qcTwLNE8pz_N09zWbQYDFsNh3qiKMFnhTtsa",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf3gwIUm1YJUdilEYWBVpkYPg5ivft_vmEQAJ8F-6h11ObRM54xlnPjMQYMQ_aSHsgXZSEUXs0M-_B1DNOzsy0_hbajk8oCkxKvObN461B7fPtNHU3gmmzM204m9q4Naf3coahhJhDJ6NF8j6zXdm_IKnm8w_R8d2NsOAXalsN1QetGA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvJyCR9wksdiX3u9019HVPdPBZUaWWH3eh_gy31QZuvJSVheqWJHfalkZYvd_6czlwtZ2_iyXT_jpM3joD5Sz3m1nkD8DQ5JGz7FyfdoLOEiOgoJc3wz5EeDuuN3LpW1XdEeW36kQ8sS7N7ykZm3GFtCE=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfqIUyrQM08rFoHfeaLsQTyCCfWwJMug9o7-LaqZz49hC18LexfW4uoKyZH8A4SWIX4ANPX736kR8YNLD3jEQaRsIoALMn9LRAUUJxgSORvdlsrEbeX30g9jYN_H_WpSvAUvYvOTuob99LmKMOI4g9YNNhCRmjQR6f_aTp6XOTu-yJHPKnRi4Q0w2EUQ2TFCvYv3E9ItFsLVmx8I2RBHCLIw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVbkyMcKo3NGCvzCVjo0LMMiMPjI3iGyXNJOS77bv-sUW23E2EXSDj4XmudIYRrAKFZJhyr8m81GLreg2YZ8616baV9QS87gz5VoUJ-QQqWaVxHQze49BPnNTgTGslwokK5fcuwRBN_zkuknxyJC-YwFWo"
+  ]
+}

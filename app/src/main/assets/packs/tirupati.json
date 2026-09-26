@@ -1,0 +1,371 @@
+{
+  "region": "Tirupati & Tirumala, Andhra Pradesh",
+  "state": "Andhra Pradesh",
+  "base": "Tirupati",
+  "season": "Nov to Feb",
+  "languages": "Telugu, English, Hindi",
+  "arrival": {
+    "rail": "Tirupati Main (TPTY), Renigunta Junction (RU)",
+    "air": "Tirupati Airport (TIR)",
+    "fromHyderabad": "Flight 1h 15m, Vande Bharat train 8h 25m, Bus 10-12h"
+  },
+  "hotels": [
+    {
+      "name": "TTD Srinivasam / Madhavam",
+      "area": "Central Bus Stand",
+      "pricePerNight": 500,
+      "kmFromBase": 0.2,
+      "note": "Official TTD pilgrim guesthouse"
+    },
+    {
+      "name": "Hotel Bliss",
+      "area": "Ramanuja Circle",
+      "pricePerNight": 2700,
+      "kmFromBase": 1.2,
+      "note": "Budget to mid-range stay"
+    },
+    {
+      "name": "Minerva Grand",
+      "area": "Renigunta Road",
+      "pricePerNight": 4100,
+      "kmFromBase": 1.5,
+      "note": "Mid-range business hotel"
+    },
+    {
+      "name": "Fortune Select Grand Ridge",
+      "area": "Tiruchanoor Road",
+      "pricePerNight": 6500,
+      "kmFromBase": 3.8,
+      "note": "Premium upscale ITC hotel"
+    },
+    {
+      "name": "Marasa Sarovar Premiere",
+      "area": "Alipiri Bypass Road",
+      "pricePerNight": 8000,
+      "kmFromBase": 4.5,
+      "note": "5-star luxury accommodation"
+    }
+  ],
+  "places": [
+    {
+      "name": "Sri Venkateswara Temple",
+      "type": "Temple",
+      "open": "03:00",
+      "close": "01:30",
+      "kmFromBase": 22,
+      "minutesFromBase": 55,
+      "fee": 0,
+      "lat": 13.6833,
+      "lon": 79.3472,
+      "tip": "Mobiles banned; deposit at lockers before queueing"
+    },
+    {
+      "name": "Sri Padmavathi Ammavari Temple",
+      "type": "Temple",
+      "open": "05:00",
+      "close": "21:00",
+      "kmFromBase": 5,
+      "minutesFromBase": 15,
+      "fee": 0,
+      "lat": 13.6128,
+      "lon": 79.4503,
+      "tip": "Visit before or right after Venkateswara darshan"
+    },
+    {
+      "name": "Sri Govindarajaswami Temple",
+      "type": "Historic Temple",
+      "open": "05:00",
+      "close": "21:00",
+      "kmFromBase": 0.4,
+      "minutesFromBase": 5,
+      "fee": 0,
+      "lat": 13.63,
+      "lon": 79.417,
+      "tip": "Walking distance from Railway Station Platform 1"
+    },
+    {
+      "name": "Kapila Theertham",
+      "type": "Waterfall & Temple",
+      "open": "05:30",
+      "close": "20:30",
+      "kmFromBase": 3.5,
+      "minutesFromBase": 10,
+      "fee": 0,
+      "lat": 13.6548,
+      "lon": 79.4277,
+      "tip": "Only major Shiva shrine, located at foothill falls"
+    },
+    {
+      "name": "Silathoranam",
+      "type": "Geological Monument",
+      "open": "06:00",
+      "close": "18:00",
+      "kmFromBase": 24,
+      "minutesFromBase": 60,
+      "fee": 0,
+      "lat": 13.6934,
+      "lon": 79.3441,
+      "tip": "Ancient natural rock arch with adjacent gardens"
+    },
+    {
+      "name": "Srivari Padalu",
+      "type": "Viewpoint",
+      "open": "06:00",
+      "close": "18:00",
+      "kmFromBase": 26,
+      "minutesFromBase": 70,
+      "fee": 0,
+      "lat": 13.7082,
+      "lon": 79.3496,
+      "tip": "Highest ridge point; roads are steep and narrow"
+    },
+    {
+      "name": "Chandragiri Fort & Raja Mahal",
+      "type": "Fort & Museum",
+      "open": "09:00",
+      "close": "17:30",
+      "kmFromBase": 15,
+      "minutesFromBase": 30,
+      "fee": 25,
+      "lat": 13.5828,
+      "lon": 79.3177,
+      "tip": "Museum shut Fridays; stay for evening sound-and-light"
+    },
+    {
+      "name": "Sri Kalyana Venkateswara Temple",
+      "type": "Temple",
+      "open": "05:30",
+      "close": "19:30",
+      "kmFromBase": 12,
+      "minutesFromBase": 25,
+      "fee": 0,
+      "lat": 13.618,
+      "lon": 79.318,
+      "tip": "Alternate sacred site for elderly unable to climb"
+    },
+    {
+      "name": "Sri Kalahasteeswara Temple",
+      "type": "Temple",
+      "open": "06:00",
+      "close": "21:00",
+      "kmFromBase": 38,
+      "minutesFromBase": 50,
+      "fee": 0,
+      "lat": 13.7498,
+      "lon": 79.6984,
+      "tip": "Book Rahu-Ketu pooja inside early morning"
+    },
+    {
+      "name": "SV Zoological Park",
+      "type": "Safari Park",
+      "open": "08:30",
+      "close": "17:00",
+      "kmFromBase": 8,
+      "minutesFromBase": 20,
+      "fee": 50,
+      "lat": 13.6111,
+      "lon": 79.3582,
+      "tip": "Closed Mondays; hire battery carts to skip long walks"
+    }
+  ],
+  "routes": [
+    {
+      "from": "Tirupati Railway Station",
+      "to": "Alipiri Tollgate",
+      "km": 4,
+      "minutes": 12,
+      "mode": "Auto or City Bus"
+    },
+    {
+      "from": "Alipiri Tollgate",
+      "to": "Tirumala Bus Stand",
+      "km": 18,
+      "minutes": 45,
+      "mode": "APSRTC Ghat Bus or Taxi"
+    },
+    {
+      "from": "Tirumala",
+      "to": "Alipiri Tollgate",
+      "km": 19,
+      "minutes": 40,
+      "mode": "APSRTC Ghat Bus"
+    },
+    {
+      "from": "Tirupati Bus Stand",
+      "to": "Sri Padmavathi Temple",
+      "km": 5,
+      "minutes": 15,
+      "mode": "Shared Auto or City Bus"
+    },
+    {
+      "from": "Tirupati Town",
+      "to": "Srinivasa Mangapuram",
+      "km": 12,
+      "minutes": 25,
+      "mode": "APSRTC Bus or Auto"
+    },
+    {
+      "from": "Tirupati",
+      "to": "Chandragiri Fort",
+      "km": 15,
+      "minutes": 30,
+      "mode": "Bus or Cab"
+    },
+    {
+      "from": "Tirupati",
+      "to": "Srikalahasti",
+      "km": 38,
+      "minutes": 50,
+      "mode": "APSRTC Express Bus or Taxi"
+    },
+    {
+      "from": "Alipiri",
+      "to": "Srivari Mettu",
+      "km": 17,
+      "minutes": 25,
+      "mode": "TTD Free Bus or Auto"
+    }
+  ],
+  "food": [
+    {
+      "item": "Srivari Laddu Prasadam",
+      "where": "Tirumala counters",
+      "price": 50
+    },
+    {
+      "item": "Free Satvik Annaprasadam",
+      "where": "Tarigonda Vengamamba Complex",
+      "price": 0
+    },
+    {
+      "item": "Andhra Banana Leaf Meal",
+      "where": "Hotel Bliss / Minerva Coffee Shop",
+      "price": 230
+    },
+    {
+      "item": "Ghee Neyyi Karam Dosa",
+      "where": "Babai Hotel",
+      "price": 85
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "plan": [
+        {
+          "time": "08:00",
+          "stop": "Arrive in Tirupati; transfer to hotel and freshen up"
+        },
+        {
+          "time": "09:30",
+          "stop": "Visit Sri Govindarajaswami Temple"
+        },
+        {
+          "time": "11:00",
+          "stop": "Darshan at Sri Padmavathi Ammavari Temple"
+        },
+        {
+          "time": "13:30",
+          "stop": "Andhra thali lunch at Minerva Coffee Shop"
+        },
+        {
+          "time": "15:30",
+          "stop": "Explore Kapila Theertham waterfall and shrine"
+        },
+        {
+          "time": "17:00",
+          "stop": "Chandragiri Fort and evening Sound & Light show"
+        },
+        {
+          "time": "20:30",
+          "stop": "Dinner in Tirupati town"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "plan": [
+        {
+          "time": "06:30",
+          "stop": "Board APSRTC bus to Tirumala via Ghat Road"
+        },
+        {
+          "time": "07:45",
+          "stop": "Reach Tirumala; deposit bags/phones at lockers"
+        },
+        {
+          "time": "09:00",
+          "stop": "Enter Vaikuntam Queue Complex for Balaji darshan"
+        },
+        {
+          "time": "13:45",
+          "stop": "Free Annaprasadam lunch at Vengamamba Complex"
+        },
+        {
+          "time": "15:00",
+          "stop": "Visit Silathoranam and Srivari Padalu"
+        },
+        {
+          "time": "17:30",
+          "stop": "Board return Ghat bus down to Tirupati"
+        },
+        {
+          "time": "19:30",
+          "stop": "Dinner and rest in Tirupati base"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "plan": [
+        {
+          "time": "07:00",
+          "stop": "Drive or take express bus to Srikalahasti"
+        },
+        {
+          "time": "08:30",
+          "stop": "Darshan & Rahu-Ketu Pooja at Sri Kalahasteeswara"
+        },
+        {
+          "time": "11:30",
+          "stop": "Visit Sri Kalyana Venkateswara Temple"
+        },
+        {
+          "time": "13:30",
+          "stop": "Lunch and buy local sweets/souvenirs"
+        },
+        {
+          "time": "16:30",
+          "stop": "Transfer to Airport or Station for departure"
+        }
+      ]
+    }
+  ],
+  "emergency": {
+    "hospital": "SVIMS (0877 2287777) / Aswini Hospital Tirumala",
+    "police": "112",
+    "atm": "Tirupati base ATMs; hilltop cash runs out quickly",
+    "noSignal": "Ghat roads and walking trails (Alipiri/Srivari Mettu)"
+  },
+  "tips": [
+    "Strict dress code: Dhoti/Kurta for men; Saree/Churidar with pinned dupatta for women.",
+    "Book Rs 300 SED tickets 90 days ahead online; they sell out in minutes.",
+    "Best season is Nov-Feb; Rayalaseema summers exceed 41C making walkways blistering.",
+    "Carry physical Aadhaar cards; down-ghat road enforces strict 40-minute minimum drive time."
+  ],
+  "generatedAt": "2026-09-26T07:20:02.994Z",
+  "sources": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4cPPdsayNXTsLwPuvVnLZh-0T8VSAKoqOEkbU2Igyig5GdY4cBtsfQ81AdWpL_qaUhyRJTAuFU0O0XXCvU_Mc2n3Mhx6cHddU-jPKmpRKcomDgyppZkejAX_3UYse6lS0GQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnXpToMIp07pROZ5vAVmEsyZtJkAay8TUvtqhWVTCjjM6tGhZnzlcumowK6cSUhTggbsArFJ2Ta33uyeZYvuD54za8XILfVSpxmMF52w03XFwyKqYGxekUmY5OR_Vqf9wffSCcTipE6_ME6J2uaCecDA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZmlCM-THBNa9NYZdvwJFRgcOriGlrdEuaXhDDcI2k6J9s6FPKQTqqa5OeNEQAzJB9phuq45hWjJL8CokLgcwt--mYhpdHLqW3dyUuizAKJHXHeam4lblflicGAKyQm1_7nE3rSM2ltGWcR8JPi4xf9vn1x6XkFwuWyuNykno3SZW3t0DEnRLdljas1s_g0npxJeb9LlkviEbLcPMrFKuLOTw3eOCWVnXd",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRs_XdxeZOZ8PTvxc1d202CdIfbJmJ9vWw8p32pv0sQ0TFUVX4lSYFCaWz5kqVoutud4k3reZXyGi79NjhVzEeO2NgxsVegYjVjkRqCTprKx52TWIq7ltn0QxNLtFTWWg-MFtdEnzW0adbu4KiKNHxEjmQyYxwynKPnKDKiTXefzrihA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeB65tzAtsaR1fZ2eaN00vCDTYEh335IGNt5RlGQF2mSp4rdUO7vPgzspQc7DYblxuJoVKf6nJ90Pxk3mkXE0GbMrWk9tQMsKLKJN9hpY3",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdI986DmekL4B-mjupFrN0kA9hJoqENkYtRpu1E-XCLXiXbKu6tqKme_mHs47uP30VNL8CKK0q6zh_T1wPl63m-hgRHtSvKjcLv0DdsxSyrjXuKyR-wtrG3Gaf-9Qf2_HBvuc=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZWa-I0p4ZOgT3TDJVdcnxg9iHS3IyD8Or_TjP7AnCkkNt8IkqtdeUfqunCB6hpcFMj1APnTHeRdm_QHS7iJBjpEILvrfbcyn4olGlLH-b5G-kQJYgwqago47up8qrcoxOiIr4v_27w0vOzUeRf6J-XnyKYKcB92x0RpHOwHLF",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3Gkm_YxI1kfsC45YYLy6DWGV0186z8HjXSN1G2Q01Wr1a2zofsgIn1gqQsrj_fugKWLNlsYbAtJTlYXStMZteJmP4rk147oXAvvSOLuJgJrHanJFkxtFQbOhAuza4ldy-XwvVm3w4LUURXbTEYGToRKE=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjcSVm6AlR-3FRVhnOuMm4Cw8GLqWXsIoFITLC3mGp5vNQCbFT4wi31GY0CYJ_8QVylC5t3o9odocywnOSY9Tal_vUdDG0OxC7j4q-XWXze07QjSNWakZGxHYmj_xy9Wpt3mjRqRV63-3G-NbF2LCV36L4FSjRCMQK_mjZ5MEoj5CS2asz-S727Y_k0Jj9IZ_pXn-urw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd7Y-jaVTItu54iH1jL3eAs8j1max1iNY0PmYnQp8pUHubsSwPobOAYuf191fcDtfcpjy7-8qoBbPsrZOMTnzgec_-uSsvsDfg9BKsHXYg5qVNQrGXeodl7rtjI4Ed9NsNtpVoweIvyqcdtxo43SY=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-mecpRiDBnLUz9h8Bsg9t19QW04bzSaL2U4ZB2GUnZxmFsJYpcV7wVYf7nC64bcePSCETPExfmW3XBHVra65iznGBEBxgOjYlfskeAS4rrqmnP_bCnpc-BOado7dVd9DhqpDqJu7G62xzzyse",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIo74fk27fR_lwtEncJGkAO_AXsSxdJKkiIVuLuKA2jmW9zpaGo7PjqOHyWAlLHZ7Q7CEo5keY_M7JveadStrcmw-wkNz1velgrM1JAGHfBaJIBuJsuzDvSOyo8b34R-70WY0w-2z_czeqz2PJMRwg5WeZHcJol6SWe3dqhpR_RMbBCkLypPw_rAexcQ=="
+  ]
+}

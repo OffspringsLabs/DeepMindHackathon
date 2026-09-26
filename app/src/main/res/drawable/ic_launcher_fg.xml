@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- compass ring -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#F5E9C8"
+        android:strokeWidth="4"
+        android:pathData="M54,54 m-24,0 a24,24 0 1,0 48,0 a24,24 0 1,0 -48,0" />
+    <!-- needle -->
+    <path
+        android:fillColor="#F2B84B"
+        android:pathData="M54,32 L61,54 L54,50 L47,54 Z" />
+    <path
+        android:fillColor="#F5E9C8"
+        android:pathData="M54,76 L47,54 L54,58 L61,54 Z" />
+</vector>
