@@ -2,292 +2,931 @@
   "region": "Araku Valley, Andhra Pradesh",
   "state": "Andhra Pradesh",
   "base": "Araku Valley",
-  "season": "October to February",
-  "languages": "Telugu",
+  "baseLat": 18.3273,
+  "baseLon": 82.8775,
+  "season": "October to March",
+  "languages": "Telugu, Hindi, English",
   "arrival": {
-    "rail": "Araku (ARK) 2.5 km, Visakhapatnam Jn (VSKP) 114 km",
-    "air": "Visakhapatnam (VTZ) 107 km",
-    "fromHyderabad": "Overnight train to VSKP then scenic Kirandul Express to Araku; or flight to VTZ + cab"
+    "rail": "Araku Railway Station (ARK) / Visakhapatnam Jn (VSKP)",
+    "air": "Visakhapatnam International Airport (VTZ)",
+    "fromStart": "Overnight train from Hyderabad/Secunderabad to Visakhapatnam (12 hrs), followed by scenic Kirandul Express train to Araku (4 hrs 10 mins)"
   },
   "hotels": [
     {
-      "name": "Sri Sai Srinivasa / Market Lodges",
-      "area": "Town Center",
-      "pricePerNight": 800,
-      "kmFromBase": 0.3,
-      "note": "Basic clean budget rooms near shops"
+      "name": "HARITHA Valley Resort Araku (APTDC)",
+      "area": "Sarabhaguda, Main Road",
+      "pricePerNight": 2000,
+      "kmFromBase": 1,
+      "rating": 3.9,
+      "mapsUri": "https://maps.google.com/?q=Haritha+Valley+Resort+Araku",
+      "note": "State-run resort opp Police Station with reliable amenities and garden"
+    },
+    {
+      "name": "Winter Valley Grand Araku",
+      "area": "Ravvalaguda",
+      "pricePerNight": 1500,
+      "kmFromBase": 0.8,
+      "rating": 5,
+      "mapsUri": "https://maps.google.com/?q=Winter+Valley+Grand+Araku",
+      "note": "Clean budget homestay near Araku bus stand"
+    },
+    {
+      "name": "Ushodaya Resorts",
+      "area": "Padmapuram Road",
+      "pricePerNight": 2200,
+      "kmFromBase": 1.5,
+      "rating": 4.5,
+      "mapsUri": "https://maps.google.com/?q=Ushodaya+Resorts+Araku",
+      "note": "Mid-range casual resort with spacious garden setting"
     },
     {
       "name": "Krishna Tara Comforts",
-      "area": "Araku Valley",
-      "pricePerNight": 1500,
-      "kmFromBase": 1.2,
-      "note": "Reliable hot water and in-house kitchen"
-    },
-    {
-      "name": "Haritha Mayuri Hill Resort",
-      "area": "Near Bus Stand",
-      "pricePerNight": 2000,
-      "kmFromBase": 0.3,
-      "note": "APTDC resort with restaurant and cottages"
-    },
-    {
-      "name": "Haritha Valley Resort",
-      "area": "Araku Valley",
-      "pricePerNight": 2200,
-      "kmFromBase": 1.5,
-      "note": "Gardens and peaceful heritage setting"
-    },
-    {
-      "name": "Padmapuram Tree Huts",
-      "area": "Padmapuram Gardens",
-      "pricePerNight": 2500,
-      "kmFromBase": 2.5,
-      "note": "Wooden cottages perched 10 ft above ground"
+      "area": "Padmapuram Garden Road",
+      "pricePerNight": 2300,
+      "kmFromBase": 1.4,
+      "rating": 4.3,
+      "mapsUri": "https://maps.google.com/?q=Krishna+Tara+Comforts+Araku",
+      "note": "Comfortable rooms with multi-cuisine dining"
     }
   ],
   "places": [
     {
-      "name": "Borra Caves",
-      "type": "Limestone Cave",
+      "name": "Borra Caves (Borra Guhalu)",
+      "type": "Karst Cave / Geological",
       "open": "10:00",
       "close": "17:00",
-      "kmFromBase": 36,
-      "minutesFromBase": 60,
-      "fee": 60,
-      "lat": 18.2811,
+      "kmFromBase": 34,
+      "minutesFromBase": 55,
+      "fee": 80,
+      "lat": 18.2804,
       "lon": 83.0396,
-      "tip": "Slick steep steps; wear shoes with strong grip"
+      "mapsUri": "https://maps.google.com/?q=Borra+Caves",
+      "tip": "Enter at 10:00 AM to beat tourist buses; wear gripped shoes for wet steps"
+    },
+    {
+      "name": "Lord Shiva Cave Shrine",
+      "type": "Sacred Temple",
+      "open": "10:00",
+      "close": "17:00",
+      "kmFromBase": 34,
+      "minutesFromBase": 55,
+      "fee": 0,
+      "lat": 18.2806,
+      "lon": 83.0398,
+      "mapsUri": "https://maps.google.com/?q=Borra+Caves+Shiva+Shrine",
+      "tip": "Climb illuminated stone stairs inside the cavern to view the swayambhu lingam"
+    },
+    {
+      "name": "Sri Anantha Venkateswara Swamy Temple",
+      "type": "Hilltop Temple",
+      "open": "06:00",
+      "close": "19:00",
+      "kmFromBase": 30,
+      "minutesFromBase": 50,
+      "fee": 0,
+      "lat": 18.2435,
+      "lon": 83.0082,
+      "mapsUri": "https://maps.google.com/?q=Vykuntagiri+Temple+Ananthagiri",
+      "tip": "High altitude hilltop shrine offering misty morning valley ridge panoramas"
+    },
+    {
+      "name": "Chaparai Water Cascade",
+      "type": "Waterfall / Nature",
+      "open": "09:00",
+      "close": "17:00",
+      "kmFromBase": 14,
+      "minutesFromBase": 25,
+      "fee": 10,
+      "lat": 18.2917,
+      "lon": 82.7842,
+      "mapsUri": "https://maps.google.com/?q=Chaparai+Water+Cascade",
+      "tip": "Avoid slick moss-covered rock slopes where current accelerates"
     },
     {
       "name": "Araku Tribal Museum",
-      "type": "Cultural Museum",
-      "open": "10:00",
+      "type": "Cultural Heritage",
+      "open": "09:00",
       "close": "18:00",
-      "kmFromBase": 1.2,
-      "minutesFromBase": 3,
+      "kmFromBase": 0.5,
+      "minutesFromBase": 2,
       "fee": 40,
-      "lat": 18.3273,
+      "lat": 18.3283,
       "lon": 82.8778,
-      "tip": "Watch live Dhimsa dance between 11:30 and 16:00"
+      "mapsUri": "https://maps.google.com/?q=Araku+Tribal+Museum",
+      "tip": "Authentic tribal hut replicas; buy certified coffee and honey from GCC stall inside"
     },
     {
       "name": "Araku Coffee Museum",
-      "type": "Culinary Museum",
+      "type": "Agro-Museum / Cafe",
       "open": "09:00",
       "close": "20:00",
-      "kmFromBase": 1.3,
-      "minutesFromBase": 4,
+      "kmFromBase": 0.6,
+      "minutesFromBase": 2,
       "fee": 20,
-      "lat": 18.3268,
-      "lon": 82.8781,
-      "tip": "Buy certified Arabica coffee and coffee chocolates here"
+      "lat": 18.328,
+      "lon": 82.8775,
+      "mapsUri": "https://maps.google.com/?q=Araku+Coffee+Museum",
+      "tip": "Located opposite Tribal Museum; try freshly brewed Araku Arabica coffee"
     },
     {
       "name": "Padmapuram Botanical Gardens",
-      "type": "Botanical Park",
-      "open": "09:00",
+      "type": "Botanical / History",
+      "open": "08:30",
       "close": "18:00",
-      "kmFromBase": 2.5,
-      "minutesFromBase": 8,
-      "fee": 10,
-      "lat": 18.3444,
-      "lon": 82.8682,
-      "tip": "Ride the mini toy train to survey the grounds"
-    },
-    {
-      "name": "Chaparai Water Cascades",
-      "type": "Water Cascades",
-      "open": "08:00",
-      "close": "18:00",
-      "kmFromBase": 15,
-      "minutesFromBase": 25,
-      "fee": 10,
-      "lat": 18.2934,
-      "lon": 82.7845,
-      "tip": "Rock algae is slippery; avoid fast crevices"
-    },
-    {
-      "name": "Katiki Waterfalls",
-      "type": "Waterfall",
-      "open": "06:00",
-      "close": "17:30",
-      "kmFromBase": 39,
-      "minutesFromBase": 90,
-      "fee": 20,
-      "lat": 18.2847,
-      "lon": 83.0182,
-      "tip": "Requires 4x4 Jeep ride and 20 min uphill trek"
+      "kmFromBase": 2.2,
+      "minutesFromBase": 7,
+      "fee": 50,
+      "lat": 18.3391,
+      "lon": 82.8702,
+      "mapsUri": "https://maps.google.com/?q=Padmapuram+Gardens",
+      "tip": "Historic WWII orchard nursery featuring suspended wooden treehouses"
     },
     {
       "name": "Galikonda View Point",
-      "type": "Mountain Overlook",
+      "type": "Scenic Vista",
       "open": "00:00",
       "close": "23:59",
-      "kmFromBase": 20,
-      "minutesFromBase": 30,
+      "kmFromBase": 21,
+      "minutesFromBase": 35,
       "fee": 0,
-      "lat": 18.2435,
-      "lon": 82.9515,
-      "tip": "Visit early morning for mist pooling in the basin"
+      "lat": 18.2711,
+      "lon": 82.9934,
+      "mapsUri": "https://maps.google.com/?q=Galikonda+View+Point",
+      "tip": "Highest viewpoint in the valley (~4,000 ft); great morning fog stop"
     },
     {
-      "name": "Ranajilleda Waterfalls",
-      "type": "Waterfall",
-      "open": "07:00",
-      "close": "17:30",
-      "kmFromBase": 5.5,
-      "minutesFromBase": 15,
-      "fee": 0,
-      "lat": 18.3512,
-      "lon": 82.8943,
-      "tip": "Less crowded natural pool reached via short nature walk"
-    },
-    {
-      "name": "Ananthagiri Coffee Plantations",
-      "type": "Plantation Estate",
+      "name": "Araku Pinery",
+      "type": "Pine Forest Walk",
       "open": "06:00",
-      "close": "18:00",
-      "kmFromBase": 26,
-      "minutesFromBase": 40,
-      "fee": 0,
-      "lat": 18.2392,
-      "lon": 83.0125,
-      "tip": "Buy authentic pepper and turmeric from local growers"
-    },
-    {
-      "name": "Madagada Sunrise Viewpoint",
-      "type": "Sunrise Viewpoint",
-      "open": "05:00",
-      "close": "08:00",
-      "kmFromBase": 22,
-      "minutesFromBase": 45,
+      "close": "19:00",
+      "kmFromBase": 3.5,
+      "minutesFromBase": 8,
       "fee": 20,
-      "lat": 18.1965,
-      "lon": 82.6685,
-      "tip": "Start by 04:15; carry a headlamp for the dirt ridge walk"
+      "lat": 18.3242,
+      "lon": 82.868,
+      "mapsUri": "https://maps.google.com/?q=Araku+Pinery",
+      "tip": "Shaded Himalayan pine grove on red laterite soil ideal for peaceful strolls"
     }
   ],
   "routes": [
     {
-      "from": "Visakhapatnam Junction",
-      "to": "Araku Valley",
-      "km": 114,
-      "minutes": 220,
-      "mode": "Train / APSRTC Bus"
+      "from": "Araku Railway Station",
+      "to": "HARITHA Valley Resort",
+      "km": 1.8,
+      "minutes": 5,
+      "mode": "Dedicated Auto"
     },
     {
-      "from": "Araku Town",
-      "to": "Borra Caves",
-      "km": 36,
-      "minutes": 60,
-      "mode": "Taxi / Auto / Train"
-    },
-    {
-      "from": "Borra Caves Junction",
-      "to": "Katiki Falls",
-      "km": 4.5,
-      "minutes": 30,
-      "mode": "4x4 Mahindra Jeep"
-    },
-    {
-      "from": "Araku Town",
-      "to": "Chaparai Cascades",
-      "km": 15,
+      "from": "HARITHA Valley Resort",
+      "to": "Chaparai Water Cascade",
+      "km": 14,
       "minutes": 25,
-      "mode": "Auto-rickshaw / Cab"
+      "mode": "Dedicated Auto"
     },
     {
-      "from": "Araku Town",
-      "to": "Padmapuram Gardens",
-      "km": 2.5,
-      "minutes": 8,
-      "mode": "Walking / Auto-rickshaw"
+      "from": "Chaparai Water Cascade",
+      "to": "Araku Pinery",
+      "km": 12.5,
+      "minutes": 22,
+      "mode": "Dedicated Auto"
     },
     {
-      "from": "Araku Town",
-      "to": "Galikonda Viewpoint",
-      "km": 20,
-      "minutes": 30,
-      "mode": "Cab / APSRTC Bus"
+      "from": "Araku Pinery",
+      "to": "Padmapuram Botanical Gardens",
+      "km": 3.8,
+      "minutes": 10,
+      "mode": "Dedicated Auto"
     },
     {
-      "from": "Araku Town",
-      "to": "Ranajilleda Falls",
-      "km": 5.5,
+      "from": "Padmapuram Botanical Gardens",
+      "to": "Araku Tribal Museum",
+      "km": 1.8,
+      "minutes": 5,
+      "mode": "Dedicated Auto"
+    },
+    {
+      "from": "HARITHA Valley Resort",
+      "to": "Galikonda View Point",
+      "km": 21,
+      "minutes": 35,
+      "mode": "Dedicated Auto"
+    },
+    {
+      "from": "Galikonda View Point",
+      "to": "Sri Anantha Venkateswara Swamy Temple",
+      "km": 9,
       "minutes": 15,
-      "mode": "Auto-rickshaw"
+      "mode": "Dedicated Auto"
     },
     {
-      "from": "Araku Town",
-      "to": "Ananthagiri Hills",
-      "km": 26,
-      "minutes": 40,
-      "mode": "Cab / APSRTC Bus"
+      "from": "Sri Anantha Venkateswara Swamy Temple",
+      "to": "Borra Caves",
+      "km": 12,
+      "minutes": 20,
+      "mode": "Dedicated Auto"
+    },
+    {
+      "from": "Borra Caves",
+      "to": "Borra Guhalu Railway Station",
+      "km": 0.8,
+      "minutes": 5,
+      "mode": "Auto / Walk"
     }
   ],
   "food": [
     {
-      "item": "Bongu Kodi (Bamboo Chicken)",
-      "where": "Chaparai / Borra Caves stalls",
-      "price": 150
+      "item": "Bamboo Chicken",
+      "localName": "Bongu Lo Kozhi",
+      "where": "Chaparai Waterfalls or Borra Junction stalls",
+      "price": 250,
+      "veg": false,
+      "spice": 3,
+      "mealWindow": "12:00-17:00",
+      "allergens": "None"
     },
     {
-      "item": "Araku Espresso",
-      "where": "Araku Coffee Museum",
-      "price": 50
+      "item": "Finger Millet Mash with Country Chicken",
+      "localName": "Ragi Sangati with Natukodi Pulusu",
+      "where": "Athidhi Devo Bhava or Haritha Restaurant",
+      "price": 220,
+      "veg": false,
+      "spice": 3,
+      "mealWindow": "12:30-15:30",
+      "allergens": "Mustard"
     },
     {
-      "item": "Andhra Tribal Veg Thali",
-      "where": "Haritha Restaurant",
-      "price": 120
+      "item": "Green Gram Crepe with Semolina Filling",
+      "localName": "Pesarattu Upma",
+      "where": "Sri Sai Tiffin Centre or Haritha Breakfast Room",
+      "price": 60,
+      "veg": true,
+      "spice": 1,
+      "mealWindow": "07:00-10:30",
+      "allergens": "Wheat, Legumes"
     },
     {
-      "item": "Thali with Natu Kodi",
-      "where": "Town military messes",
-      "price": 220
+      "item": "Stuffed Eggplant Curry with Rice",
+      "localName": "Gutti Vankaya Kura",
+      "where": "MTR Restaurant Araku",
+      "price": 140,
+      "veg": true,
+      "spice": 2,
+      "mealWindow": "12:30-21:00",
+      "allergens": "Peanuts, Sesame seeds"
     },
     {
-      "item": "Charred Sweet Corn",
-      "where": "Galikonda Viewpoint stalls",
-      "price": 30
+      "item": "Organic Araku Filter Coffee",
+      "localName": "Araku Filter Coffee",
+      "where": "Araku Coffee Museum Cafe",
+      "price": 40,
+      "veg": true,
+      "spice": 0,
+      "mealWindow": "09:00-19:30",
+      "allergens": "Dairy"
+    },
+    {
+      "item": "Madugula Halwa",
+      "localName": "Madugula Halwa",
+      "where": "Sweet stalls near Araku Bus Stand",
+      "price": 100,
+      "veg": true,
+      "spice": 0,
+      "mealWindow": "08:00-20:00",
+      "allergens": "Gluten, Dairy, Cashews"
     }
   ],
+  "language": {
+    "primary": "Telugu",
+    "script": "Telugu Script",
+    "phrases": [
+      {
+        "intent": "Where is this?",
+        "english": "Where is this?",
+        "native": "ఇది ఎక్కడ ఉంది?",
+        "roman": "Idhi ekkada undhi?"
+      },
+      {
+        "intent": "How much is this?",
+        "english": "How much is this?",
+        "native": "ఇది ఎంత?",
+        "roman": "Idhi entha?"
+      },
+      {
+        "intent": "Too expensive!",
+        "english": "Too expensive!",
+        "native": "చాలా ఎక్కువ ఖరీదు!",
+        "roman": "Chaala ekkuva khareedu!"
+      },
+      {
+        "intent": "Vegetarian food",
+        "english": "Vegetarian food",
+        "native": "శాఖాహారం భోజనం",
+        "roman": "Shaakhaahaara bhojanam"
+      },
+      {
+        "intent": "No spice / Less spice",
+        "english": "Make it less spicy",
+        "native": "కారం తక్కువ వేయండి",
+        "roman": "Kaaram thakkuva veyandi"
+      },
+      {
+        "intent": "Stop here",
+        "english": "Stop here",
+        "native": "ఇక్కడ ఆపండి",
+        "roman": "Ikkada aapandi"
+      },
+      {
+        "intent": "Water",
+        "english": "Water",
+        "native": "మంచినీళ్లు",
+        "roman": "Manchineellu"
+      },
+      {
+        "intent": "Thank you",
+        "english": "Thank you",
+        "native": "ధన్యవాదాలు",
+        "roman": "Dhanyavaadaalu"
+      }
+    ],
+    "stationNames": [
+      {
+        "native": "అరకు",
+        "english": "Araku"
+      },
+      {
+        "native": "బొర్రా గుహలు",
+        "english": "Borra Guhalu"
+      },
+      {
+        "native": "విశాఖపట్నం",
+        "english": "Visakhapatnam"
+      },
+      {
+        "native": "పద్మాపురం",
+        "english": "Padmapuram"
+      },
+      {
+        "native": "చాపరాయి",
+        "english": "Chaparai"
+      },
+      {
+        "native": "అనంతగిరి",
+        "english": "Ananthagiri"
+      }
+    ]
+  },
+  "connectivity": {
+    "deadZones": [
+      "Inside Borra Caves subterranean chambers",
+      "Tyda to Ananthagiri 10 km ghat road section",
+      "Katiki waterfall gorge trail"
+    ],
+    "bestCarrier": "Jio / Airtel in town, BSNL in deep ghats",
+    "tips": "Download offline maps for the entire Araku-Borra sector; notify family before entering ghat stretches"
+  },
+  "transport": {
+    "autoRule": "No meters or app cabs exist; negotiate fixed lump-sum fares before boarding",
+    "fares": [
+      {
+        "from": "Araku Railway Station",
+        "to": "Haritha Valley Resort",
+        "mode": "Dedicated Auto",
+        "fairInr": 100,
+        "touristQuoteInr": 200
+      },
+      {
+        "from": "Araku Town",
+        "to": "Chaparai Water Cascade (return + wait)",
+        "mode": "Dedicated Auto",
+        "fairInr": 450,
+        "touristQuoteInr": 800
+      },
+      {
+        "from": "Araku Town",
+        "to": "Padmapuram Gardens",
+        "mode": "Dedicated Auto",
+        "fairInr": 70,
+        "touristQuoteInr": 150
+      },
+      {
+        "from": "Day 1 Circuit",
+        "to": "All Valley Sights",
+        "mode": "Dedicated Auto Full Day",
+        "fairInr": 900,
+        "touristQuoteInr": 1600
+      },
+      {
+        "from": "Day 2 Circuit",
+        "to": "Galikonda-Vykuntagiri-Borra Caves",
+        "mode": "Dedicated Auto Full Day",
+        "fairInr": 1300,
+        "touristQuoteInr": 2200
+      }
+    ],
+    "sharedRoutes": [
+      "Araku Bus Stand to Chaparai Junction via shared jeep (₹20-₹30/seat)",
+      "Araku to Padmapuram via shared Ape auto (₹10/seat)"
+    ],
+    "metro": "None available",
+    "busBoards": "APSRTC buses board from Kantabamsuguda Bus Stand; hail by hand wave at village stages",
+    "lastServiceTimes": [
+      "Shared autos wind down by 18:30",
+      "Last APSRTC bus down to Visakhapatnam departs around 19:30"
+    ]
+  },
+  "payments": {
+    "upiCoverage": "Good in Araku town, resorts, and major counters; drops at waterfalls and ghat stalls",
+    "cashOnly": [
+      "Chaparai waterfall entry and parking booths",
+      "Local auto-rickshaws and shared jeeps",
+      "Roadside bamboo chicken and spice stalls"
+    ],
+    "tolls": "Borra Caves parking ₹30-₹50, Chaparai parking ₹20",
+    "permits": [],
+    "idNeeded": "Government photo ID (Aadhaar/Passport) required for hotel check-in and train travel"
+  },
+  "culture": {
+    "dressCode": "Modest clothing covering knees and shoulders required at temples; full pants recommended for cave and forest trails",
+    "footwear": "Slip-on sneakers with deep traction; shoes must be removed outside temple sanctums",
+    "photography": "Prohibited inside temple sanctums; allowed at Borra Caves (smartphone free); seek permission before photographing tribal locals",
+    "alcohol": "Public drinking at viewpoints, falls, and forests is strictly prohibited and fined",
+    "holidaysShutdowns": [
+      {
+        "date": "2024-10-12",
+        "what": "Dussehra / Vijayadasami - heavy pilgrim traffic"
+      },
+      {
+        "date": "2024-11-18",
+        "what": "Kartika Somavaram - massive queues at Borra Caves Shiva shrine"
+      }
+    ],
+    "womenSafety": "Generally peaceful and safe; avoid unlit forest roads after 19:30; emergency dial 112 / Disha App",
+    "tips": [
+      "Dense fog reduces ghat road visibility to under 20m before 08:30 AM",
+      "Never step on dark slippery moss-covered granite at Chaparai rapids",
+      "Carry light woollens as night temperatures drop below 15°C"
+    ]
+  },
+  "trust": {
+    "scams": [
+      {
+        "pattern": "Hawkers selling sugar-jaggery syrup as pure medicinal forest honey for ₹500",
+        "counter": "Buy verified GI-tagged honey exclusively from the Girijan Cooperative Corporation (GCC) store"
+      },
+      {
+        "pattern": "Unofficial touts at Borra Caves demanding ₹500 for unwanted guiding",
+        "counter": "Engage only authorized APTDC badged guides at the entrance for fixed ₹300 rate or self-tour"
+      },
+      {
+        "pattern": "Roadside stalls reheating stale pre-cooked bamboo chicken over coals",
+        "counter": "Order only from stalls where fresh chicken is packed into green bamboo tubes in front of you"
+      }
+    ],
+    "officialGuideRateInr": 300,
+    "officialCounters": [
+      "APTDC computerised counters at Borra Caves and Tribal Museum",
+      "GCC tribal cooperative retail outlets"
+    ]
+  },
+  "emergency": {
+    "hospital": "Community Health Centre (Area Hospital), Kantabamsuguda, Araku Valley (08936-249622)",
+    "pharmacy24h": "Sri Sai Medical & General Stores, Opp Old Bus Stand, Araku (+91 94903 24110)",
+    "police": "112",
+    "touristPolice": "1800-425-45454",
+    "embassy": "Consulates in Hyderabad (~620 km west)",
+    "atm": "SBI ATM with CDM, beside Post Office, Kantabamsuguda",
+    "noSignal": "Borra Caves inside chamber and Tyda-Ananthagiri 10 km ghat segment",
+    "numbers": [
+      {
+        "label": "Araku Valley Police Station",
+        "phone": "08936-249633"
+      },
+      {
+        "label": "State Ambulance",
+        "phone": "108"
+      },
+      {
+        "label": "Women Helpline",
+        "phone": "181"
+      }
+    ],
+    "phrases": [
+      {
+        "english": "Please take us to the nearest hospital immediately!",
+        "native": "దయచేసి మమ్మల్ని వెంటనే దగ్గర్లోని ఆసుపత్రికి తీసుకెళ్లండి!",
+        "roman": "Dayachesi mammalni ventane daggarloni aasupathriki theesukellandi!"
+      },
+      {
+        "english": "I need police help right now!",
+        "native": "నాకు వెంటనే పోలీస్ సహాయం కావాలి!",
+        "roman": "Naaku ventane police sahaayam kaavali!"
+      },
+      {
+        "english": "There has been an accident here.",
+        "native": "ఇక్కడ ప్రమాదం జరిగింది.",
+        "roman": "Ikkada pramaadham jarigindi."
+      }
+    ]
+  },
+  "tips": [
+    "Reserve the morning Kirandul Express train early to enjoy scenic Eastern Ghat tunnels",
+    "Carry ₹2,500 cash as ATMs are sparse and UPI drops at waterfalls",
+    "Keep motion sickness pills handy for the curvy Ananthagiri ghat descent",
+    "Savor fresh bamboo chicken and hot Araku Arabica coffee at local spots"
+  ],
+  "plan": {
+    "constraints": {
+      "days": 2,
+      "budgetInr": 10000,
+      "people": 2,
+      "startCity": "Hyderabad",
+      "pace": "balanced",
+      "interests": [
+        "temples",
+        "nature",
+        "food"
+      ],
+      "diet": "any"
+    },
+    "transportToRegion": {
+      "mode": "Overnight Train (SL) + Mountain Train (2S)",
+      "hours": 16.5,
+      "costInrPerPerson": 1040,
+      "note": "Train 12728 Secunderabad to Vizag (₹445 SL) + Train 18551 Vizag to Araku (₹75 2S), round trip"
+    },
+    "stay": {
+      "name": "HARITHA Valley Resort Araku (APTDC)",
+      "area": "Sarabhaguda, Main Road",
+      "pricePerNight": 2000,
+      "nights": 1,
+      "rating": 3.9,
+      "mapsUri": "https://maps.google.com/?q=Haritha+Valley+Resort+Araku",
+      "lat": 18.3273,
+      "lon": 82.8775
+    },
+    "foodPerPersonPerDay": 500,
+    "localTransportInr": 2200,
+    "days": [
+      {
+        "day": 1,
+        "theme": "Lush Landscapes & Adivasi Culture",
+        "stops": [
+          {
+            "time": "10:55",
+            "name": "Arrival & Check-In at HARITHA Valley Resort",
+            "minutes": 35,
+            "costInr": 0,
+            "travelKm": 1.8,
+            "travelMin": 5,
+            "mode": "Dedicated Auto",
+            "lat": 18.3273,
+            "lon": 82.8775,
+            "mapsUri": "https://maps.google.com/?q=Haritha+Valley+Resort+Araku",
+            "note": "Arrive via Kirandul Express, short auto transfer, luggage drop and freshen up"
+          },
+          {
+            "time": "11:30",
+            "name": "Traditional Andhra Lunch Window",
+            "minutes": 60,
+            "costInr": 0,
+            "travelKm": 0.2,
+            "travelMin": 2,
+            "mode": "Walk",
+            "lat": 18.3275,
+            "lon": 82.8777,
+            "mapsUri": "https://maps.google.com/?q=Athidhi+Devo+Bhava+Araku",
+            "note": "Savor Ragi Sangati with Natukodi or Gutti Vankaya curry; covered in food budget"
+          },
+          {
+            "time": "12:30",
+            "name": "Chaparai Water Cascade",
+            "minutes": 100,
+            "costInr": 10,
+            "travelKm": 14,
+            "travelMin": 25,
+            "mode": "Dedicated Auto",
+            "lat": 18.2917,
+            "lon": 82.7842,
+            "mapsUri": "https://maps.google.com/?q=Chaparai+Water+Cascade",
+            "note": "Smooth granite water rapids; watch fresh bamboo chicken being roasted"
+          },
+          {
+            "time": "14:45",
+            "name": "Araku Pinery (Pine Forest)",
+            "minutes": 45,
+            "costInr": 20,
+            "travelKm": 12.5,
+            "travelMin": 22,
+            "mode": "Dedicated Auto",
+            "lat": 18.3242,
+            "lon": 82.868,
+            "mapsUri": "https://maps.google.com/?q=Araku+Pinery",
+            "note": "Peaceful pine-needle forest trail walk and photography under tall canopies"
+          },
+          {
+            "time": "16:00",
+            "name": "Padmapuram Botanical Gardens",
+            "minutes": 60,
+            "costInr": 50,
+            "travelKm": 3.8,
+            "travelMin": 10,
+            "mode": "Dedicated Auto",
+            "lat": 18.3391,
+            "lon": 82.8702,
+            "mapsUri": "https://maps.google.com/?q=Padmapuram+Gardens",
+            "note": "Explore historic 1942 WWII nursery grounds, orchards, and wooden treehouses"
+          },
+          {
+            "time": "17:25",
+            "name": "Araku Tribal Museum & Coffee Museum",
+            "minutes": 95,
+            "costInr": 60,
+            "travelKm": 1.8,
+            "travelMin": 5,
+            "mode": "Dedicated Auto",
+            "lat": 18.3283,
+            "lon": 82.8778,
+            "mapsUri": "https://maps.google.com/?q=Araku+Tribal+Museum",
+            "note": "Tribal culture exhibits (₹40) and coffee museum tasting (₹20)"
+          },
+          {
+            "time": "19:30",
+            "name": "Dinner & Evening Wind-Down",
+            "minutes": 90,
+            "costInr": 0,
+            "travelKm": 1,
+            "travelMin": 5,
+            "mode": "Walk",
+            "lat": 18.3273,
+            "lon": 82.8775,
+            "mapsUri": "https://maps.google.com/?q=Haritha+Valley+Resort+Araku",
+            "note": "Hearty dinner at MTR Restaurant or resort before early rest; covered in food budget"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "theme": "Eastern Ghat Panoramas & Divine Sanctuaries",
+        "stops": [
+          {
+            "time": "07:30",
+            "name": "Breakfast & Check-Out",
+            "minutes": 45,
+            "costInr": 0,
+            "travelKm": 0,
+            "travelMin": 0,
+            "mode": "Walk",
+            "lat": 18.3273,
+            "lon": 82.8775,
+            "mapsUri": "https://maps.google.com/?q=Haritha+Valley+Resort+Araku",
+            "note": "Hot Pesarattu Upma and Idlis; complete checkout with backpacks aboard auto"
+          },
+          {
+            "time": "08:15",
+            "name": "Galikonda View Point",
+            "minutes": 25,
+            "costInr": 0,
+            "travelKm": 21,
+            "travelMin": 35,
+            "mode": "Dedicated Auto",
+            "lat": 18.2711,
+            "lon": 82.9934,
+            "mapsUri": "https://maps.google.com/?q=Galikonda+View+Point",
+            "note": "Panoramic 4,000-ft mountain pass vista above morning fog blankets"
+          },
+          {
+            "time": "09:15",
+            "name": "Sri Anantha Venkateswara Swamy Temple",
+            "minutes": 60,
+            "costInr": 0,
+            "travelKm": 9,
+            "travelMin": 15,
+            "mode": "Dedicated Auto",
+            "lat": 18.2435,
+            "lon": 83.0082,
+            "mapsUri": "https://maps.google.com/?q=Vykuntagiri+Temple+Ananthagiri",
+            "note": "Serene morning hilltop temple darshan overlooking the misty Eastern Ghat ridges"
+          },
+          {
+            "time": "10:30",
+            "name": "Borra Caves & Lord Shiva Cave Shrine",
+            "minutes": 90,
+            "costInr": 80,
+            "travelKm": 12,
+            "travelMin": 20,
+            "mode": "Dedicated Auto",
+            "lat": 18.2804,
+            "lon": 83.0396,
+            "mapsUri": "https://maps.google.com/?q=Borra+Caves",
+            "note": "Stalactites, stalagmites, and naturally sculpted underground Shiva lingam"
+          },
+          {
+            "time": "12:45",
+            "name": "Tribal Lunch Window",
+            "minutes": 60,
+            "costInr": 0,
+            "travelKm": 0.5,
+            "travelMin": 3,
+            "mode": "Walk",
+            "lat": 18.2802,
+            "lon": 83.039,
+            "mapsUri": "https://maps.google.com/?q=Borra+Caves+Food+Stalls",
+            "note": "Fresh bamboo-steamed chicken, rice, and gongura dal; covered in food budget"
+          },
+          {
+            "time": "13:45",
+            "name": "Gosthani River Trail & Spice Stalls",
+            "minutes": 60,
+            "costInr": 0,
+            "travelKm": 0.5,
+            "travelMin": 5,
+            "mode": "Walk",
+            "lat": 18.281,
+            "lon": 83.038,
+            "mapsUri": "https://maps.google.com/?q=Gosthani+River+Borra",
+            "note": "Riverside stroll and certified GCC forest honey and coffee shopping"
+          },
+          {
+            "time": "15:00",
+            "name": "Borra Guhalu Station & Onward Departure",
+            "minutes": 45,
+            "costInr": 0,
+            "travelKm": 0.8,
+            "travelMin": 5,
+            "mode": "Auto / Walk",
+            "lat": 18.2818,
+            "lon": 83.0456,
+            "mapsUri": "https://maps.google.com/?q=Borra+Guhalu+Railway+Station",
+            "note": "Board Train 18552 at 15:45 to Visakhapatnam; connect to overnight train to Secunderabad"
+          }
+        ]
+      }
+    ],
+    "budget": {
+      "stay": 2000,
+      "food": 2000,
+      "transport": 6360,
+      "entry": 320,
+      "buffer": 1068,
+      "total": 11748,
+      "remaining": -1748
+    },
+    "alternatives": [
+      {
+        "title": "Stay at Winter Valley Grand instead of Haritha",
+        "savesInr": 500,
+        "tradeoff": "More basic amenities and smaller grounds, but saves ₹500 per night"
+      },
+      {
+        "title": "Use shared jeeps instead of dedicated auto for Chaparai",
+        "savesInr": 350,
+        "tradeoff": "Must wait for jeeps to fill up, adding 20-30 mins transit delay each way"
+      }
+    ],
+    "offlineMap": {
+      "centerLat": 18.3273,
+      "centerLon": 82.8775,
+      "zoom": 12,
+      "mapsAreaUrl": "https://www.google.com/maps/@18.3273,82.8775,12z"
+    },
+    "budgetVerified": true,
+    "overBudget": true
+  },
+  "generatedAt": "2026-09-26T08:32:23.078Z",
+  "sources": [
+    {
+      "title": "Araku - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=10126936987781457103",
+      "kind": "maps"
+    },
+    {
+      "title": "Review of Araku - Google Maps",
+      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNoMXQzZGFBEAE!2m1!1s0x3a3a4bfbe2c7f30b:0x8c8a1b891b7a64cf",
+      "kind": "maps"
+    },
+    {
+      "title": "Araku Railway Station - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=13075344124085786554",
+      "kind": "maps"
+    },
+    {
+      "title": "Review of Araku Railway Station - Google Maps",
+      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNYb0ttSDR3RRAB!2m1!1s0x3a3a4bc1c6808831:0xb574f434681fd7ba",
+      "kind": "maps"
+    },
+    {
+      "title": "Winter Valley Grand Araku - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=14322353646366877338",
+      "kind": "maps"
+    },
+    {
+      "title": "Review of Winter Valley Grand Araku - Google Maps",
+      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21weFRFTk1jVEpXYVhWSFZXTnZaa2RqY1dSWGNGRRAB!2m1!1s0x3a3a4b4bd21e8f39:0xc6c338c21f37e69a",
+      "kind": "maps"
+    },
+    {
+      "title": "HARITHA VALLEY RESORT ARAKU - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=10654025968080750401",
+      "kind": "maps"
+    },
+    {
+      "title": "Review of HARITHA VALLEY RESORT ARAKU - Google Maps",
+      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toSWMyWkRZVWRNZW1rNFNFOU1RVGc0VG5adFZtYxAB!2m1!1s0x3a3a4aea9965cebd:0x93dab42ba73d8741",
+      "kind": "maps"
+    },
+    {
+      "title": "USHODAYA RESORTS - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=5444065455622681809",
+      "kind": "maps"
+    },
+    {
+      "title": "Krishna Tara Comforts - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=12330362403269759428",
+      "kind": "maps"
+    },
+    {
+      "title": "Hills and Valley Resorts - Jungle Villa - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=6030299519216832931",
+      "kind": "maps"
+    },
+    {
+      "title": "Borra Caves - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=3389938326920917303",
+      "kind": "maps"
+    },
+    {
+      "title": "Borra Caves - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=3389938326920917303",
+      "kind": "maps"
+    },
+    {
+      "title": "Review of Borra Caves - Google Maps",
+      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xaS2Jtb3hWRTEwYkMxWGNHRjFVRlEzZFVoWFRsRRAB!2m1!1s0x3a3bc834502bc679:0x2f0b7af29a9a7137",
+      "kind": "maps"
+    },
+    {
+      "title": "Review of Borra Caves - Google Maps",
+      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUQtdi1fTnNBRRAB!2m1!1s0x3a3bc834502bc679:0x2f0b7af29a9a7137",
+      "kind": "maps"
+    },
+    {
+      "title": "Borra Caves - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=3389938326920917303",
+      "kind": "maps"
+    },
+    {
+      "title": "Review of Borra Caves - Google Maps",
+      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNmejQzT1p3EAE!2m1!1s0x3a3bc834502bc679:0x2f0b7af29a9a7137",
+      "kind": "maps"
+    },
+    {
+      "title": "Sri Anantha Venkateswara Swamy Temple (Vykuntagiri) - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=8939915731312449847",
+      "kind": "maps"
+    },
+    {
+      "title": "Chaparai Water Cascade - Google Maps",
+      "uri": "https://maps.google.com/maps?cid=6382253517504572592",
+      "kind": "maps"
+    },
+    {
+      "title": "Review of Chaparai Water Cascade - Google Maps",
+      "uri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURCMzhMN2pBRRAB!2m1!1s0x3a3a49df8ee4d8af:0x589251c27158ecb0",
+      "kind": "maps"
+    }
+  ],
+  "version": 2,
   "days": [
     {
       "day": 1,
       "plan": [
         {
-          "time": "06:45",
-          "stop": "Board Train 18551 at VSKP"
-        },
-        {
-          "time": "10:15",
-          "stop": "Arrive Araku Station and hotel check-in"
+          "time": "10:55",
+          "stop": "Arrival & Check-In at HARITHA Valley Resort"
         },
         {
           "time": "11:30",
+          "stop": "Traditional Andhra Lunch Window"
+        },
+        {
+          "time": "12:30",
+          "stop": "Chaparai Water Cascade"
+        },
+        {
+          "time": "14:45",
+          "stop": "Araku Pinery (Pine Forest)"
+        },
+        {
+          "time": "16:00",
           "stop": "Padmapuram Botanical Gardens"
         },
         {
-          "time": "13:30",
-          "stop": "Lunch at Haritha Mayuri"
+          "time": "17:25",
+          "stop": "Araku Tribal Museum & Coffee Museum"
         },
         {
-          "time": "15:00",
-          "stop": "Araku Tribal Museum"
-        },
-        {
-          "time": "16:30",
-          "stop": "Coffee Museum"
-        },
-        {
-          "time": "18:00",
-          "stop": "Local tribal weekly market"
-        },
-        {
-          "time": "20:00",
-          "stop": "Dinner in town"
+          "time": "19:30",
+          "stop": "Dinner & Evening Wind-Down"
         }
       ]
     },
@@ -295,99 +934,34 @@
       "day": 2,
       "plan": [
         {
-          "time": "08:00",
-          "stop": "Breakfast and drive towards Borra"
+          "time": "07:30",
+          "stop": "Breakfast & Check-Out"
         },
         {
-          "time": "09:15",
+          "time": "08:15",
           "stop": "Galikonda View Point"
         },
         {
-          "time": "10:15",
-          "stop": "Borra Caves"
+          "time": "09:15",
+          "stop": "Sri Anantha Venkateswara Swamy Temple"
         },
         {
-          "time": "12:30",
-          "stop": "Board 4x4 Jeep to Katiki Falls"
+          "time": "10:30",
+          "stop": "Borra Caves & Lord Shiva Cave Shrine"
         },
         {
-          "time": "13:15",
-          "stop": "Katiki Falls & Bamboo Chicken lunch"
+          "time": "12:45",
+          "stop": "Tribal Lunch Window"
         },
         {
-          "time": "15:30",
-          "stop": "Jeep back to Borra junction"
+          "time": "13:45",
+          "stop": "Gosthani River Trail & Spice Stalls"
         },
         {
-          "time": "16:15",
-          "stop": "Ananthagiri Coffee Plantations"
-        },
-        {
-          "time": "19:30",
-          "stop": "Return to Araku and dinner"
-        }
-      ]
-    },
-    {
-      "day": 3,
-      "plan": [
-        {
-          "time": "05:00",
-          "stop": "Madagada Sunrise viewpoint"
-        },
-        {
-          "time": "08:30",
-          "stop": "Breakfast in Araku town"
-        },
-        {
-          "time": "09:30",
-          "stop": "Chaparai Water Cascades"
-        },
-        {
-          "time": "11:30",
-          "stop": "Ranajilleda Waterfalls trail"
-        },
-        {
-          "time": "13:00",
-          "stop": "Lunch and hotel check-out"
-        },
-        {
-          "time": "14:30",
-          "stop": "Bus or cab to Visakhapatnam"
-        },
-        {
-          "time": "18:30",
-          "stop": "Arrive Vizag for return travel"
+          "time": "15:00",
+          "stop": "Borra Guhalu Station & Onward Departure"
         }
       ]
     }
-  ],
-  "emergency": {
-    "hospital": "Area Hospital Araku Valley, Main Road",
-    "police": "112",
-    "atm": "SBI / Canara Bank / Union Bank in Araku Town",
-    "noSignal": "Borra Caves interior, Katiki Falls trail, Tyda-Ananthagiri ghat dips"
-  },
-  "tips": [
-    "Book Vistadome coach 30-60 days ahead via IRCTC",
-    "Carry 4000-5000 in cash as rural UPI fails frequently",
-    "Wear closed footwear with strong rubber grip for Borra Caves",
-    "Top up vehicle fuel fully in Araku town before rural side trips",
-    "Download offline Google Maps for ASR district prior to travel"
-  ],
-  "generatedAt": "2026-09-26T07:21:10.113Z",
-  "sources": [
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPn7MQj8PDybuiyEFxuKN4mIEjK1ZaNvJzM61cm7jUEznSEUSQ1iWmjxqwd1Pv-4l1V7xz9VLY8AMj1RWAclO2VDbMIORxJ8ROGMxkJ0sABJA815xCdUaTLlo8oU2LGSA7-UOUbG1CS8tIiCKlADhxSh-lNV766SwhQddujcTMw56xTqpFM5IpTkAzPQHqHA6VPLcPu_nHgzG3Bg==",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMWgCqjVeZdSd4KEAMeALYm80Jl_kKeGVxf1fOlN1F0bzYg7gvVHfvCNtrKNVcUDbau0c5Cii56TUcDA2ag8BqJytqQl8sHFLQqCxXVg9FkzLWtqGmgfwbE4uYvt4fLMVTN16Hwt13q2Q8o3TUzxvssQ==",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6hbmIzA0T4wLIqKcraW9KDz7sCgzFF2NBShUv7tFshOFCcVwJm3oeANB2gpaLXATns2ZttZKcIWiUdjIKFj5F5EadpqcUufF8IX4xuZt9O6MblAMpY_-g6c8v5Yas2hDMusNfihg_c07CtAMJx4FG552JikyORHkVsbHwBo8b49mO4EbKaDjse7zOPArVU2rP",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs-G_cuVBvcyoZiUCvqcEO_BW8YH_ljsejNHyhx38yl_B10Al7y1rrf6At7pZJhYNR-QFa4Q19pOE9o2CsFicI8MDgBVaGp5zPMpeDdM8BoW5QUcLmwe1GlS_UZT7AK-5UE17lnnMTPDjlEQkI",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1YTZ5ZDaNFgp9NGAbEltM5hHfDOf2aKCzPuxzLdMZTZ3JYsk7_oF6hjm4uVNTr4yicR1MAThH321d1i4KWGfzl94NkaK8p6lxcz-xHHntAjRv9L3aJQuAb_ohTOL5yu9q-2LDr5BXiLGJHvmbAbTFXaytr83sBptwtc5dBBB9aSSJ5A==",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhHhSaewGpAZcdzwPg69sCAUMGCQTJA_56xxVb5r-zSgvk7Pcy7c76F7vKkj4EqICQjhPmCBT0MloscQvEGuhO6WHWU3ROtDykOyy5_kTPEBD_8hUJ0rTHt7XOu725--as",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVXgqXNh02fvt3QDD67vRxXHvUCh39vkXtcxMw51bFBOeaUv6U8zqUuBcn8e2eMM5WHyrYtQKH9_baercbXzAwqQjMGxYDUDNe_-RznkgiJ4JnaOuSims4ksaLagxyMBpf8YLq8Km9FbS1oWw-8kVXv2wmCuJBeMLocA-k69yobgySpwJDsvt_GtCLl1wxTFZoioeCcA==",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYO2NNC2jWnF-Igt7MgEsjsT7gSmTGJvxREx4vrzetOEsjSTUAndm8x6pkxF62ZodsMBl9Ip_57yeDM3n2CGRiAEgkh5WOiMfoLuJUh0R3qcTwLNE8pz_N09zWbQYDFsNh3qiKMFnhTtsa",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf3gwIUm1YJUdilEYWBVpkYPg5ivft_vmEQAJ8F-6h11ObRM54xlnPjMQYMQ_aSHsgXZSEUXs0M-_B1DNOzsy0_hbajk8oCkxKvObN461B7fPtNHU3gmmzM204m9q4Naf3coahhJhDJ6NF8j6zXdm_IKnm8w_R8d2NsOAXalsN1QetGA==",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvJyCR9wksdiX3u9019HVPdPBZUaWWH3eh_gy31QZuvJSVheqWJHfalkZYvd_6czlwtZ2_iyXT_jpM3joD5Sz3m1nkD8DQ5JGz7FyfdoLOEiOgoJc3wz5EeDuuN3LpW1XdEeW36kQ8sS7N7ykZm3GFtCE=",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfqIUyrQM08rFoHfeaLsQTyCCfWwJMug9o7-LaqZz49hC18LexfW4uoKyZH8A4SWIX4ANPX736kR8YNLD3jEQaRsIoALMn9LRAUUJxgSORvdlsrEbeX30g9jYN_H_WpSvAUvYvOTuob99LmKMOI4g9YNNhCRmjQR6f_aTp6XOTu-yJHPKnRi4Q0w2EUQ2TFCvYv3E9ItFsLVmx8I2RBHCLIw==",
-    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVbkyMcKo3NGCvzCVjo0LMMiMPjI3iGyXNJOS77bv-sUW23E2EXSDj4XmudIYRrAKFZJhyr8m81GLreg2YZ8616baV9QS87gz5VoUJ-QQqWaVxHQze49BPnNTgTGslwokK5fcuwRBN_zkuknxyJC-YwFWo"
   ]
 }

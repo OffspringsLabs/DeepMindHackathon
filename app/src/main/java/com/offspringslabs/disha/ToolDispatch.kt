@@ -16,9 +16,24 @@ object ToolProtocol {
         ToolSpec("listAll", "List everything in the pack: places, hotels, food, routes.", emptyList()),
         ToolSpec("getEmergencyInfo", "Hospital, police, ATMs, no-signal areas, how to reach the region.", emptyList()),
         ToolSpec("currentTime", "Current local time and weekday from the phone clock.", emptyList()),
+        // v2 local-reality + plan
+        ToolSpec("sayIt", "Local-language phrase for an intent (where is, how much, hospital, vegetarian, help…): native script + romanised.", listOf("intent" to "What to say, in English")),
+        ToolSpec("fareCheck", "Fair fare vs tourist quote for a leg by mode, plus the local auto/taxi rule.", listOf("from" to "From", "to" to "To", "mode" to "auto, taxi, bus, jeep or any")),
+        ToolSpec("howToRide", "How local transport works: auto rules, shared routes, metro, bus boards, last services.", listOf("mode" to "auto, bus, metro, shared or any")),
+        ToolSpec("permitsAndPayments", "UPI coverage, cash-only spots, tolls, ID and permits with cost and lead time.", emptyList()),
+        ToolSpec("findFood", "Dishes and eateries for a diet and spice tolerance.", listOf("diet" to "veg, non-veg, jain, vegan, halal or any", "spice" to "mild, medium, hot or any")),
+        ToolSpec("etiquette", "Dress code, footwear, photography, alcohol, women's safety, upcoming shutdowns.", listOf("place" to "Place name or general")),
+        ToolSpec("isShutdown", "Whether anything is shut or special on a date.", listOf("date" to "YYYY-MM-DD, today or tomorrow")),
+        ToolSpec("scamCheck", "Match a situation to known scams and get the counter-move.", listOf("situation" to "What is happening")),
+        ToolSpec("emergency", "Emergency contact by kind plus the local-language phrase.", listOf("kind" to "hospital, pharmacy, police, tourist police, embassy or any")),
+        ToolSpec("signalMap", "Where mobile signal drops and the best carrier.", emptyList()),
+        ToolSpec("getBudget", "Planned trip total vs budget by category, remaining, per person.", emptyList()),
+        ToolSpec("whatIfSkip", "Rupees and minutes saved by skipping a planned stop, with alternatives.", listOf("stop" to "Stop name")),
+        ToolSpec("findStay", "Stays at or under a nightly price.", listOf("maxPerNight" to "Max ₹ per night")),
+        ToolSpec("getMap", "Offline schematic map of places, stay and day routes with no-signal zones.", emptyList()),
     )
 
-    fun toolMenu(): String = SPECS.joinToString("\n") { s -> "- ${s.name}(${s.params.joinToString(", ") { it.first }})" }
+    fun toolMenu(): String = SPECS.joinToString("\n") { s -> "- ${s.name}(${s.params.joinToString(", ") { it.first }}): ${s.description.substringBefore('.').take(70)}" }
 
     /** Gemini `function_declarations` JSON. */
     fun geminiDeclarations(): JSONArray = JSONArray().apply {
@@ -74,6 +89,20 @@ fun TripTools.dispatch(call: ToolProtocol.Call): String {
             "listAll" -> listAll()
             "getEmergencyInfo" -> getEmergencyInfo()
             "currentTime" -> currentTime()
+            "sayIt" -> sayIt(arg(0))
+            "fareCheck" -> fareCheck(arg(0, "base"), arg(1), arg(2, "any"))
+            "howToRide" -> howToRide(arg(0, "any"))
+            "permitsAndPayments" -> permitsAndPayments()
+            "findFood" -> findFood(arg(0, "any"), arg(1, "any"))
+            "etiquette" -> etiquette(arg(0, "general"))
+            "isShutdown" -> isShutdown(arg(0, "today"))
+            "scamCheck" -> scamCheck(arg(0))
+            "emergency" -> emergency(arg(0, "any"))
+            "signalMap" -> signalMap()
+            "getBudget" -> getBudget()
+            "whatIfSkip" -> whatIfSkip(arg(0))
+            "findStay" -> findStay(arg(0, "999999"))
+            "getMap" -> getMap()
             else -> "Unknown tool ${call.name}"
         }
     }.getOrElse { "Tool error: ${it.message}" }

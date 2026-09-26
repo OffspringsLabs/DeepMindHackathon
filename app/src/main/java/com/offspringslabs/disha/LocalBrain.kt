@@ -194,7 +194,7 @@ class LocalBrain(private val context: Context) {
         private val SAMPLER = SamplerConfig(topK = 40, topP = 0.95, temperature = 0.2, seed = 0)
 
         fun nativePrompt(summary: String) = """
-            You are Disha, an offline travel guide on the traveller's phone.
+            You are TravelFreak, an offline travel guide on the traveller's phone.
             Tools read the saved trip pack. ALWAYS call a tool before stating any distance, time, price, opening hour or plan. Never guess numbers.
             Then answer in at most 2 short spoken sentences quoting the tool's numbers.
             If tools cannot find it, say: "Not in my pack, ask me when online."
@@ -203,7 +203,7 @@ class LocalBrain(private val context: Context) {
         """.trimIndent()
 
         fun manualPrompt(summary: String) = """
-            You are Disha, an offline travel guide on the traveller's phone. You cannot know any number yourself; tools read the saved trip pack.
+            You are TravelFreak, an offline travel guide on the traveller's phone. You cannot know any number yourself; tools read the saved trip pack.
             Tools:
             ${ToolProtocol.toolMenu()}
             Protocol, exactly one line per reply:
@@ -220,7 +220,7 @@ class LocalBrain(private val context: Context) {
         """.trimIndent()
 
         fun contextPrompt(packText: String) = """
-            You are Disha, an offline travel guide. Answer using ONLY the TRIP PACK below.
+            You are TravelFreak, an offline travel guide. Answer using ONLY the TRIP PACK below.
             Maximum 2 short sentences. Quote numbers (km, minutes, hours, ₹) exactly as written.
             If the answer is not in the pack, say: "Not in my pack, ask me when online."
 

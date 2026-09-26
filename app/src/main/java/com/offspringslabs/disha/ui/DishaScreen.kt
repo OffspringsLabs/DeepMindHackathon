@@ -78,6 +78,10 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
     val showPack by vm.showPack.collectAsState()
     val refreshed by vm.packRefreshed.collectAsState()
     val replyLang by vm.replyLang.collectAsState()
+    val trips by vm.trips.collectAsState()
+    val intakeActive by vm.intakeActive.collectAsState()
+    val intakeCard by vm.intakeCard.collectAsState()
+    val intakeSay by vm.intakeSay.collectAsState()
     val ttsVoice by vm.ttsVoice.collectAsState()
     val speaking by vm.speaking.collectAsState()
 
@@ -92,7 +96,7 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
             // Header
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Column(Modifier.weight(1f)) {
-                    Text("Disha", fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Forest)
+                    Text("TravelFreak", fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Forest)
                     Text("the guide that never leaves you lost", color = Muted, fontSize = 13.sp)
                 }
                 Badge(
@@ -102,10 +106,18 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
             }
             Spacer(Modifier.height(12.dp))
 
-            // Regions
+            // Trips: saved by the planner agent + bundled demos, plus "New trip"
             LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                items(vm.regions) { r ->
-                    FilterChip(selected = r.id == region.id, onClick = { vm.selectRegion(r) }, label = { Text(r.label) })
+                item { FilterChip(selected = intakeActive, onClick = { vm.startNewTrip() }, enabled = !busy, label = { Text("＋ New trip", fontWeight = FontWeight.SemiBold) }) }
+                items(trips) { r ->
+                    FilterChip(selected = r.id == region.id && !intakeActive, onClick = { vm.selectRegion(r) }, label = { Text((if (r.saved) "★ " else "") + r.label, maxLines = 1) })
+                }
+            }
+            pack.plan?.let { p ->
+                Spacer(Modifier.height(6.dp))
+                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    listOf("${p.constraints.days} days", "₹${"%,d".format(p.constraints.budgetInr)}", "${p.constraints.people} ppl", "from ${p.constraints.startCity}", p.constraints.pace).forEach { Pill2(it) }
+                    if (p.overBudget) Pill2("over budget", Warn) else Pill2("₹${"%,d".format(p.budget.remaining)} left", Ok)
                 }
             }
             Spacer(Modifier.height(6.dp))
@@ -172,15 +184,24 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
             }
             Spacer(Modifier.height(12.dp))
 
+            // The agent asks → interactive component; free text / voice also answers it
+            if (intakeActive) {
+                val card = intakeCard
+                if (card != null) AskCard(card, intakeSay) { vm.answerIntake(it) }
+                else Row(verticalAlignment = Alignment.CenterVertically) { CircularProgressIndicator(Modifier.size(14.dp), strokeWidth = 2.dp); Spacer(Modifier.width(8.dp)); Text(intakeSay.ifBlank { "TravelFreak is thinking…" }, fontSize = 13.sp, color = Muted) }
+                TextButton(onClick = vm::cancelIntake) { Text("Cancel planning", fontSize = 12.sp, color = Warn) }
+                Spacer(Modifier.height(8.dp))
+            }
+
             // Conversation
-            if (transcript.isNotBlank()) {
+            if (transcript.isNotBlank() && !intakeActive) {
                 Text("You", fontSize = 11.sp, color = Muted)
                 Text(transcript, fontSize = 16.sp, color = Ink)
                 Spacer(Modifier.height(8.dp))
             }
             if (route.isNotBlank() || busy) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text("Disha", fontSize = 11.sp, color = Muted)
+                    Text("TravelFreak", fontSize = 11.sp, color = Muted)
                     Spacer(Modifier.width(8.dp))
                     if (route.isNotBlank()) Badge(route, if (route.contains("cloud")) Color(0xFF3B6FD9) else Forest)
                     if (!busy && latency > 0) { Spacer(Modifier.width(8.dp)); Text("${latency / 1000.0}s", fontSize = 11.sp, color = Muted) }
@@ -261,7 +282,7 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
 
             // Quick asks
             LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                items(quickAsks(pack.places.firstOrNull()?.name ?: "the main temple")) { q ->
+                items(quickAsks(pack)) { q ->
                     OutlinedButton(onClick = { vm.ask(q) }, enabled = !busy, contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 12.dp, vertical = 4.dp)) {
                         Text(q, fontSize = 12.sp, maxLines = 1)
                     }
@@ -279,13 +300,31 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
     }
 }
 
-private fun quickAsks(place: String) = listOf(
-    "How far is $place from base and how long?",
-    "Is $place open right now?",
-    "What's next on my day 1 plan?",
-    "Budget for 2 people, 2 nights at the cheapest hotel?",
-    "Nearest hospital and where is there no signal?",
-)
+private fun quickAsks(pack: com.offspringslabs.disha.TripPack): List<String> {
+    val place = pack.places.firstOrNull()?.name ?: "the main temple"
+    val lang = pack.language?.primary ?: "the local language"
+    val stop = pack.plan?.days?.firstOrNull()?.stops?.getOrNull(1)?.name ?: place
+    val out = ArrayList<String>()
+    if (pack.plan != null) { out += "Am I within budget?"; out += "What's next on my plan?"; out += "What if I skip $stop?"; out += "Show me the map" }
+    if (pack.language != null) out += "Say 'where is the nearest hospital' in $lang"
+    if (pack.transport != null) out += "Fair auto fare from the station to $place?"
+    if (pack.trust != null) out += "Any scams near $place?"
+    out += "9 pm, bus or auto back from $place?"
+    out += "Nearest pharmacy at night?"
+    if (pack.payments != null) out += "Do I need any permits or cash?"
+    if (pack.culture != null) out += "Dress code and anything shut tomorrow?"
+    if (pack.food.isNotEmpty()) out += "Veg food with mild spice?"
+    out += "Is $place open right now?"
+    return out
+}
+
+@Composable
+private fun Pill2(text: String, color: Color = Color(0xFFEDE6D3)) {
+    val onDark = color != Color(0xFFEDE6D3)
+    Box(Modifier.background(color, RoundedCornerShape(999.dp)).padding(horizontal = 9.dp, vertical = 3.dp)) {
+        Text(text, fontSize = 11.sp, color = if (onDark) Color.White else Ink, fontWeight = FontWeight.Medium)
+    }
+}
 
 private fun modeLabel(m: LocalBrain.Mode) = when (m) {
     LocalBrain.Mode.NATIVE_TOOLS -> "native tools"

@@ -1,14 +1,38 @@
-# Disha — the travel guide that never leaves you lost
+# TravelFreak — the travel guide that never leaves you lost
+
+> **v2 (afternoon build):** TravelFreak now *plans*. Tap **＋ New trip** and the agent asks where, how long, what budget and who — each question is an interactive card it summons on demand. It then researches with Gemini's live tools (Google Maps grounding, Google Search, code execution), builds a day-by-day itinerary that fits your **days and budget**, re-verifies every rupee deterministically, and saves the whole trip — places, fares, phrases in the local script, permits, scams, emergency numbers, offline map — for the on-device model.
 
 **GDG Hyderabad × Google DeepMind Hackathon, 26 Sep 2026.** Built with Gemini Flash (cloud) and Gemma 3n E2B (on-device, LiteRT-LM).
 
-Every travel app goes quiet the moment the network drops on a ghat road. Disha doesn't.
+Every travel app goes quiet the moment the network drops on a ghat road. TravelFreak doesn't.
 
 1. **Online:** Gemini Flash, grounded with Google Search, researches a region and compiles a compact **trip pack** (stays, places, hours, distances, routes, food, day plans, emergency info) as structured JSON.
 2. **The pack is cached on the phone.**
 3. **Offline:** Gemma 3n E2B runs fully on-device and answers by **calling deterministic tools over the pack**. Every km, minute, ₹ and opening hour comes from code, not from the model's memory.
 4. **Generative UI, the safe way:** the model never draws pixels. Each tool returns facts **plus a typed card**, and the screen renders a precompiled Compose component for it: Route, Open/Closed, Budget, Day-plan timeline, Safety, Place, Inventory. The agent's decision about *which tool to call* is the decision about *which component to show*. Online (Gemini Flash, native function calling) and offline (Gemma 3n) share the same tools, so the UI is identical either way.
 5. **Voice both ways, multilingual:** online, your spoken question goes to **Gemini Flash Audio** (English, Telugu or Hindi), the agent replies in the same language (or the one you pick: Auto / English / తెలుగు / हिन्दी), and **Gemini TTS** reads it back in a natural guide-like voice you can switch (Kore, Puck, Zephyr…). Offline, Android's on-device recognizer feeds Gemma and the device voice speaks the answer.
+
+## What the pack covers now (the things that actually strand people)
+
+| Category | Offline tool | Card |
+|---|---|---|
+| Language & script | `sayIt(intent)` — native script + romanised | Phrase |
+| Local transport rules | `fareCheck(from,to,mode)`, `howToRide(mode)` | Fair fare vs tourist quote |
+| Payments, ID & permits | `permitsAndPayments()` | Checklist |
+| Food & diet | `findFood(diet, spice)` | Food list (veg/spice/allergens) |
+| Culture & safety | `etiquette(place)`, `isShutdown(date)` | Checklist |
+| Trust & scams | `scamCheck(situation)` | Alert with counter-moves |
+| Emergencies | `emergency(kind)` | Tap-to-call numbers + local phrase |
+| Connectivity | `signalMap()` | Offline map with dead zones |
+| Days & budget | `getBudget()`, `getPlan(day,time)`, `whatIfSkip(stop)`, `findStay(max)`, `getMap()` | Budget bar, timeline, what-if, map |
+
+Online, the same tools plus Google Search run in a **multi-round decision loop**: for "9 pm, bus or auto back?" the agent gathers fares, hours and time, then answers `DECISION / WHY / ALTERNATIVE`, rendered as a decision card.
+
+## Planner agent: how the conversation works
+
+The intake agent's questions are **client-side tools**. When Gemini calls `askBudget(...)`, the app renders a ₹ slider card and suspends the loop until you answer; your answer is returned as the tool result and the agent continues. Free text or voice also answers the current card, and if you say "2 days in Araku for two under ₹8,000" it skips what it already knows. `buildTrip` then runs three research calls (Maps ∥ Search → code execution), one structuring call, and a Kotlin re-computation of the budget (models do slip: the demo Tirupati plan claimed ₹14,300; the real total was ₹17,072, so it is flagged over budget with alternatives).
+
+Gemini API constraints we hit: Maps grounding cannot share a request with Search or code execution, and mixing built-in tools with function declarations needs `toolConfig.includeServerSideToolInvocations`. Third-party apps cannot download Google Maps offline areas, so the map card draws a schematic from stored coordinates and hands off to Maps for the download.
 
 ## Demo script (90 s)
 

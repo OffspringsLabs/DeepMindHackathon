@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit
  * with a style prompt so it sounds like a local guide rather than a screen reader. PCM16 played via AudioTrack.
  */
 class GeminiTts(private val apiKey: String = BuildConfig.GEMINI_API_KEY) {
-    private val http = OkHttpClient.Builder().callTimeout(60, TimeUnit.SECONDS).build()
+    private val http = OkHttpClient.Builder().connectTimeout(20, TimeUnit.SECONDS).readTimeout(90, TimeUnit.SECONDS).callTimeout(120, TimeUnit.SECONDS).build()
     @Volatile private var track: AudioTrack? = null
 
     data class Pcm(val bytes: ByteArray, val sampleRate: Int)
