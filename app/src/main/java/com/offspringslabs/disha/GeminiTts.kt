@@ -30,7 +30,7 @@ class GeminiTts(private val apiKey: String = BuildConfig.GEMINI_API_KEY) {
     suspend fun synthesize(text: String, voice: String, style: String): Pcm = withContext(Dispatchers.IO) {
         var last: Exception? = null
         for (model in MODELS) {
-            try { return@withContext call(model, "$style\n\n$text", voice) } catch (e: Exception) { last = e; Log.w(TAG, "$model failed: ${e.message}") }
+            try { return@withContext call(model, if (style.isBlank()) text else "$style $text", voice) } catch (e: Exception) { last = e; Log.w(TAG, "$model failed: ${e.message}") }
         }
         throw last ?: IOException("TTS failed")
     }

@@ -108,7 +108,7 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         if (preferGemini) {
             try {
                 speaking.value = "gemini"
-                val style = "Read this aloud ${replyLang.value.ttsHint}, warmly and briskly, like a friendly local guide. Say numbers naturally."
+                val style = ""
                 // First sentence alone → audio starts in ~3 s; the rest synthesizes meanwhile and plays back to back.
                 val (head, tail) = splitForSpeech(text)
                 coroutineScope {
@@ -133,7 +133,7 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
      */
     private suspend fun choreograph(text: String, staged: List<UiCard>, preferGemini: Boolean) = coroutineScope {
         val segments = splitSentences(text).ifEmpty { listOf(text) }
-        val style = "Read this aloud ${replyLang.value.ttsHint}, warmly and briskly, like a friendly local guide. Say numbers naturally."
+        val style = ""   // measured: any style prefix adds ~1.5 s latency and up to 70% longer audio; Kore is already warm
         val audio = if (preferGemini) segments.map { seg -> async(Dispatchers.IO) { runCatching { withTimeoutOrNull(12_000L) { geminiTts.synthesize(seg, ttsVoice.value, style) } }.getOrNull() } } else emptyList()
         val t0 = System.currentTimeMillis()
         val shown = StringBuilder()
@@ -141,10 +141,11 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         for ((i, seg) in segments.withIndex()) {
             // component(s) for this sentence: card i, plus any leftovers on the last sentence
             val group = if (i < segments.lastIndex) listOfNotNull(staged.getOrNull(i)) else staged.drop(i)
+            if (preferGemini && !geminiFailed) speaking.value = "gemini"   // "voice coming" indicator while the first clip synthesizes
+            val pcm = if (preferGemini && !geminiFailed) audio.getOrNull(i)?.await() else null
             if (group.isNotEmpty()) { group.forEach { addCard(it); Log.i("Choreo", "card ${it::class.simpleName} +${System.currentTimeMillis() - t0} ms") }; delay(CARD_SETTLE_MS) }
             shown.append(seg).append(' ')
             answer.value = shown.toString().trim()
-            val pcm = if (preferGemini && !geminiFailed) audio.getOrNull(i)?.await() else null
             if (pcm != null) {
                 speaking.value = "gemini"
                 geminiTts.play(pcm) { Log.i("Choreo", "voice ${i + 1}/${segments.size} +${System.currentTimeMillis() - t0} ms") }
