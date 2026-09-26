@@ -28,6 +28,12 @@ import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
@@ -49,7 +55,9 @@ import kotlin.math.roundToInt
 /** Interactive components the intake agent summons. Each answers with one JSON object. */
 @Composable
 fun AskCard(card: UiCard, say: String, onAnswer: (JSONObject) -> Unit) {
-    AskShell(say) {
+    var shown by remember(card) { mutableStateOf(false) }
+    LaunchedEffect(card) { shown = true }
+    AnimatedVisibility(visible = shown, enter = fadeIn(tween(380)) + expandVertically(tween(380)) + slideInVertically(tween(380)) { it / 6 }) { AskShell(say) {
         when (card) {
             is UiCard.AskDestination -> AskDestinationBody(card, onAnswer)
             is UiCard.AskDays -> AskDaysBody(card, onAnswer)
@@ -59,7 +67,7 @@ fun AskCard(card: UiCard, say: String, onAnswer: (JSONObject) -> Unit) {
             is UiCard.Progress -> ProgressBody(card)
             else -> Unit
         }
-    }
+    } }
 }
 
 @Composable

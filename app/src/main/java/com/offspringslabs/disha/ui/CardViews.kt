@@ -1,8 +1,15 @@
 package com.offspringslabs.disha.ui
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -45,7 +52,9 @@ import kotlin.math.roundToInt
 /** Renders whichever precompiled component the agent's tool produced. */
 @Composable
 fun AgentCard(card: UiCard, onOpenMap: (Double?, Double?, String) -> Unit) {
-    AnimatedVisibility(visible = true, enter = fadeIn() + expandVertically()) {
+    var shown by remember(card) { mutableStateOf(false) }
+    LaunchedEffect(card) { shown = true }
+    AnimatedVisibility(visible = shown, enter = fadeIn(tween(380)) + expandVertically(tween(380)) + slideInVertically(tween(380)) { it / 6 }) {
         when (card) {
             is UiCard.Route -> RouteCard(card)
             is UiCard.OpenStatus -> OpenStatusCard(card)

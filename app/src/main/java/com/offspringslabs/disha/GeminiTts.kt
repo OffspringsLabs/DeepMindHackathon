@@ -82,7 +82,7 @@ class GeminiTts(private val apiKey: String = BuildConfig.GEMINI_API_KEY) {
     }
 
     /** Blocking playback on the caller's (IO) thread; returns when done or stopped. */
-    suspend fun play(pcm: Pcm) = withContext(Dispatchers.IO) {
+    suspend fun play(pcm: Pcm, onStart: () -> Unit = {}) = withContext(Dispatchers.IO) {
         stop()
         val t = AudioTrack.Builder()
             .setAudioAttributes(AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_ASSISTANT).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build())
@@ -94,6 +94,7 @@ class GeminiTts(private val apiKey: String = BuildConfig.GEMINI_API_KEY) {
         try {
             t.write(pcm.bytes, 0, pcm.bytes.size)
             t.play()
+            onStart()
             val durationMs = pcm.bytes.size * 1000L / (pcm.sampleRate * 2)
             val end = System.currentTimeMillis() + durationMs + 150
             while (System.currentTimeMillis() < end && track === t && t.playState == AudioTrack.PLAYSTATE_PLAYING) Thread.sleep(50)

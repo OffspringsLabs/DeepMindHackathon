@@ -13,6 +13,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 import org.json.JSONObject
 
 data class ToolStep(val label: String, val result: String)
@@ -98,34 +99,52 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun stopAllSpeech() { voice.stopSpeaking(); geminiTts.stop(); speaking.value = "" }
 
-    private suspend fun speakOut(text: String, preferGemini: Boolean) {
-        if (text.isBlank()) return
+    /** Speaks [text]; [onStart] fires the moment audio actually begins (or immediately for the device voice). */
+    private suspend fun speakOut(text: String, preferGemini: Boolean, onStart: () -> Unit = {}) {
+        if (text.isBlank()) { onStart(); return }
         if (preferGemini) {
             try {
                 speaking.value = "gemini"
                 val pcm = geminiTts.synthesize(text, ttsVoice.value, "Read this aloud ${replyLang.value.ttsHint}, warmly and briskly, like a friendly local guide. Say numbers naturally.")
-                geminiTts.play(pcm); speaking.value = ""; return
+                geminiTts.play(pcm) { Log.i("Choreo", "voice started (gemini)"); onStart() }
+                speaking.value = ""; return
             } catch (e: Exception) {
                 Log.w("Disha", "Gemini TTS failed, using Android TTS", e)
                 notes.value = notes.value + "Gemini voice unavailable, using device voice"
             }
         }
-        speaking.value = "android"; voice.speak(text); speaking.value = ""
+        speaking.value = "android"; voice.speak(text); Log.i("Choreo", "voice started (device)"); onStart(); speaking.value = ""
+    }
+
+    /**
+     * Voice-first choreography: start speaking, and only once audio begins (or after [VOICE_WAIT_MS])
+     * show the answer text; one second later the components slide in, staggered.
+     */
+    private suspend fun choreograph(text: String, staged: List<UiCard>, preferGemini: Boolean) {
+        val started = CompletableDeferred<Unit>()
+        viewModelScope.launch { speakOut(text, preferGemini) { started.complete(Unit) }; started.complete(Unit) }
+        val t0 = System.currentTimeMillis()
+        withTimeoutOrNull(VOICE_WAIT_MS) { started.await() }
+        answer.value = text
+        delay(CARD_LEAD_MS)
+        for (c in staged) { addCard(c); Log.i("Choreo", "card ${c::class.simpleName} +${System.currentTimeMillis() - t0} ms"); delay(CARD_STAGGER_MS) }
     }
 
     /** Tools shared by both brains; every tool call lands a precompiled card on screen. */
     private fun addCard(c: UiCard) { if (c !in cards.value) cards.value = cards.value + c }
+    /** Cards are collected while the agent works and revealed by [choreograph] once the voice starts. */
+    private fun stagedTools(staged: MutableList<UiCard>): TripTools = TripTools(pack.value).also { t -> t.onCard = { c -> if (c !in staged) staged += c } }
     private fun toolsForScreen(): TripTools = TripTools(pack.value).also { t -> t.onCard = ::addCard }
 
     private fun onStep(label: String, result: String) { steps.value = steps.value + ToolStep(label, result) }
 
     /** DECISION / WHY / ALTERNATIVE → Decision card; returns the spoken line. */
-    private fun absorbDecision(text: String): String {
+    private fun absorbDecision(text: String, staged: MutableList<UiCard>): String {
         if (!text.contains("DECISION:", true)) return text
         val rec = Regex("DECISION:\\s*(.+)").find(text)?.groupValues?.get(1)?.trim().orEmpty()
         val why = Regex("WHY:\\s*(.+)").find(text)?.groupValues?.get(1)?.split('|')?.map { it.trim().trimStart('-', '•', ' ') }?.filter { it.isNotBlank() } ?: emptyList()
         val alt = Regex("ALTERNATIVE:\\s*(.+)").find(text)?.groupValues?.get(1)?.trim().orEmpty()
-        addCard(UiCard.Decision(rec, why, alt, ""))
+        staged.add(0, UiCard.Decision(rec, why, alt, ""))
         return rec
     }
 
@@ -145,22 +164,24 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             try {
                 var done = false
+                val staged = ArrayList<UiCard>()
+                var text = ""
                 if (useCloud()) {
                     route.value = "Gemini Flash · cloud agent"
                     try {
-                        val r = gemini.answerWithTools(question, pack.value, toolsForScreen(), replyLang.value, live = true, onStep = ::onStep)
-                        answer.value = absorbDecision(r.text)
+                        val r = gemini.answerWithTools(question, pack.value, stagedTools(staged), replyLang.value, live = true, onStep = ::onStep)
+                        text = absorbDecision(r.text, staged)
                         done = true
                     } catch (e: Exception) {
                         Log.w("Disha", "cloud failed, falling back on-device", e)
                         notes.value = notes.value + "cloud unreachable (${e.message?.take(60)}), answering on-device"
-                        cards.value = emptyList(); steps.value = emptyList()
+                        staged.clear(); steps.value = emptyList()
                     }
                 }
-                if (!done) askOnDevice(question)
+                if (!done) text = askOnDevice(question, staged)
                 latencyMs.value = System.currentTimeMillis() - t0
                 busy.value = false
-                speakOut(answer.value, preferGemini = done)
+                choreograph(text, staged, preferGemini = done)
             } catch (e: Exception) {
                 status.value = "Error: ${e.message}"
             } finally {
@@ -169,18 +190,18 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-    private suspend fun askOnDevice(question: String) {
+    private suspend fun askOnDevice(question: String, staged: MutableList<UiCard>): String {
         route.value = "Gemma 3n E2B · on-device agent"
         val sb = StringBuilder()
         brain.ask(pack.value, question).collect { ev ->
             when (ev) {
-                is BrainEvent.Text -> { sb.append(ev.delta); answer.value = sb.toString() }
+                is BrainEvent.Text -> sb.append(ev.delta)
                 is BrainEvent.ToolUsed -> steps.value = steps.value + ToolStep(ev.label, ev.result)
-                is BrainEvent.Card -> addCard(ev.card)
+                is BrainEvent.Card -> if (ev.card !in staged) staged += ev.card
                 is BrainEvent.Note -> notes.value = notes.value + ev.text
             }
         }
-        answer.value = absorbDecision(sb.toString())
+        return absorbDecision(sb.toString(), staged)
     }
 
     // ---------- intake ----------
@@ -194,7 +215,6 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
             override suspend fun ask(card: UiCard, say: String): JSONObject {
                 val d = CompletableDeferred<JSONObject>()
                 pending = d
-                intakeCard.value = card
                 val line = say.ifBlank {
                     when (card) {
                         is UiCard.AskDestination -> card.prompt; is UiCard.AskDays -> card.prompt + (if (card.reason.isNotBlank()) " " + card.reason else "")
@@ -202,7 +222,14 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
                         is UiCard.Confirm -> card.prompt; else -> ""
                     }
                 }
-                if (line.isNotBlank()) { intakeSay.value = line; viewModelScope.launch { speakOut(line, preferGemini = true) } }
+                if (line.isNotBlank()) {
+                    intakeSay.value = line
+                    val started = CompletableDeferred<Unit>()
+                    viewModelScope.launch { speakOut(line, preferGemini = true) { started.complete(Unit) }; started.complete(Unit) }
+                    withTimeoutOrNull(VOICE_WAIT_MS) { started.await() }
+                    delay(CARD_LEAD_MS)
+                }
+                intakeCard.value = card
                 return d.await()
             }
             override fun progress(stage: Int, total: Int, label: String) { intakeCard.value = UiCard.Progress(label, builder.stages, stage) }
@@ -211,16 +238,16 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         intakeJob = viewModelScope.launch {
             try {
                 val out = intake.run(utterance, ui, replyLang.value, store.savedTrips().map { it.label })
+                val staged = ArrayList<UiCard>()
                 out.result?.let { r ->
                     trips.value = store.regions
                     selectRegion(Region(r.id, r.pack.region, saved = true))
                     if (r.fixes.isNotEmpty()) notes.value = notes.value + "budget re-verified: ${r.fixes.joinToString("; ")}"
-                    // surface the plan immediately
-                    val t = toolsForScreen(); t.getBudget(); t.getPlan("1", "now"); t.getMap()
+                    val t = stagedTools(staged); t.getBudget(); t.getPlan("1", "now"); t.getMap()
                 }
-                answer.value = out.closing
                 route.value = "Gemini Flash · planner agent"
-                speakOut(out.closing, preferGemini = true)
+                intakeActive.value = false; intakeCard.value = null
+                choreograph(out.closing, staged, preferGemini = true)
             } catch (e: Exception) {
                 status.value = "Planner stopped: ${e.message?.take(160)}"
             } finally {
@@ -275,12 +302,13 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             try {
                 route.value = "Gemini Flash Audio · cloud agent"
-                val (t, a, _) = gemini.answerAudioWithTools(wav, pack.value, toolsForScreen(), replyLang.value, ::onStep)
+                val staged = ArrayList<UiCard>()
+                val (t, a, _) = gemini.answerAudioWithTools(wav, pack.value, stagedTools(staged), replyLang.value, ::onStep)
                 transcript.value = t
-                answer.value = absorbDecision(a)
+                val text = absorbDecision(a, staged)
                 latencyMs.value = System.currentTimeMillis() - t0
                 busy.value = false
-                speakOut(answer.value, preferGemini = true)
+                choreograph(text, staged, preferGemini = true)
             } catch (e: Exception) {
                 status.value = "Audio failed: ${e.message?.take(120)}. Use the mic again offline or type."
                 transcript.value = ""
@@ -320,5 +348,11 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
 
     override fun onCleared() {
         geminiTts.stop(); voice.release(); brain.close()
+    }
+
+    companion object {
+        const val VOICE_WAIT_MS = 7_000L   // never hold the screen longer than this waiting for audio
+        const val CARD_LEAD_MS = 1_000L    // voice leads, components follow
+        const val CARD_STAGGER_MS = 650L
     }
 }
