@@ -8,11 +8,11 @@ Every travel app goes quiet the moment the network drops on a ghat road. Disha d
 2. **The pack is cached on the phone.**
 3. **Offline:** Gemma 3n E2B runs fully on-device and answers by **calling deterministic tools over the pack**. Every km, minute, ₹ and opening hour comes from code, not from the model's memory.
 4. **Generative UI, the safe way:** the model never draws pixels. Each tool returns facts **plus a typed card**, and the screen renders a precompiled Compose component for it: Route, Open/Closed, Budget, Day-plan timeline, Safety, Place, Inventory. The agent's decision about *which tool to call* is the decision about *which component to show*. Online (Gemini Flash, native function calling) and offline (Gemma 3n) share the same tools, so the UI is identical either way.
-5. **Voice both ways:** online, your spoken question goes to **Gemini Flash Audio** (English, Telugu or Hindi). Offline, Android's on-device recognizer feeds Gemma. Answers are spoken back with TTS.
+5. **Voice both ways, multilingual:** online, your spoken question goes to **Gemini Flash Audio** (English, Telugu or Hindi), the agent replies in the same language (or the one you pick: Auto / English / తెలుగు / हिन्दी), and **Gemini TTS** reads it back in a natural guide-like voice you can switch (Kore, Puck, Zephyr…). Offline, Android's on-device recognizer feeds Gemma and the device voice speaks the answer.
 
 ## Demo script (90 s)
 
-1. Pick **Tirupati & Tirumala**. Badge shows ONLINE. Ask by voice: *"How far is the temple and how long?"* → Gemini Flash Audio answers in ~2 s.
+1. Pick **Tirupati & Tirumala**. Badge shows ONLINE. Ask by voice in Telugu: *"గుడి ఎంత దూరం, ఎంత సమయం పడుతుంది?"* → Gemini Flash Audio transcribes it, calls `getDistance`, shows the ROUTE card and **answers aloud in Telugu** with Gemini's voice.
 2. **Turn on airplane mode.** Badge flips to OFFLINE.
 3. Ask again (mic or text): *"Is the temple open right now?"* → Gemma 3n, on-device, calls `isOpen(...)`; an **OPEN NOW** card with "closes in 12 h" appears, then the spoken answer, in ~5 s.
 4. *"Budget for 2 people, 2 nights at the cheapest hotel?"* → `estimateBudget(...)` renders the **Budget** card with every line of arithmetic.
@@ -76,6 +76,7 @@ app/src/main/java/com/offspringslabs/disha/
   ToolDispatch.kt    one tool catalogue → LiteRT-LM, CALL/FINAL protocol, Gemini function declarations
   LocalBrain.kt      Gemma 3n via LiteRT-LM, three-tier agent loop
   GeminiClient.kt    Gemini Flash REST: grounded pack research, function-calling agent loop (text + audio)
+  GeminiTts.kt       Gemini TTS (gemini-3.8-flash-lite-tts → 2.5 preview fallback), PCM playback, ReplyLang
   VoiceIO.kt         on-device SpeechRecognizer + TTS
   AudioRecorder.kt   16 kHz WAV capture for Gemini Flash Audio
   Connectivity.kt    online/offline state

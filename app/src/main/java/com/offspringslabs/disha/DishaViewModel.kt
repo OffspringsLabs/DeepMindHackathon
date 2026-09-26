@@ -22,6 +22,7 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
     private val connectivity = Connectivity(app)
     private val voice = VoiceIO(app)
     private val recorder = AudioRecorder()
+    private val geminiTts = GeminiTts()
 
     val regions = store.regions
     private val _region = MutableStateFlow(regions.first())
@@ -48,6 +49,9 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
     val recording = MutableStateFlow(false)
     val status = MutableStateFlow("")
     val showPack = MutableStateFlow(false)
+    val replyLang = MutableStateFlow(ReplyLang.AUTO)
+    val ttsVoice = MutableStateFlow(GeminiTts.VOICES.first())
+    val speaking = MutableStateFlow("")   // "" | "gemini" | "android"
 
     private var recordTimeout: Job? = null
 
@@ -70,6 +74,30 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun toggleForceOffline() { forceOffline.value = !forceOffline.value }
+    fun setReplyLang(l: ReplyLang) { replyLang.value = l }
+    fun nextVoice() { val i = GeminiTts.VOICES.indexOf(ttsVoice.value); ttsVoice.value = GeminiTts.VOICES[(i + 1) % GeminiTts.VOICES.size] }
+
+    private fun stopAllSpeech() { voice.stopSpeaking(); geminiTts.stop(); speaking.value = "" }
+
+    /** Online: Gemini's multilingual voice with a guide-like delivery. Falls back to Android TTS on any failure. */
+    private suspend fun speakOut(text: String, preferGemini: Boolean) {
+        if (text.isBlank()) return
+        if (preferGemini) {
+            try {
+                speaking.value = "gemini"
+                val pcm = geminiTts.synthesize(text, ttsVoice.value, "Read this aloud ${replyLang.value.ttsHint}, warmly and briskly, like a friendly local guide giving directions. Say numbers naturally.")
+                geminiTts.play(pcm)
+                speaking.value = ""
+                return
+            } catch (e: Exception) {
+                Log.w("Disha", "Gemini TTS failed, using Android TTS", e)
+                notes.value = notes.value + "Gemini voice unavailable, using device voice"
+            }
+        }
+        speaking.value = "android"
+        voice.speak(text)
+        speaking.value = ""
+    }
     fun togglePack() { showPack.value = !showPack.value }
     fun setStatus(s: String) { status.value = s }
 
@@ -83,7 +111,7 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
     fun ask(q: String) {
         val question = q.trim()
         if (question.isEmpty() || busy.value) return
-        voice.stopSpeaking()
+        stopAllSpeech()
         transcript.value = question
         clearAnswer()
         busy.value = true
@@ -94,7 +122,7 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
                 if (useCloud()) {
                     route.value = "Gemini Flash · cloud agent"
                     try {
-                        val r = gemini.answerWithTools(question, pack.value, toolsForScreen())
+                        val r = gemini.answerWithTools(question, pack.value, toolsForScreen(), replyLang.value)
                         steps.value = r.toolCalls.map { ToolStep(it.first, it.second) }
                         answer.value = r.text
                         done = true
@@ -105,12 +133,13 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
                     }
                 }
                 if (!done) askOnDevice(question)
-                voice.speak(answer.value)
+                latencyMs.value = System.currentTimeMillis() - t0
+                busy.value = false
+                speakOut(answer.value, preferGemini = done)
             } catch (e: Exception) {
                 status.value = "Error: ${e.message}"
             } finally {
-                latencyMs.value = System.currentTimeMillis() - t0
-                busy.value = false
+                if (busy.value) { latencyMs.value = System.currentTimeMillis() - t0; busy.value = false }
             }
         }
     }
@@ -135,14 +164,14 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
             recording.value -> stopRecordingAndAsk()
             busy.value -> Unit
             useCloud() -> {
-                voice.stopSpeaking()
+                stopAllSpeech()
                 recorder.start()
                 recording.value = true
                 status.value = "Recording… tap mic again to send"
                 recordTimeout = viewModelScope.launch { delay(12_000); if (recording.value) stopRecordingAndAsk() }
             }
             else -> {
-                voice.stopSpeaking()
+                stopAllSpeech()
                 status.value = if (voice.onDevice) "Listening (on-device)…" else "Listening…"
                 transcript.value = ""
                 voice.startListening()
@@ -162,17 +191,18 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             try {
                 route.value = "Gemini Flash Audio · cloud agent"
-                val (t, a, calls) = gemini.answerAudioWithTools(wav, pack.value, toolsForScreen())
+                val (t, a, calls) = gemini.answerAudioWithTools(wav, pack.value, toolsForScreen(), replyLang.value)
                 transcript.value = t
                 steps.value = calls.map { ToolStep(it.first, it.second) }
                 answer.value = a
-                voice.speak(a)
+                latencyMs.value = System.currentTimeMillis() - t0
+                busy.value = false
+                speakOut(a, preferGemini = true)
             } catch (e: Exception) {
                 status.value = "Audio failed: ${e.message?.take(120)}. Use the mic again offline or type."
                 transcript.value = ""
             } finally {
-                latencyMs.value = System.currentTimeMillis() - t0
-                busy.value = false
+                if (busy.value) { latencyMs.value = System.currentTimeMillis() - t0; busy.value = false }
             }
         }
     }
@@ -204,6 +234,7 @@ class DishaViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     override fun onCleared() {
+        geminiTts.stop()
         voice.release()
         brain.close()
     }

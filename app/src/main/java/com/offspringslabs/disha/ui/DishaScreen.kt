@@ -77,6 +77,9 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
     val status by vm.status.collectAsState()
     val showPack by vm.showPack.collectAsState()
     val refreshed by vm.packRefreshed.collectAsState()
+    val replyLang by vm.replyLang.collectAsState()
+    val ttsVoice by vm.ttsVoice.collectAsState()
+    val speaking by vm.speaking.collectAsState()
 
     val cloud = online && !forceOffline && vm.hasKey
     var draft by remember { mutableStateOf("") }
@@ -105,7 +108,22 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
                     FilterChip(selected = r.id == region.id, onClick = { vm.selectRegion(r) }, label = { Text(r.label) })
                 }
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(6.dp))
+            // Reply language + Gemini voice
+            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                Text("Reply", fontSize = 12.sp, color = Muted)
+                Spacer(Modifier.width(8.dp))
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.weight(1f)) {
+                    items(com.offspringslabs.disha.ReplyLang.entries) { l ->
+                        FilterChip(selected = l == replyLang, onClick = { vm.setReplyLang(l) }, label = { Text(l.label, fontSize = 12.sp) })
+                    }
+                }
+                if (cloud) {
+                    Spacer(Modifier.width(6.dp))
+                    Text("🔊 $ttsVoice", fontSize = 12.sp, color = Color(0xFF3B6FD9), fontWeight = FontWeight.SemiBold, modifier = Modifier.clickable { vm.nextVoice() })
+                }
+            }
+            Spacer(Modifier.height(6.dp))
 
             // Engine + pack status
             Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer), shape = RoundedCornerShape(14.dp)) {
@@ -191,6 +209,13 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
                     Text(answer, Modifier.padding(14.dp), fontSize = 18.sp, lineHeight = 26.sp, color = Ink)
                 }
             }
+            if (speaking.isNotBlank()) {
+                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(top = 4.dp)) {
+                    CircularProgressIndicator(Modifier.size(12.dp), strokeWidth = 2.dp, color = Color(0xFF3B6FD9))
+                    Spacer(Modifier.width(6.dp))
+                    Text(if (speaking == "gemini") "Gemini voice · $ttsVoice · ${replyLang.label}" else "Device voice", fontSize = 11.sp, color = Muted)
+                }
+            }
             notes.forEach { Text("· $it", fontSize = 11.sp, color = Muted) }
             if (status.isNotBlank()) { Spacer(Modifier.height(6.dp)); Text(status, fontSize = 12.sp, color = Warn) }
 
@@ -214,7 +239,7 @@ fun DishaScreen(vm: DishaViewModel, onMic: () -> Unit) {
                         when {
                             recording -> "Recording for Gemini Flash Audio · tap to send"
                             listening -> "Listening on-device · tap to stop"
-                            cloud -> "Tap to ask · Gemini Flash Audio"
+                            cloud -> "Tap to ask · Gemini Flash Audio · replies in ${replyLang.label}"
                             else -> "Tap to ask · on-device speech → Gemma"
                         }, fontSize = 12.sp, color = Muted,
                     )

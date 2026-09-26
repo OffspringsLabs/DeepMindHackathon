@@ -36,16 +36,16 @@ class GeminiClient(private val apiKey: String = BuildConfig.GEMINI_API_KEY) {
     }
 
     /** Text question → function-calling loop over TripTools → short spoken answer. */
-    suspend fun answerWithTools(question: String, pack: TripPack, tools: TripTools): AgentResult =
-        agentLoop(userParts(textPart("QUESTION: $question")), pack, tools, PackPrompts.agentSystem(pack.summary()))
+    suspend fun answerWithTools(question: String, pack: TripPack, tools: TripTools, lang: ReplyLang = ReplyLang.AUTO): AgentResult =
+        agentLoop(userParts(textPart("QUESTION: $question")), pack, tools, PackPrompts.agentSystem(pack.summary(), lang))
 
     /** Spoken question (WAV) → same loop; the model transcribes and answers. Returns (transcript, answer, calls). */
-    suspend fun answerAudioWithTools(wav: ByteArray, pack: TripPack, tools: TripTools): Triple<String, String, List<Pair<String, String>>> {
+    suspend fun answerAudioWithTools(wav: ByteArray, pack: TripPack, tools: TripTools, lang: ReplyLang = ReplyLang.AUTO): Triple<String, String, List<Pair<String, String>>> {
         val audioPart = JSONObject().put(
             "inline_data",
             JSONObject().put("mime_type", "audio/wav").put("data", Base64.encodeToString(wav, Base64.NO_WRAP)),
         )
-        val r = agentLoop(userParts(audioPart, textPart(PackPrompts.audioTurn())), pack, tools, PackPrompts.agentSystem(pack.summary()))
+        val r = agentLoop(userParts(audioPart, textPart(PackPrompts.audioTurn())), pack, tools, PackPrompts.agentSystem(pack.summary(), lang))
         val transcript = Regex("TRANSCRIPT:\\s*(.+)").find(r.text)?.groupValues?.get(1)?.trim() ?: "(audio)"
         val answer = r.text.substringAfter("ANSWER:", r.text).trim()
         return Triple(transcript, answer, r.toolCalls)
@@ -165,18 +165,19 @@ object PackPrompts {
         $research
     """.trimIndent()
 
-    fun agentSystem(summary: String) = """
-        You are Disha, a travel guide on the traveller's phone. You have tools that read the saved trip pack; the app renders a card for every tool you call.
+    fun agentSystem(summary: String, lang: ReplyLang) = """
+        You are Disha, a warm, quick local travel guide on the traveller's phone. You have tools that read the saved trip pack; the app renders a card for every tool you call.
         ALWAYS call a tool before stating any distance, time, price, opening hour or plan; never guess numbers. Call several tools if the question needs them.
-        Then answer in at most 2 short spoken sentences quoting the tool numbers. The traveller may speak Indian English, Telugu or Hindi; always answer in English.
+        Then answer in at most 2 short spoken sentences quoting the tool numbers, the way a friendly guide would say it aloud. Tool arguments are always in English.
+        ${lang.instruction}
         If tools cannot find it, say so in one sentence and give one sentence of general guidance.
 
         $summary
     """.trimIndent()
 
     fun audioTurn() = """
-        The audio is the traveller's spoken question. Use tools as needed, then reply EXACTLY in this format:
-        TRANSCRIPT: <the question in English>
-        ANSWER: <at most 2 short spoken sentences>
+        The audio is the traveller's spoken question (Indian English, Telugu or Hindi). Use tools as needed, then reply EXACTLY in this format:
+        TRANSCRIPT: <the question as spoken, in its own language and script>
+        ANSWER: <at most 2 short spoken sentences, following the language rule>
     """.trimIndent()
 }
